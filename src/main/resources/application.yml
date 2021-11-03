@@ -1,0 +1,60 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+spring:
+  datasource:
+    password: admin
+    url: jdbc:mysql://localhost:3306/mockproject
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        
+  security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 1072700503619-ubp9q30tq72o1cfg7jn87vqg6sltj0lf.apps.googleusercontent.com
+              clientSecret: tFHslyy9lRVFG_iTm7GPIudp
+              scope:
+                - email
+                - profile
+            facebook:
+              clientId: 840430540176218
+              clientSecret: 06c0c7bf19009b3c30800b59a4b423ca
+              scope:
+                - email
+                - public_profile
+#          Cách lấy hình fb! Nhưng nó sẽ ảnh hưởng đến DB á 
+#                               nên nếu muốn lấy avatar fb thì bật cái này
+#          provider:
+#            facebook:
+#              userInfoUri: https://graph.facebook.com/me?fields=id,name,email,picture
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: nguyenminhtuan13122000@gmail.com
+    password: snmfshgwzorpazeg
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+          
+
+   

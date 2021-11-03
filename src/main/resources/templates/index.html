@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<base href="/" />
+
+<title>For Students - Quizizz</title>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/join.css">
+
+</head>
+<body class="using-mouse">
+<include src="header.html"></include>
+	<div class="root-bootstrapper-container">
+		<div class="route-loader-wrapper"></div>
+		<div class="root-component">
+			<div data-v-52d0425c="" data-v-2d3aa134=""
+				data-test="modal-container" class="modal-container" th:fragment="starter-model">
+				<div data-v-52d0425c="" id="modal_id" class="modal-mask">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+						
+
+					</div>
+
+				</div>
+
+				<div data-v-52d0425c="" id="modal_signup" class="modal-mask">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+						<div data-v-b11ef74e="" class="signup-prompt-special-view">
+							<div data-v-b11ef74e="" tabindex="0" role="dialog"
+								aria-modal="true" aria-label="Sign up"
+								class="auth-signup-view kr-modal-container">
+								<div data-v-b11ef74e="" class="kr-modal-body">
+									<button data-v-b11ef74e="" id="button_close_signup_modal"
+										aria-label="Close sign up dialog" class="kr-modal-close-btn">
+										<i data-v-b11ef74e="" class="icon-fas-times"></i>
+									</button>
+									<div data-v-b11ef74e=""
+										class="modal-illustration-wrapper illust-bg-2" style="position: absolute;">
+										<div data-v-b11ef74e="" class="illustration-container">
+											<img data-v-b11ef74e="" style="position: absolute; top:-70px"
+												src="./assets/image/logo/login_signup_logo_400x200.png"
+												alt="Sign up illustration">
+										</div>
+									</div>
+									<div data-v-b11ef74e="" class="modal-title">Don't lose
+										your progress—create a free account!</div>
+									<div data-v-b11ef74e="" class="modal-action-wrapper">
+
+										<script>
+											function googleOauth2Authortization() {
+												location
+														.replace("/oauth2/authorization/google");
+											}
+										</script>
+
+										<button data-v-b11ef74e="" aria-label="Sign in with Google"
+											class="google-signup-btn"
+											onclick="googleOauth2Authortization()">
+											<span data-v-b11ef74e="" class="logo-wrapper"> <img
+												data-v-b11ef74e=""
+												src="https://cf.quizizz.com/img/logos/google-logo-1.png"
+												alt="Google logo">
+											</span> <span data-v-b11ef74e="" class="btn-label">Continue
+												with Google </span>
+										</button>
+
+
+										<script>
+											function facebookOauth2Authortization() {
+												location
+														.replace("/oauth2/authorization/facebook");
+											}
+										</script>
+
+
+										<button data-v-b11ef74e="" aria-label="Sign in with Facebook"
+											class="ms-signup-btn" onclick= "facebookOauth2Authortization()">
+											<span data-v-b11ef74e="" class="logo-wrapper"> <img
+												data-v-b11ef74e=""
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"
+												alt="MS logo">
+											</span> <span data-v-b11ef74e="" class="btn-label">Continue
+												with Facebook</span>
+										</button>
+
+
+										<div data-v-b11ef74e="" class="divider-or">— or —</div>
+										<div data-v-b11ef74e=""
+											class="search-input-wrapper email-input-wrapper">
+											<div data-v-b11ef74e="" class="search-input-container"
+												style="height: 50px">
+												<label data-v-b11ef74e="" id="sign-up-input-label"
+													class="search-input-label"> Sign up with email </label>
+												<!-- <span
+													data-v-b11ef74e="" class="kr2-textfield-icon"><i
+													data-v-b11ef74e="" class="icon-far-envelope"></i></span> -->
+												<script>
+													function getRegisterPage() {
+														location
+																.replace("/registration")
+													}
+												</script>
+												<div data-v-b11ef74e="" onclick="getRegisterPage()"
+													class="next-btn-wrapper"
+													style="position: relative; top: 10px; margin: -8px 0px;">
+													<div data-v-b11ef74e="" class="next-step-btn">
+														<span data-v-b11ef74e="">Get started</span>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<!---->
+										<!---->
+									</div>
+								</div>
+								<div data-v-b11ef74e="" class="kr-modal-footer">
+									<div data-v-b11ef74e="" class="footer-text">
+										Already have an account?
+										<button data-v-b11ef74e="" id="show_login_in_signup"
+											class="footer-login-btn">Log In</button>
+									</div>
+								</div>
+							</div>
+							<!---->
+						</div>
+					</div>
+				</div>
+				<div data-v-52d0425c="" id="modal_login" class="modal-mask" th:class="${(param.requiredLogin != null) or (param.error !=null)} ? 'modal-mask active' : 'modal-mask' ">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+						<div data-v-b11ef74e=""
+							class="signup-prompt-special-view modal-type-login">
+							<!---->
+							<div data-v-b11ef74e="" tabindex="0" role="dialog"
+								aria-modal="true" aria-label="Log in"
+								class="auth-login-view kr-modal-container">
+								<div data-v-b11ef74e="" class="kr-modal-body">
+									<button data-v-b11ef74e="" id="button_close_login"
+										class="kr-modal-close-btn">
+										<i data-v-b11ef74e="" aria-label="Close log in dialog"
+											class="icon-fas-times"></i>
+									</button>
+									<div data-v-b11ef74e=""
+										class="modal-illustration-wrapper illust-bg-2">
+										<div data-v-b11ef74e="" class="illustration-container">
+											<img data-v-b11ef74e="" alt="Log in illustration" 
+											style="position: absolute; top:-70px"
+												src="./assets/image/logo/login_signup_logo_400x200.png"/>
+										</div>
+									</div>
+
+
+									<div data-v-b11ef74e="" class="modal-action-wrapper">
+										<button data-v-b11ef74e="" aria-label="Log in with Google"
+											class="google-signup-btn" onclick="googleOauth2Authortization()">
+											<span data-v-b11ef74e="" class="logo-wrapper"><img
+												data-v-b11ef74e=""
+												src="https://cf.quizizz.com/img/logos/google-logo-1.png"
+												alt="Google logo" /></span> <span data-v-b11ef74e=""
+												class="btn-label">Login with Google</span>
+										</button>
+
+										<button data-v-b11ef74e="" aria-label="Sign in with Facebook"
+											class="ms-signup-btn" onclick= "facebookOauth2Authortization()">
+											<span data-v-b11ef74e="" class="logo-wrapper"> <img
+												data-v-b11ef74e=""
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"
+												alt="MS logo">
+											</span> <span data-v-b11ef74e="" class="btn-label">Login
+												with Facebook</span>
+										</button>
+
+
+										<div data-v-b11ef74e="" class="divider-or">— or —</div>
+										<div data-v-b11ef74e=""
+											class="search-input-wrapper email-input-wrapper">
+											<div data-v-b11ef74e="" class="search-input-container">
+												<form data-v-b11ef74e="" action="/perform_login" method="post" onsubmit="return validate()" >
+												
+													<div class="alert alert-danger" th:if="${param.error}">
+											          <h4 style="color: rgb(255, 128, 128)" th:text="${session.error}" th:unless="${session == null}"></h4>
+											        </div>
+													<label data-v-b11ef74e="" id="email-label"
+														class="search-input-label"> Username </label>
+													<!---->
+													<input data-v-b11ef74e="" autocapitalize="off" required name="username"
+														maxlength="50" id="username" aria-labelledby="email-label" class="auth-input"/> 
+													<label data-v-b11ef74e="" id="password-label"
+														class="search-input-label"> Password </label> 
+													<input data-v-b11ef74e="" type="password"   name="password"
+														required maxlength="16" id="password"
+														aria-labelledby="password-label" class="auth-input" />
+													<!---->
+													<a data-v-b11ef74e="" tabindex="0" class="skip-btn" href="/forgot_password">
+														Forgot Password? </a>
+													<!---->
+													<input data-v-b11ef74e="" type="submit" value="Login"
+														class="login-submit-btn" />
+													<!---->
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-v-b11ef74e="" class="kr-modal-footer">
+									<div data-v-b11ef74e="" class="footer-text">
+										Don't have an account?
+										<button data-v-b11ef74e="" id="show_signup_in_login"
+											class="footer-login-btn">Sign Up</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-v-52d0425c="" id="set_user_avatar" class="modal-mask">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+
+						<div data-v-0aaf16eb="" data-v-2d3aa134="" role="dialog"
+							aria-modal="true" class="avatar-picker-wrapper">
+							<div data-v-0aaf16eb="" class="mobile-heading">
+								<span data-v-0aaf16eb=""><i data-v-0aaf16eb=""
+									class="icon-fas-chevron-down"></i></span><span data-v-0aaf16eb=""
+									class="mobile-heading-title">Select avatar</span>
+							</div>
+							<div data-v-0aaf16eb="" class="avatar-picker-container">
+								<a data-v-0aaf16eb="" id="button_close_set_avatar"
+									aria-label="Close button. Press space to close the button"
+									tabindex="0" class="close-avatar-picker flex-view all-center"><i
+									data-v-0aaf16eb=""
+									class="icon-far-times close-avatar-picker-icon"></i></a>
+								<div data-v-0aaf16eb="" class="avatar-preview-wrapper">
+									<p data-v-0aaf16eb="" class="heading">Select your avatar</p>
+									<div data-v-0aaf16eb="" class="avatar-actionable">
+										<img src="./assets/image/91448b4b89b3bec0070da6bfd814a3c3.jpg"
+											id="preview_image_avatar" onclick="ImageFileURL()"> <input
+											type="file" id="button_upload_image_real" accept="image/*"
+											hidden>
+										<div class="hover_image" onclick="ImageFileURL()">
+											<h2>UPLOAD</h2>
+										</div>
+									</div>
+									<div data-v-0aaf16eb="" class="avatar-show-container">
+										<button data-v-e67050a8="" id="button_save_avatar"
+											data-v-0aaf16eb="" aria-label="Pick this avatar"
+											class="pick-avatar-button btn text-unselectable primary medium primary-floating">
+											<span data-v-0aaf16eb="" data-v-e67050a8=""> Save </span>
+										</button>
+										<button data-v-e67050a8="" id="button_close_save_avatar"
+											data-v-0aaf16eb="" aria-label="Pick this avatar"
+											class="cancel-avatar-button btn text-unselectable primary medium primary-floating">
+											<span data-v-0aaf16eb="" data-v-e67050a8=""> Cancel </span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-v-52d0425c="" id="show_user_avatar" class="modal-mask">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+						<div data-v-0aaf16eb="" data-v-2d3aa134="" role="dialog"
+							aria-modal="true" class="avatar-show-wrapper">
+							<div data-v-0aaf16eb="" class="mobile-heading">
+								<span data-v-0aaf16eb=""><i data-v-0aaf16eb=""
+									class="icon-fas-chevron-down"></i></span><span data-v-0aaf16eb=""
+									class="mobile-heading-title">Select avatar</span>
+							</div>
+							<img src="" id="preview_image_avatar">
+						</div>
+						<div data-v-0aaf16eb="" class="avatar-show-container">
+							<button data-v-e67050a8="" id="button_save_avatar"
+								data-v-0aaf16eb="" aria-label="Pick this avatar"
+								class="pick-avatar-button btn text-unselectable primary medium primary-floating">
+								<span data-v-0aaf16eb="" data-v-e67050a8=""> Save </span>
+							</button>
+							<button data-v-e67050a8="" id="button_close_save_avatar"
+								data-v-0aaf16eb="" aria-label="Pick this avatar"
+								class="cancel-avatar-button btn text-unselectable primary medium primary-floating">
+								<span data-v-0aaf16eb="" data-v-e67050a8=""> Cancel </span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			
+			<div class="error-boundary-container">
+				<div data-v-2d3aa134="" class="featured-wrapper">
+					<div data-v-2d3aa134="" class="featured-container">
+						<div data-v-2d3aa134="" class="header-wrapper">
+							<div th:replace = "header :: menu"></div>	
+						</div>			
+					</div>
+				</div>
+						<div data-v-dee90666="" data-v-2d3aa134="" class="home-container"
+							user="[object Object]">
+
+							<!---->
+							<div data-v-dee90666="" class="content">
+								<div data-v-dee90666="" class="content-actionable">
+									<div data-v-dee90666=""
+										class="home-proceed-game-container theme-streak">
+										<div data-v-dee90666="" class="home-proceed-game">
+											<div data-v-3f143c58="" data-v-dee90666=""
+												class="proceed-game-container">
+												<form data-v-3f143c58="" id="check_code"
+													class="proceed-game-action-wrapper">
+													<div data-v-3f143c58=""
+														class="proceed-game-input-container">
+														<input data-v-3f143c58="" id="textbox_join"
+															placeholder="Enter a join code" type="tel" pattern="\d*"
+															maxlength="8"
+															aria-label="Enter a join code to play a game"
+															class="check-room-input"> <span
+															data-v-3f143c58="" id="error_icon"
+															class="icon-fas-exclamation-circle error-indicator-icon"></span>
+													</div>
+													<button data-v-3f143c58="" id="button_join"
+														aria-label="Join Game" isfloating="true"
+														class="check-room-button text-unselectable">
+														<!---->
+														<span data-v-3f143c58="" class="visible">JOIN</span>
+													</button>
+												</form>
+												<div data-v-3f143c58="" id="join_code_empty"
+													class="pre-game-error-container">
+													<div data-v-29165136="" data-v-3f143c58="" tabindex="0"
+														class="error-message-container">
+														<div data-v-29165136="" class="error-text">Please
+															enter a valid game code</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div data-v-dee90666="" class="home-hero-container">
+										<div data-v-dee90666="" class="home-hero theme-streak">
+											<div data-v-6770767a="" data-v-dee90666=""
+												class="themed-streak-hero">
+												<div data-v-6770767a=""
+													class="hero-details-container flex-view flex-column">
+													<div data-v-6770767a="" class="hero-details"
+														id="button_select_avatar">
+														<button data-v-6770767a="" aria-label="Pick Avatar"
+															class="avatar-wrapper flex-view all-center text-unselectable">
+															<th:block sec:authorize="isAnonymous()">
+															<div data-v-6770767a="" class="select-avatar">
+																<img
+																	src="./assets/image/91448b4b89b3bec0070da6bfd814a3c3.jpg"
+																	id="avatar_user">
+															</div>
+															</th:block>
+															<th:block sec:authorize="!isAnonymous()")>
+															<div data-v-6770767a="" class="select-avatar">
+																<img
+																	th:src="${userImage}"
+																	id="avatar_user">
+															</div>
+															</th:block>
+														</button>
+														<th:block sec:authorize="isAnonymous()">
+														<p data-v-6770767a="" id="user" class="player-name"
+															style="display: -webkit-box; -webkit-box-orient: vertical;
+															 overflow: hidden; 
+															 text-overflow: ellipsis; -webkit-line-clamp: 1;">
+															 Welcome!
+														</p>
+														</th:block>
+														<th:block sec:authorize="!isAnonymous()">
+														<p data-v-6770767a="" id="user" class="player-name"
+															style="display: -webkit-box; -webkit-box-orient: vertical;
+															 overflow: hidden; 
+															 text-overflow: ellipsis; -webkit-line-clamp: 1;" th:text = ${userName}>
+																
+														</p>
+														</th:block>
+													</div>
+													<div data-v-6770767a="" class="player-info">
+													<th:block sec:authorize="!isAnonymous()">
+														<div data-v-6770767a=""
+															class="links-container flex-view all-center"
+															id="user_edit_view">
+															
+															<a data-v-6770767a="" href="/join/settings" class="">
+			       													<div data-v-6770767a="" class="hero-button">
+			       														<span data-v-6770767a="">Edit Profile</span>
+			       													</div>
+			       												</a>
+			       													<span data-v-6770767a="" class="dot-separator">●</span>
+			       												<a data-v-6770767a="" href="/join/activity" class="">
+			       													<div data-v-6770767a="" class="hero-button">
+			       														<span data-v-6770767a="">View Activity</span>
+			       													</div>
+			       												</a>
+															</div>
+															</th:block>
+													</div>
+
+												</div>
+												<div data-v-23ac895d="" data-v-6770767a=""
+													class="unlock-theme-container flex-view flex-column home">
+													<div data-v-23ac895d=""
+														class="unlock-theme-icons-wrapper flex-view flex-row'">
+														<div data-v-23ac895d=""
+															class="flex-view flex-column all-center">
+															<div data-v-23ac895d=""
+																class="unlock-theme-icon-wrapper flex-view flex-row all-center">
+																<!---->
+																<div data-v-23ac895d=""
+																	class="unlock-theme-tile flex-view all-center locked home">
+																	<i data-v-23ac895d=""
+																		class="icon-fas-flame-solid unlock-theme-tile-fire-icon"></i>
+																</div>
+															</div>
+															<!---->
+														</div>
+														<div data-v-23ac895d=""
+															class="flex-view flex-column all-center">
+															<div data-v-23ac895d=""
+																class="unlock-theme-icon-wrapper flex-view flex-row all-center">
+																<div data-v-23ac895d=""
+																	class="unlock-theme-divider-container home">
+																	<span data-v-23ac895d=""
+																		class="unlock-theme-divider-progress locked"></span>
+																</div>
+																<div data-v-23ac895d=""
+																	class="unlock-theme-tile flex-view all-center locked home">
+																	<i data-v-23ac895d=""
+																		class="icon-fas-flame-solid unlock-theme-tile-fire-icon"></i>
+																</div>
+															</div>
+															<!---->
+														</div>
+														<div data-v-23ac895d=""
+															class="flex-view flex-column all-center">
+															<div data-v-23ac895d=""
+																class="unlock-theme-icon-wrapper flex-view flex-row all-center">
+																<div data-v-23ac895d=""
+																	class="unlock-theme-divider-container home">
+																	<span data-v-23ac895d=""
+																		class="unlock-theme-divider-progress locked"></span>
+																</div>
+																<div data-v-23ac895d=""
+																	class="unlock-theme-tile flex-view all-center locked home">
+																	<i data-v-23ac895d=""
+																		class="icon-fas-flame-solid unlock-theme-tile-fire-icon"></i>
+																</div>
+															</div>
+															<!---->
+														</div>
+														<div data-v-23ac895d=""
+															class="flex-view flex-column all-center">
+															<div data-v-23ac895d=""
+																class="unlock-theme-icon-wrapper flex-view flex-row all-center">
+																<div data-v-23ac895d=""
+																	class="unlock-theme-divider-container home">
+																	<span data-v-23ac895d=""
+																		class="unlock-theme-divider-progress locked"></span>
+																</div>
+																<div data-v-23ac895d=""
+																	class="unlock-theme-tile flex-view all-center locked home">
+																	<i data-v-23ac895d=""
+																		class="icon-fas-flame-solid unlock-theme-tile-fire-icon"></i>
+																</div>
+															</div>
+															<!---->
+														</div>
+														<div data-v-23ac895d=""
+															class="flex-view flex-column all-center">
+															<div data-v-23ac895d=""
+																class="unlock-theme-icon-wrapper flex-view flex-row all-center">
+																<div data-v-23ac895d=""
+																	class="unlock-theme-divider-container home">
+																	<span data-v-23ac895d=""
+																		class="unlock-theme-divider-progress locked"></span>
+																</div>
+																<div data-v-23ac895d=""
+																	class="unlock-theme-tile flex-view all-center locked home">
+																	<i data-v-23ac895d=""
+																		class="icon-fas-flame-solid unlock-theme-tile-fire-icon"></i>
+																</div>
+															</div>
+															<!---->
+														</div>
+													</div>
+													<div data-v-23ac895d="" class="streak-title zero-streaks">0-day
+														streak</div>
+													<!---->
+													<div data-v-23ac895d=""
+														class="unlock-streak-title zero-streaks">Start your
+														streak, play now!</div>
+												</div>
+												<!---->
+											</div>
+										</div>
+									</div>
+								</div>
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<div data-v-dee90666="" class="featured-solo-quizzes">
+                                        <div data-v-dee90666="" class="quizzes-and-games-list">
+                                            <div data-v-dee90666="" class="incomplete-game">
+                                           <th:block sec:authorize="!isAnonymous()">
+                                                <div data-v-dee90666="">
+                                                    <div data-v-dee90666="" class="recent-activity-text text-unselectable">
+                                                        <p data-v-dee90666="" class="recent-activity-text-foreground text-unselectable">Recent Activity</p>
+                                                        <a data-v-dee90666="" href="/join/activity" class="see-all-link"><span data-v-dee90666="">See all</span></a>
+                                                    </div>
+                                                    <div data-v-752ae97a="" data-v-dee90666="" class="carousel-wrapper recent-activity-carousel-container">
+                                                        <div data-v-752ae97a="" class="carousel-container">
+                                                            <div data-v-752ae97a="" class="carousel">
+                                                                <div data-v-752ae97a="" class="carousel-inner">
+                                                                    <div data-v-8d3099dc="" data-v-dee90666="" class="text-unselectable" data-v-752ae97a="">
+                                                                        <div data-v-8d3099dc="" class="games">
+                                                                        	<th:block th:each="inquiz : ${incompleteQuizList}">                                              
+                                                                            <div data-v-8d3099dc="" class="game" th:onclick="|window.location.href='/requiz/${inquiz.getId()}'|">
+                                                                                <div data-v-e46d0afe="" data-v-8d3099dc="" class="game-card-container">
+                                                                                    <div data-v-e46d0afe="" class="route-loader-wrapper"></div>
+                                                                                    <div data-v-e46d0afe="">
+                                                                                        <div data-v-76782db8="" data-v-e46d0afe="" class="curved-edge-container media-dimensions media-wrapper">
+                                                                                            <div data-v-76782db8="" class="curve" style="width: 400%; padding-top: 400%; transform: translateX(-37.5%) translateY(-100%); top: 100%;">
+                                                                                                <div data-v-76782db8="" class="content-container" style="width: calc(25.02%); left: calc(37.49%);">
+                                                                                                    <div data-v-e46d0afe="" data-v-76782db8="" role="img" aria-label="Quiz thumbnail" class="media-dimensions media" th:style="'background-image:url(' + @{${inquiz.image}} + ');'"></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!----><!---->
+                                                                                        <div data-v-e46d0afe="" class="quiz-info"><div data-v-e46d0afe="" class="questions-length">[(${inquiz.quantityOfQuestion})] Qs</div></div>
+                                                                                        <p data-v-e46d0afe="" class="quiz-name" style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2;" th:utext="${inquiz.name}">
+                                                                                            
+                                                                                        </p>
+                                                                                        <div data-v-e46d0afe="" class="game-progress-bar-background">
+                                                                                            <div data-v-e46d0afe="" class="game-progress-bar flex-view flex-row" th:style="'width:'+ (${inquiz.completedQuestion}/${inquiz.quantityOfQuestion})*100 +'%;'"></div>
+                                                                                            <span data-v-e46d0afe="" class="game-progress-bar-text">[(${inquiz.quantityOfQuestion} - ${inquiz.completedQuestion})] question left</span>
+                                                                                        </div>
+                                                                                        <div data-v-e46d0afe="" class="game-details"><!----><!----></div>
+                                                                                        <!---->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            </th:block>
+                                                                           
+                                                                        <!----><!---->
+                                                                    	</div>
+                                                                	</div>
+                                                            	</div>
+                                                        	</div>
+                                                    	</div>
+                                                	</div>
+                                            	</div>
+                                            </th:block>
+                                            <div data-v-dee90666="" class="featured-quiz-recommendations">
+                                           	<th:block th:each="category : ${listCategory}">
+                                                <div data-v-dee90666="" data-index="0" class="featured-section">
+                                                    <!---->
+                                                    <div data-v-dee90666="" class="featured-section-header">
+                                                        <div data-v-dee90666="" class="featured-section-title text-unselectable">
+                                                            <!---->
+                                                            <span data-v-dee90666="" th:utext="${category.getName()}"></span>
+                                                        </div>
+                                                        <div data-v-dee90666="" class="featured-section-cta-more"><button th:onclick="|window.location.href='/category/${category.getId()}'|" data-v-dee90666="" type="button" class="see-more-btn text-unselectable strip-default-btn-style">See more</button></div>
+                                                    </div>
+                                                    <div data-v-dee90666="" class="featured-section-quizzzes">
+                                                        <div data-v-6482f4a3="" data-v-dee90666="" class="solo-quiz-container text-unselectable">
+                                                            <div data-v-6482f4a3="" class="solo-quizzes">
+                                                            <th:block th:each="quiz,iter : ${category.quizzes}" th:if="${iter.index} < 5">
+                                                                <button data-v-6482f4a3="" aria-label="Quiz Information Card" class="solo-quiz max-in-row-2 max-in-row-3 max-in-row-4 max-in-row-5" th:value="${quiz.id}">
+                                                                    <div data-v-76782db8="" data-v-6482f4a3="" class="curved-edge-container media-dimensions media-wrapper">
+                                                                        <div data-v-76782db8="" class="curve" style="width: 400%; padding-top: 400%; transform: translateX(-37.5%) translateY(-100%); top: 100%;">
+                                                                            <div data-v-76782db8="" class="content-container" style="width: calc(25.02%); left: calc(37.49%);">
+                                                                                <div data-v-6482f4a3="" data-v-76782db8="" role="img" aria-label="Quiz thumbnail" class="media-dimensions media" th:style="'background-image:url(' + @{${quiz.image}} + ');'"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-6482f4a3="" class="quiz-info"><span data-v-6482f4a3="" class="questions-length"> [(${quiz.quantityOfQuestion})] Qs</span></div>
+                                                                    <p data-v-6482f4a3="" class="quiz-name" style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2;" th:utext="${quiz.name}"></p>
+                                                                </button>
+                                                                </th:block>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+											 </th:block>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+						<!---->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:inline="javascript">
+       	 	/*<![CDATA[*/
+        	var quizList = /*[[${quizlist}]]*/ "Quiz None";
+       	 	var resultList = /*[[${incompleteQuizList}]]*/ "Result None";
+    		/*]]>*/
+     </script>
+	<script src="./assets/js/join.js"></script>
+</body>
+</html>

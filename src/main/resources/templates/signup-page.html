@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Create a free account — Quizizz</title>
+<meta name="description"
+	content="Quizizz is free. Sign up as a teacher, student, or parent to get started." />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<!-- <meta name="mobile-web-app-capable" content="yes" /> -->
+<meta name="theme-color" content="#461A42" />
+<meta name="twitter:image"
+	content="https://cf.quizizz.com/img/q_og_generic.png" />
+<meta property="og:image"
+	content="https://cf.quizizz.com/img/q_og_generic.png" />
+<meta name="twitter:title"
+	content="Quizizz — The world’s most engaging learning platform" />
+<meta property="og:title"
+	content="Quizizz — The world’s most engaging learning platform" />
+<meta name="twitter:description"
+	content="Find and create gamified quizzes, lessons, presentations, and flashcards for students, employees, and everyone else. Get started for free!" />
+<meta property="og:description"
+	content="Find and create gamified quizzes, lessons, presentations, and flashcards for students, employees, and everyone else. Get started for free!" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="shortcut icon"
+	href="https://cf.quizizz.com/img/favicon/favicon.ico" />
+<link rel="icon"
+	href="https://cf.quizizz.com/img/favicon/favicon-32x32.png" />
+<link rel="icon"
+	href="https://cf.quizizz.com/img/favicon/favicon-16x16.png" /> 
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,800&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Cookie&amp;display=swap"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Lobster"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+	rel="stylesheet" />
+
+<meta name="robots" content="noindex, nofollow" />
+<link id="canonical" rel="canonical"
+	href="https://quizizz.com/signup/teacher/1" />
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- fix -->
+<link rel="stylesheet" th:href="@{assets/css/sign-up.css}">
+</head>
+
+<body class="tablet en using-mouse auth-view" 
+	data-new-gr-c-s-check-loaded="14.1028.0" data-gr-ext-installed="">
+
+
+	<!-- message register success -->
+	<div th:if="${param.success}">
+		<script type="text/javascript">
+			alert("Register Success");
+		</script>
+	</div>
+	
+	<!-- message register fail gmail existed -->
+	<div th:if="${param.failGmailExisted}">
+		<script type="text/javascript">
+			alert("Gmail has been existed");
+			
+		</script>
+	</div>
+
+
+	<div class="app-container">
+		<div class="nav-container">
+			<div class="krafty-container-e31927e3-1c2d-4f1c-9a57-e5d09221d619">
+				<header id="main-header" class="main-header tablet up awaited-up">
+					<div class="top-header">
+						<div class="nav-size-container">
+							<button class="bars hidden no-select"
+								aria-label="Expand navigation menu">
+								<span class="burger-icon stripe"><span
+									class="top-stripe stripe"></span><span
+									class="mid-stripe stripe"></span><span
+									class="bottom-stripe stripe"></span></span>
+							</button>
+							<div class="main-logo" style="margin-left: 20px;">
+								<button class="skip-to-main-content">Skip to main
+									content</button>
+								<a href="/admin"><img class=""
+									src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png"
+									alt="Quizizz" /></a>
+							</div>
+						</div>
+						<div class="main-search-master-wrapper">
+							<div class="main-search-wrapper">
+								<div class="main-search">
+									<div class="main-search-container">
+										<i class="fas fa-search"></i>
+										<div class="main-search-input">
+											<div
+												class="krafty-container-8b1bfc4f-2f7b-4a0d-a32d-b18732360264">
+												<div class="kr-selectbox no-select">
+													<input type="text" class="kr-selectbox-focus-helper"
+														tabindex="-1" />
+													<div
+														class="kr-selectbox-selected-option allow-search placeholder closed">
+														<span class="kr-selectbox-list-item-img hidden"
+															style="background-image: url();"></span> <input
+															class="kr-selectbox-selected-open-text kr-selectbox-search-input"
+															placeholder="Search" value="" /> <span
+															class="kr-selectbox-selected-option-text hidden"
+															role="listbox" aria-expanded="false"
+															aria-activedescendant="option-1" tabindex="0">Search</span>
+														<i class="fas fa-caret-down hidden"></i>
+													</div>
+													<div
+														class="kr-selectbox-list-container allow-search closed tablet">
+														<ul class="kr-selectbox-list" id="list" role="listbox"
+															aria-expanded="false" aria-activedescendant="option-1"></ul>
+														<div class="kr-selectbox-btn hidden"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<span class="divider"></span>
+										<div class="search-context">
+											<div
+												class="krafty-container-2fd2f44e-b02d-42e5-a928-baacc75e3059">
+												<div class="kr-selectbox no-select">
+													<input type="text" class="kr-selectbox-focus-helper"
+														tabindex="-1" />
+													<div class="kr-selectbox-selected-option closed">
+														<span class="kr-selectbox-list-item-img hidden"
+															style="background-image: url();"></span> <input
+															class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden"
+															placeholder="--" value="Quizizz library" /> <span
+															class="kr-selectbox-selected-option-text" role="listbox"
+															aria-expanded="false" aria-activedescendant="option0"
+															tabindex="0">Quizizz library</span> <i
+															class="fas fa-caret-down"></i>
+													</div>
+													<div class="kr-selectbox-list-container closed tablet">
+														<ul class="kr-selectbox-list" id="list" role="listbox"
+															aria-expanded="false" aria-activedescendant="option0">
+															<li data-idx="0" data-val="all_quizzes" class=""
+																id="option1" aria-selected="true" role="option"
+																tabindex="-1"><span
+																class="kr-selectbox-list-item-img hidden"
+																style="background-image: url();"></span>
+																<div class="kr-selectbox-list-item-text">Quizizz
+																	library</div></li>
+															<li data-idx="1" data-val="my_quizzes" class=""
+																id="option2" aria-selected="false" role="option"
+																tabindex="-1"><span
+																class="kr-selectbox-list-item-img hidden"
+																style="background-image: url();"></span>
+																<div class="kr-selectbox-list-item-text">My
+																	library</div></li>
+															<li data-idx="2" data-val="reports" class="" id="option3"
+																aria-selected="false" role="option" tabindex="-1">
+																<span class="kr-selectbox-list-item-img hidden"
+																style="background-image: url();"></span>
+																<div class="kr-selectbox-list-item-text">Reports</div>
+															</li>
+														</ul>
+														<div class="kr-selectbox-btn hidden"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tray no-select">
+							<button class="search-icon hidden">
+								<i class="far fa-search"></i>
+							</button>
+							<a class="join-game-btn hidden" href="/join" target="_blank">Enter
+								Code</a>
+							<button class="sign-in-btn login-action tablet">Log in</button>
+							<button class="sign-in-btn signup-action">Sign up</button>
+							<button class="notification-bell tablet hidden"
+								aria-label="Notifications">
+								<i class="fal fa-bell"></i><i class="fas fa-gift"></i><span
+									class="notification-count hidden">0</span>
+							</button>
+						</div>
+					</div>
+					<div class="bottom-header-wrapper" style="">
+						<div class="bottom-header-container">
+							<div class="bottom-header hidden"></div>
+						</div>
+					</div>
+				</header>
+			</div>
+			<div class="krafty-container-ab6bb3f1-6d1d-4563-86b2-7d44970d558f">
+				<nav id="main-navigation"
+					class="main-navigation no-select tablet closed awaited-close">
+					<div class="main-navigation-inner" data-qtest="navigation-sidebar"
+						style="z-index: 997;">
+						<div class="header">
+							<div class="not-signed-in">
+								<button class="user-img" aria-label="Log in now">
+									<i class="fas fa-user-plus"></i>
+								</button>
+								<div class="user-details">
+									<div class="name">Have an account?</div>
+									<button class="login-btn">Log in now</button>
+								</div>
+							</div>
+							<button class="upgrade-super-nav-btn hidden" type="button">
+								<i class="fas fa-bolt"></i><span>Upgrade to Super</span>
+							</button>
+							<button class="manage-org-members-btn hidden">
+								<i class="fas fa-user-cog"></i>Manage members
+							</button>
+						</div>
+						<div class="create-menu-wrapper">
+							<div class="create-fullscreen-overlay hidden"></div>
+							<button class="create-btn" id="create">
+								<i class="far fa-plus-circle"></i><span class="create-btn-label">Create</span><i
+									class="fas fa-caret-down"></i>
+							</button>
+							<div class="create-menu hidden">
+								<button class="menu-option menu-option-quiz">
+									<div class="menu-option-img">
+										<video autoplay="true" loop="true"
+											src="https://cf.quizizz.com/img/illustrations/Bars_H_hover.mp4"></video>
+									</div>
+									<div class="menu-option-content">
+										<div class="menu-title">Quiz</div>
+										<div class="menu-desc">Engage live or asynchronously
+											with quiz and poll questions that participants complete at
+											their own pace.</div>
+									</div>
+								</button>
+								<button class="menu-option menu-option-presentation">
+									<div class="menu-option-img">
+										<video autoplay="true" loop="true"
+											src="https://cf.quizizz.com/img/illustrations/Card_V_hover.mp4"></video>
+									</div>
+									<div class="menu-option-content">
+										<div class="menu-title">
+											Lesson<span class="new-label">NEW</span>
+										</div>
+										<div class="menu-desc">Create an instructor-led
+											experience where slides and multimedia are combined with quiz
+											and poll questions.</div>
+									</div>
+								</button>
+							</div>
+						</div>
+						<div class="main-navigation-list-wrapper">
+							<ul class="main-navigation-list" style="">
+								<li id="explore" class=" "><i aria-hidden="true"
+									class="fal fa-map-marked-alt"></i><span id="explore-link"
+									role="link" tabindex="0">Explore</span></li>
+								<li id="my-quizzes" class=""><i aria-hidden="true"
+									class="fal fa-folder-open"></i><span id="my-quizzes-link"
+									role="link" tabindex="0">My library</span></li>
+								<li id="my-organization" class="hidden"><i
+									aria-hidden="true" class="fal fa-landmark"></i> <span
+									id="my-organization-link" role="link" tabindex="0"> My
+										organization
+										<div class="new-tag">NEW</div>
+								</span></li>
+								<li id="reports" class=""><i aria-hidden="true"
+									class="fal fa-analytics"></i><span id="reports-link"
+									role="link" tabindex="0">Reports</span></li>
+								<li id="classes" class="  "><i aria-hidden="true"
+									class="fal fa-users-class"></i><span id="classes-link"
+									role="link" tabindex="0">Classes</span></li>
+								<li id="settings" class="hidden"><i aria-hidden="true"
+									class="fal fa-cog"></i><span id="settings-link" role="link"
+									tabindex="0">Settings</span></li>
+								<li class="divider collapsed"></li>
+								<li id="memes" class="collapsed"><i aria-hidden="true"
+									class="fal fa-images"></i><span id="memes-link" role="link"
+									tabindex="-1" aria-hidden="true">Memes</span></li>
+								<li id="collections" class="collapsed"><i
+									aria-hidden="true" class="fal fa-folder"></i><span
+									id="collections-link" role="link" tabindex="-1"
+									aria-hidden="true">Collections</span></li>
+								<li id="profile" class="collapsed hidden"><i
+									aria-hidden="true" class="fal fa-user"></i><span
+									id="profile-link" role="link" tabindex="-1" aria-hidden="true">Profile</span></li>
+								<li id="signout" class="collapsed hidden"
+									data-qtest="signout-btn"><i aria-hidden="true"
+									class="fal fa-sign-out"></i><span id="signout-link" role="link"
+									tabindex="-1" aria-hidden="true">Log out</span></li>
+								<li id="nav-more" class="nav-collapsed"><i
+									aria-hidden="true" class="fas fa-chevron-down"></i><span
+									id="nav-more-link" role="link" tabindex="0" aria-hidden="false"
+									class="nav-label-collapsed">More</span> <span
+									id="nav-more-link" role="link" tabindex="-1" aria-hidden="true"
+									class="nav-label-open">Less</span></li>
+								<li class="spacer no-hover hidden"></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<nav
+					class="main-navigation-drawer-container tablet closed awaited-close">
+					<div class="main-navigation-drawer">
+						<div class="header">
+							<div class="not-signed-in">
+								<button class="user-img" aria-label="Log in now">
+									<i class="fas fa-user-plus"></i>
+								</button>
+								<div class="user-details">
+									<div class="name">Have an account?</div>
+									<button class="login-btn">Log in now</button>
+								</div>
+							</div>
+							<button class="upgrade-super-nav-btn hidden" type="button">
+								<i class="fas fa-bolt"></i><span>Upgrade to Super</span>
+							</button>
+							<button class="manage-org-members-btn hidden">
+								<i class="fas fa-user-cog"></i>Manage members
+							</button>
+						</div>
+						<div class="create-menu-wrapper">
+							<button class="create-btn" id="create-drawer">
+								<i class="far fa-plus-circle"></i><span class="create-btn-label">Create</span><i
+									class="fas fa-caret-down hidden"></i>
+							</button>
+						</div>
+						<div class="main-navigation-inner"
+							style="height: 583px; z-index: 997;">
+							<ul class="main-navigation-list" style="">
+								<li class=" "><i aria-hidden="true"
+									class="fal fa-map-marked-alt"></i><span id="explore"
+									role="link" tabindex="0">Explore</span></li>
+								<li class=""><i aria-hidden="true"
+									class="fal fa-folder-open"></i><span id="my-quizzes"
+									role="link" tabindex="0">My library</span></li>
+								<li class=""><i aria-hidden="true" class="fal fa-analytics"></i><span
+									id="reports" role="link" tabindex="0">Reports</span></li>
+								<li class="  "><i aria-hidden="true"
+									class="fal fa-users-class"></i><span id="classes" role="link"
+									tabindex="0">Classes</span></li>
+								<li class="hidden"><i aria-hidden="true" class="fal fa-cog"></i><span
+									id="settings" role="link" tabindex="0">Settings</span></li>
+								<li class="divider collapsed"></li>
+								<li class="collapsed"><i aria-hidden="true"
+									class="fal fa-images"></i><span id="memes" role="link"
+									tabindex="0">Memes</span></li>
+								<li class="collapsed"><i aria-hidden="true"
+									class="fal fa-folder"></i><span id="collections" role="link"
+									tabindex="0">Collections</span></li>
+								<li class="collapsed hidden"><i aria-hidden="true"
+									class="fal fa-user"></i><span id="profile" role="link"
+									tabindex="0">Profile</span></li>
+								<li class="collapsed hidden" data-qtest="signout-btn"><i
+									aria-hidden="true" class="fal fa-sign-out"></i><span
+									id="signout" role="link" tabindex="0">Log out</span></li>
+								<li id="nav-more" class="nav-collapsed" aria-hidden="true"><i
+									class="fas fa-chevron-down"></i><span
+									class="nav-label-collapsed">More</span><span
+									class="nav-label-open">Less</span></li>
+								<li class="spacer no-hover hidden"></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<main id="page-container" tabindex="0" class="page-container tablet"
+			style="padding-top: 0px; margin-left: 0px; width: 100%;">
+			<div class="page-inner">
+				<div class="krafty-container-8428fc11-f8a5-443f-81e8-254bfada9cca">
+					<div class="signup-new-master-wrapper">
+						<div>
+							<div
+								class="krafty-container-3324d240-ba5c-428b-ae88-49f62deaa24f">
+								<div class="signup-header-view">
+									<div class="signup-header-container">
+										<a
+											href="/?ref=signup-logo&amp;occ=teacher&amp;typ=email&amp;p=signup_account_info">
+											<div class="header-logo">
+												<img
+													src="./assets/image/logo/mockprojectLogo02_600x200.png"
+													alt="Quizizz"  
+													style="width: 160px; height: 100px;
+															position: absolute; left: -20px; top: -20px">
+											</div>
+										</a>
+										<div class="btn-tray-right" style ="right: -20px; position: absolute; top: 0px;">
+											<a href="/?ref=signup-logo&amp;occ=teacher&amp;typ=email&amp;p=signup_account_info"
+												class="join-game-link">
+												<div class="join-game-btn" >
+													<span class="btn-label-md">Join a game</span><span
+														class="btn-label-sm">Join</span>
+												</div>
+											</a>
+											<!-- <button class="login-btn" role="link" th:onclick="@{/login-page.html}">Log In</button> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="signup-view-container signup-account-info-view signup-view-enter">
+							<div class="view-content-wrapper">
+								<div class="signup-widget signup-account-info-widget">
+									<div class="widget-title">Your account details</div>
+									<div id="msg" th:if="${error !=null}">
+									<div class="msg err">[[${error}]]</div>
+								</div>
+								<div id="msg" th:if="${message !=null}">
+									<div class="msg ok done-msg">[[${message}]]</div>
+								</div>
+									<div class="widget-content">
+
+
+										<form th:action="@{/registration}" method="post"
+											th:object="${user}">
+											<div class="user-fname-wrapper">
+												<div class="user-fname-input kr2-textfield"
+													data-field-key="firstName">
+													<label>Full Name</label> <input type="text" id="firstName"
+														th:field="*{name}" placeholder="Minerva" value=""
+														data-cy="fname-input-field" />
+													<div class="err-msg hidden">Special characters are
+														not allowed in name</div>
+												</div>
+												<div class="user-fname-validation-msg hidden kr2-field-msg">
+													<div class="kr2-field-msg-text">First name is
+														required.</div>
+												</div>
+											</div>
+
+											<!-- <div class="user-lname-wrapper">
+												<div class="user-lname-input kr2-textfield"
+													data-field-key="lastName">
+													<label>Last name</label> <input type="text" id="lastName"
+														th:field="*{lastName}" placeholder="McGonagall" value=""
+														data-cy="lname-input-field" />
+													<div class="err-msg hidden">Special characters are
+														not allowed in name</div>
+												</div>
+												<div class="user-lname-validation-msg hidden kr2-field-msg">
+													<div class="kr2-field-msg-text">Last name is
+														required.</div>
+												</div>
+											</div> -->
+
+											<!-- Username input -->
+											<div class="user-lname-wrapper">
+												<div class="user-lname-input kr2-textfield"
+													data-field-key="lastName">
+													<label>Email</label> <input type="email" id="username" name="usernameemail"
+														th:field="*{username}" placeholder="McGonagall@gmail.com"
+														value="" data-cy="lname-input-field" />
+												</div>
+												<div class="user-lname-validation-msg hidden kr2-field-msg">
+													<div class="kr2-field-msg-text">Email is required.</div>
+												</div>
+											</div>
+
+											<div class="user-pass-input">
+												<div
+													class="kr2-passfield kr2-passfield-w-show kr2-passfield-pass-show">
+													<label>Password</label> <span class="kr2-passfield-eye">
+														<i class="far fa-eye"></i> <i class="far fa-eye-slash"></i>
+													</span> <input type="password" id=password th:field="*{password}"
+														placeholder="******" data-cy="password-input-field" />
+												</div>
+												<div class="passwd-msg">
+													<i class="far fa-info-circle"></i>
+													<div class="passwd-tooltip kr2-tooltip hidden">
+														<div class="kr2-tooltip-title">Password tips</div>
+														<div class="kr2-tooltip-text" aria-live="assertive">
+															Create a password that's unique.<br /> Use 6 or more
+															characters.<br /> Use a number and a symbol.
+														</div>
+														<div class="kr2-tooltip-arrow kr2-tooltip-arrow-left"></div>
+													</div>
+												</div>
+												<div class="user-passwd-validation-msg hidden kr2-field-msg">
+													<div class="kr2-field-msg-text">Password is required</div>
+												</div>
+											</div>
+
+											<button type="submit" id="continue-button"
+												data-cy="enabled-complete-signup-btn"
+												class="complete-signup-btn kr2-btn kr2-btn-disabled">
+												Continue
+												<i class="fas fa-spinner kr-anim-spin hidden"> </i>
+											</button>
+
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="app-spinner-container" style="display: none;">
+				<div class="spinner kr-anim-spin">
+					<img
+						src="data:image/png;base64,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"
+						alt="" />
+				</div>
+			</div>
+		</main>
+		<div class="krafty-container-c73e2f22-6221-4460-911a-6e9f3b35acf1">
+			<div class="main-overlay-container hide-overlay"></div>
+		</div>
+	</div>
+
+	
+	<script type="text/javascript" nonce=""
+		src="https://cf.quizizz.com/assets/v2/a/scripts/v3/vendorV4-549e33e664.min.js"></script>
+	<script type="text/javascript" nonce=""
+		src="https://cf.quizizz.com/assets/v2/a/scripts/v3/boot-45a432ac54.min.js"></script>
+	<script type="text/javascript" nonce="">
+        Globals.isQuizBizLoaded = false;
+
+        var script = document.createElement("script");
+        script.async = "async";
+        script.onload = function () {
+            window.quizbiz.cmd.push(function cb() {
+                Globals.isQuizBizLoaded = true;
+            });
+        };
+        script.setAttribute("nonce", "f247da87-7704-4a9e-8fff-bd7cf31f7cf4");
+        script.src = adsScript;
+        window.document.head.appendChild(script);
+    </script>
+	<div id="browser-checker"></div>
+	<script src="https://www.youtube.com/player_api"></script>
+	<script
+		src="https://cf.quizizz.com/assets/v2/a/templates/v3/auth-5cd312c297.template.js"></script>
+	<div id="eJOY__extension_root" class="eJOY__extension_root_class"
+		style="all: unset;"></div>
+	<iframe id="nr-ext-rsicon"
+		style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
+	<link rel="stylesheet"
+		href="https://cf.quizizz.com/assets/v2/a/styles/v3/main-ff8ad8ffe6.min.css" />
+	<link rel="stylesheet"
+		href="https://cf.quizizz.com/assets/v2/a/styles/v3/auth-f08aeea7f5.min.css" />
+	<script crossorigin="anonymous"
+		src="https://cf.quizizz.com/assets/v2/a/scripts/v3/auth-d8eb9b76d5.min.js"></script>
+	<script nonce="" async="" defer=""
+		src="https://teams.microsoft.com/share/launcher.js"></script>
+	<script nonce="" src="https://apis.google.com/js/platform.js"
+		type="text/javascript" async="" defer=""></script>
+	<script
+		src="https://cf.quizizz.com/assets/v2/a/scripts/v3/external-a9f1a97083.min.js"
+		type="text/javascript" async="" defer=""></script>
+	<script nonce="" async=""
+		src="https://www.googletagmanager.com/gtag/js?id=G-N10L950FVL"></script>
+	<script nonce=""
+		src="https://browser.sentry-cdn.com/5.5.0/bundle.min.js"
+		crossorigin="anonymous"></script>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+<!-- fix -->
+<script th:src="@{/assets/js/sign-up.js}"></script>
+
+</html>

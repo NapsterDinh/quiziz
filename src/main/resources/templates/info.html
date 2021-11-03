@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/info.css" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script charset="utf-8" src="https://cf.quizizz.com/assets/v3/j/scripts/js/route_preGame.0c8591eeef6795245668.js"></script>
+    
+</head>
+<body class="using-mouse">
+    <div class="root-bootstrapper-container">
+        <div class="route-loader-wrapper"></div>
+        <div class="root-component">
+            <!---->
+            <div class="error-boundary-container">
+                <div data-v-9ce189e8="" class="theme theme-dogsville" media="[object Object]">
+                    <div data-v-9ce189e8="" class="pre-game-screen-container">
+                        <div data-v-0475adf1="" data-v-9ce189e8="" class="header-container">
+                            <!----><!----><!---->
+                            <div data-v-0475adf1="" class="actions-wrapper">
+                                <div data-v-0475adf1="" class="actions-container">
+                                    <button data-v-0475adf1="" class="pause-icon-container" onclick="location.href='/home'">
+                                        <div data-v-0475adf1="" aria-label="Exit" class="exit-icon"><i data-v-0475adf1="" class="icon-far-times"></i></div>
+                                    </button>
+                                    <!----><!----><!----><!----><!---->
+                                </div>
+                                <!---->
+                                <div data-v-0475adf1="" class="fullscreen-btn-container">
+                                    <button data-v-0475adf1="" title="Fullscreen" class="fullscreen-btn"><div data-v-0475adf1="" class="fullscreen-btn-icon"></div></button>
+                                </div>
+                            </div>
+                            <!----><!----><!---->
+                        </div>
+                        <div data-v-9ce189e8="" class="pre-game-screen">
+                            <div data-v-9ce189e8="" class="secondary-information-section">
+                                <div data-v-9ce189e8="" class="quiz-and-host-info-card-wrapper">
+                                    <div data-v-52f1c57b="" data-v-9ce189e8="" class="quiz-and-host-info-card">
+                                        <div data-v-52f1c57b="" class="quiz-info-section">
+                                            <img data-v-52f1c57b="" th:src="${quiz.image}" class="quiz-image" />
+                                            <div data-v-52f1c57b="" class="quiz-name-and-num-questions">
+                                                <div data-v-52f1c57b="" class="quiz-name" style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2;">
+                                                  [(${quiz.getName()})]
+                                                </div>
+                                                <div data-v-52f1c57b="" class="quiz-num-questions">[(${quiz.quantityOfQuestion})] Questions</div>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div data-v-52f1c57b="" class="host-info-section">
+                                            <div data-v-52f1c57b="" class="hosted-by host-detail">
+                                                <i data-v-52f1c57b="" class="icon-fas-chalkboard-teacher host-detail-icon"></i>
+                                                <div data-v-52f1c57b="" class="host-detail-prefix">
+                                                    <div data-v-52f1c57b="" class="host-detail-prefix-text">By</div>
+                                                    <div data-v-52f1c57b="" class="host-detail-prefix-colon">:</div>
+                                                </div>
+                                                <div data-v-52f1c57b="" class="host-detail-value" th:utext=${quiz.createdUser.username}></div>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                        <div data-v-52f1c57b="" class="share-and-edit-section">
+                                            <div data-v-52f1c57b="" class="share-button-wrapper">
+                                                <button data-v-52f1c57b="" class="share-button" th:value="${quiz.id}">
+                                                    <i data-v-52f1c57b="" class="icon-fas-share-alt"></i>
+                                                    Share
+                                                </button>
+                                                <input data-v-52f1c57b="" id="quiz-info-share-input" readonly="readonly" class="share-link-input" style="display: none;text-align: center;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-9ce189e8="" class="main-action-section">
+                                <div data-v-9f0bf926="" data-v-9ce189e8="" class="action-item-wrapper default-card-styles cta-section">
+                                    <!----><!---->
+                                    <div data-v-9f0bf926="" class="player-practice-section">
+                                        <div data-v-9f0bf926="" class="practice-button-wrapper">
+                                            <button data-v-9f0bf926="" class="primary-button play-again" id="btnStart" th:value=${quiz.id}>
+                                                <i data-v-9f0bf926="" class="play-icon icon-fas-play"></i>
+                                                Start
+                                            </button>
+                                            <button data-v-9f0bf926="" class="secondary-button challenge-game">
+                                                <i data-v-9f0bf926="" class="challenge-icon icon-far-users"></i>
+                                                Challenge friends
+                                            </button>
+                                            <button data-v-9f0bf926="" class="secondary-button flashcards">
+                                                <i data-v-9f0bf926="" class="flashcards-icon icon-fas-external-link-alt"></i>
+                                                Flashcards
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form name ="start-quiz-form" method ="POST"></form>
+                                <!---->
+                                <div data-v-9ce189e8="" class="game-settings-wrapper">
+                                    <div data-v-5dbb6ae0="" data-v-9ce189e8="" class="settings-picker" gametype="live" gamemode="normal">
+                                        <div data-v-5dbb6ae0="" class="settings-cards">
+                                            <div data-v-5dbb6ae0="" class="settings-card game-settings-section default-card-styles">
+                                                <div data-v-5dbb6ae0="" class="settings-card-title">
+                                                    Settings
+                                                </div>
+                                                <ul data-v-5dbb6ae0="" class="game-settings-list">
+                                                    <!---->
+                                                    <li data-v-5dbb6ae0="" class="setting">
+                                                        <div data-v-5dbb6ae0="" class="setting-description">
+                                                            <i data-v-5dbb6ae0="" class="setting-icon icon-fas-alarm-clock"></i>
+                                                            Timer
+                                                        </div>
+                                                        <button data-v-8ccc2956="" data-v-5dbb6ae0="" aria-label="Timer" role="checkbox" aria-checked="true" class="toggle-button text-unselectable on">
+                                                            <span data-v-8ccc2956="" class="open"></span>
+                                                            <span data-v-8ccc2956="" class="close"></span>
+                                                        </button>
+                                                    </li>
+                                                    <li data-v-5dbb6ae0="" class="setting">
+                                                        <div data-v-5dbb6ae0="" class="setting-description">
+                                                            <i data-v-5dbb6ae0="" class="setting-icon icon-fas-grin-tears"></i>
+                                                            Memes
+                                                        </div>
+                                                        <button data-v-8ccc2956="" data-v-5dbb6ae0="" aria-label="Memes" role="checkbox" aria-checked="true" class="toggle-button text-unselectable on" id="checkmeme">
+                                                            <span data-v-8ccc2956="" class="open"></span><span data-v-8ccc2956="" class="close"></span>
+                                                        </button>
+                                                    </li>
+                                                    <!---->
+                                                    <li data-v-5dbb6ae0="" class="setting">
+                                                        <div data-v-5dbb6ae0="" class="setting-description">
+                                                            <i data-v-5dbb6ae0="" class="setting-icon icon-fas-comment-dots"></i>
+                                                            Read aloud
+                                                        </div>
+                                                        <button data-v-8ccc2956="" data-v-5dbb6ae0="" aria-label="Read aloud" role="checkbox" class="toggle-button text-unselectable">
+                                                            <span data-v-8ccc2956="" class="open"></span><span data-v-8ccc2956="" class="close"></span>
+                                                        </button>
+                                                    </li>
+                                                    <li data-v-5dbb6ae0="" class="setting">
+                                                        <div data-v-5dbb6ae0="" class="setting-description">
+                                                            <i data-v-5dbb6ae0="" class="setting-icon icon-fas-flask"></i>
+                                                            Power-ups
+                                                        </div>
+                                                        <button data-v-8ccc2956="" data-v-5dbb6ae0="" aria-label="Power-ups" role="checkbox" aria-checked="true" class="toggle-button text-unselectable on">
+                                                            <span data-v-8ccc2956="" class="open"></span><span data-v-8ccc2956="" class="close"></span>
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div data-v-5dbb6ae0="" class="settings-card memes-section default-card-styles">
+                                                <div data-v-5dbb6ae0="" class="settings-card-title">
+                                                    Memes
+                                                </div>
+                                                <div data-v-5dbb6ae0="" class="memeset-carousel-wrapper">
+                                                    <div data-v-752ae97a="" data-v-5dbb6ae0="" class="carousel-wrapper memeset-carousel-container">
+                                                        <div data-v-752ae97a="" class="navigation">
+                                                            <!---->
+                                                            <!-- <div data-v-752ae97a="" class="move-right"><i data-v-752ae97a="" class="icon-far-chevron-right move-right-icon"></i></div> -->
+                                                        </div>
+                                                        <div data-v-752ae97a="" class="carousel-container">
+                                                            <div data-v-752ae97a="" class="carousel">
+                                                                <div data-v-752ae97a="" role="radiogroup" aria-label="Memes" class="carousel-inner slider">
+                                                                    <div data-v-18ba7b0e="" data-v-5dbb6ae0="" class="memeset-card-outer desktop" data-v-752ae97a="" style="padding-left: 24px;">
+                                                                        <div data-v-18ba7b0e="" tabindex="0" role="radio" aria-checked="true" aria-label="I'm Feeling Lucky" class="memeset-card-wrapper">
+                                                                            <div data-v-18ba7b0e="" tabindex="-1" class="memeset-card memeset-card-selected medium">
+                                                                                <div data-v-18ba7b0e="" class="memeset-selection-check"><span data-v-18ba7b0e="" class="icon-fas-check"></span></div>
+                                                                                <div
+                                                                                    data-v-18ba7b0e=""
+                                                                                    class="memeset-img-preview medium"
+                                                                                    style="background-color: rgba(0, 0, 0, 0.2); background-image: url('https://cf.quizizz.com/img/illustrations/feelinglucky_dice.png?w=200&amp;h=200');"
+                                                                                ></div>
+                                                                                <div data-v-18ba7b0e="" class="memeset-name">I'm Feeling ...</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-18ba7b0e="" data-v-5dbb6ae0="" class="memeset-card-outer desktop" data-v-752ae97a="">
+                                                                        <div data-v-18ba7b0e="" tabindex="0" role="radio" aria-label="Fellow Kids" class="memeset-card-wrapper">
+                                                                            <div data-v-18ba7b0e="" tabindex="-1" class="memeset-card medium">
+                                                                                <!---->
+                                                                                <div
+                                                                                    data-v-18ba7b0e=""
+                                                                                    class="memeset-img-preview medium"
+                                                                                    style="background-image: url('https://quizizz.com/media/resource/gs/quizizz-media/memes/0f5d2cc6-6340-4878-a58c-71bd9095d1dc?w=200&amp;h=200');"
+                                                                                ></div>
+                                                                                <div data-v-18ba7b0e="" class="memeset-name">Fellow Kids</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-18ba7b0e="" data-v-5dbb6ae0="" class="memeset-card-outer desktop" data-v-752ae97a="">
+                                                                        <div data-v-18ba7b0e="" tabindex="0" role="radio" aria-label="The Vault [Archived Favorites]" class="memeset-card-wrapper">
+                                                                            <div data-v-18ba7b0e="" tabindex="-1" class="memeset-card medium">
+                                                                                <!---->
+                                                                                <div
+                                                                                    data-v-18ba7b0e=""
+                                                                                    class="memeset-img-preview medium"
+                                                                                    style="background-image: url('https://quizizz.com/media/resource/gs/quizizz-media/memes/53666f78-a44c-41bd-b97c-1f0cc6d04855?w=200&amp;h=200');"
+                                                                                ></div>
+                                                                                <div data-v-18ba7b0e="" class="memeset-name">The Vault [A...</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-18ba7b0e="" data-v-5dbb6ae0="" class="memeset-card-outer desktop" data-v-752ae97a="">
+                                                                        <div data-v-18ba7b0e="" tabindex="0" role="radio" aria-label="Puns of the Animal Kingdom II" class="memeset-card-wrapper">
+                                                                            <div data-v-18ba7b0e="" tabindex="-1" class="memeset-card medium">
+                                                                                <!---->
+                                                                                <div
+                                                                                    data-v-18ba7b0e=""
+                                                                                    class="memeset-img-preview medium"
+                                                                                    style="background-image: url('https://quizizz.com/media/resource/gs/quizizz-media/memes/e54be28b-afcc-4605-97a2-3a293b8352cf?w=200&amp;h=200');"
+                                                                                ></div>
+                                                                                <div data-v-18ba7b0e="" class="memeset-name">Puns of the ...</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-18ba7b0e="" data-v-5dbb6ae0="" class="memeset-card-outer desktop" data-v-752ae97a="" style="padding-right: 24px;">
+                                                                        <div data-v-18ba7b0e="" tabindex="0" role="radio" aria-label="Gneiss Bois" class="memeset-card-wrapper">
+                                                                            <div data-v-18ba7b0e="" tabindex="-1" class="memeset-card medium">
+                                                                                <!---->
+                                                                                <div
+                                                                                    data-v-18ba7b0e=""
+                                                                                    class="memeset-img-preview medium"
+                                                                                    style="background-image: url('https://quizizz.com/media/resource/gs/quizizz-media/memes/1c637a50-a8e1-4689-b1aa-f9d84f6e5232?w=200&amp;h=200');"
+                                                                                ></div>
+                                                                                <div data-v-18ba7b0e="" class="memeset-name">Gneiss Bois</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-v-5dbb6ae0="" class="settings-card theme-section section-with-loader default-card-styles">
+                                                <div data-v-5dbb6ae0="" class="settings-card-title">Themes</div>
+                                                <div data-v-2e746a42="" data-v-5dbb6ae0="" role="radiogroup" aria-label="themes" class="theme-settings-grid">
+                                                    <div data-v-2e746a42="" tabindex="0" role="radio" class="theme-item">
+                                                        <div data-v-2e746a42="" tabindex="-1" class="theme-item-inner">
+                                                            <!---->
+                                                            <div data-v-94fa1eba="" data-v-2e746a42="" class="theme-icon-container flex-view all-center theme-image classic">
+                                                                <div data-v-94fa1eba="" class="theme-icon-wrapper flex-view all-center" style="width: 34px; height: 34px;"><div data-v-94fa1eba="" class="theme-icon"></div></div>
+                                                            </div>
+                                                            <span data-v-2e746a42="" class="theme-name">Classic</span>
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-2e746a42="" tabindex="0" role="radio" class="theme-item">
+                                                        <div data-v-2e746a42="" tabindex="-1" class="theme-item-inner">
+                                                            <!---->
+                                                            <div data-v-94fa1eba="" data-v-2e746a42="" class="theme-icon-container flex-view all-center theme-image synthwave">
+                                                                <div data-v-94fa1eba="" class="theme-icon-wrapper flex-view all-center" style="width: 34px; height: 34px;">
+                                                                    <div data-v-94fa1eba="" class="theme-icon" style="transform: scale(1);"></div>
+                                                                </div>
+                                                            </div>
+                                                            <span data-v-2e746a42="" class="theme-name">Synthwave</span>
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-2e746a42="" tabindex="0" role="radio" aria-checked="true" class="theme-item">
+                                                        <div data-v-2e746a42="" tabindex="-1" class="theme-item-inner active">
+                                                            <!---->
+                                                            <div data-v-94fa1eba="" data-v-2e746a42="" class="theme-icon-container flex-view all-center theme-image dogsville">
+                                                                <div data-v-94fa1eba="" class="theme-icon-wrapper flex-view all-center" style="width: 34px; height: 34px;">
+                                                                    <div data-v-94fa1eba="" class="theme-icon" style="transform: scale(1);"></div>
+                                                                </div>
+                                                            </div>
+                                                            <span data-v-2e746a42="" class="theme-name">Dogsville</span>
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-2e746a42="" tabindex="0" role="radio" class="theme-item">
+                                                        <div data-v-2e746a42="" tabindex="-1" class="theme-item-inner">
+                                                            <!---->
+                                                            <div data-v-94fa1eba="" data-v-2e746a42="" class="theme-icon-container flex-view all-center theme-image anime">
+                                                                <div data-v-94fa1eba="" class="theme-icon-wrapper flex-view all-center" style="width: 34px; height: 34px;">
+                                                                    <div data-v-94fa1eba="" class="theme-icon" style="transform: scale(1);"></div>
+                                                                </div>
+                                                            </div><span data-v-2e746a42="" class="theme-name">Flame Impala</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-9ce189e8="" class="quizbiz-section">
+                                <div data-v-9ce189e8="" class="quizbiz-flyer-wrapper">
+                                    <div data-v-9ce189e8="" class="dummy-div"></div>
+                                    <div data-v-2e79a17a="" data-v-9ce189e8="" class="quizbiz-container" style="display: none;">
+                                        <div data-v-2e79a17a="" class="info-header" style="display: none;">
+                                            <div data-v-2e79a17a="" class="info-content">
+                                                <div data-v-0bdd05df="" data-v-2e79a17a="" tabindex="-1" class="show-tooltip hover default">
+                                                    <span data-v-2e79a17a="" data-v-0bdd05df="" class="info-text">
+                                                        <i data-v-2e79a17a="" data-v-0bdd05df="" class="icon-fas-info-circle"></i>
+                                                        Why show ads?
+                                                    </span>
+                                                    <div data-v-0bdd05df="" class="content bottom-left default">
+                                                        Quizizz uses ads on this page to keep the service free.
+                                                        <br />
+                                                        <br />
+                                                        To learn more about how this works,
+                                                        <a href="https://quizizz.zendesk.com/hc/en-us/articles/360016227971" target="_blank">
+                                                            click here
+                                                        </a>
+                                                        .
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-v-2e79a17a="" class="report-ad">Report this ad</div>
+                                        </div>
+                                        <!---->
+                                        <div data-v-2e79a17a="" class="main-ad-container"><div data-v-2e79a17a="" id="preGameScreen"></div></div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----><!----><!----><!----><!----><!----><!----><!---->
+            </div>
+            <!----><!---->
+        </div>
+        <div data-v-2b138a44="" data-test="snackbar-container" role="alert" class="snackbar-container" style="display: none;">
+            <div data-v-2b138a44="" data-test="content" class="content">
+                <p data-v-2b138a44="" data-test="message" class="message">Shareable link copied to clipboard.</p>
+            </div>
+            <div data-v-2b138a44="" class="action"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.slider').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+                },
+                {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+            });
+    </script>
+    <script src="/assets/js/info.js" async></script>
+</body>
+
+
+
+</html>

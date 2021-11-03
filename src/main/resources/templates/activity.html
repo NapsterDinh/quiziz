@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/395f3c7beb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/join.css">
+    <link rel="stylesheet" href="../assets/css/activity.css">
+</head>
+<body>
+    <div class="root-bootstrapper-container">
+        <div class="root-component">
+        	<div data-v-52d0425c="" data-v-2d3aa134=""
+				data-test="modal-container" class="modal-container" th:include="index :: starter-model"></div>
+            <!---->
+            <div class="error-boundary-container">
+                <div data-v-2d3aa134="" class="featured-wrapper">
+                    <div data-v-2d3aa134="" class="featured-container">
+		
+                        <!---->
+                       <div data-v-2d3aa134="" class="header-wrapper">
+							<div th:replace = "header :: menu"></div>	
+						</div>	
+						</div>
+						</div>
+                        <div data-v-0a48d845="" data-v-2d3aa134="" class="activity-wrapper">
+                            <div data-v-0a48d845="" class="activity-container">
+                                <div data-v-0a48d845="" class="in-page-navigator">
+                                    <div data-v-0a48d845="" class="navigation-wrapper">
+                                        <div data-v-0a48d845="" class="navigator-tabs">
+                                        	<a th:href="@{/activity?status=running}">
+                                        		<div data-v-0a48d845="" role="tab" tabindex="0" th:classappend="${status == 'running'} ? active" class="tab running">
+                                                <span data-v-0a48d845="" class="tab-name">Running</span>
+                                                <span data-v-0a48d845="" class="tab-icon">
+                                                    <i data-v-0a48d845="" class="fas fa-hourglass-half"></i>
+                                                </span></div>
+                                        	</a>
+                                        	<a th:href="@{/activity?status=completed}">
+                                        	    <div data-v-0a48d845="" role="tab" tabindex="0" th:classappend="${status == 'completed'} ? active" class="tab completed"><span data-v-0a48d845="" class="tab-name">Completed</span><span data-v-0a48d845="" class="tab-icon"><i data-v-0a48d845="" class="fas fa-hourglass-end"></i></span></div>
+                                        	</a>
+                                        	<a th:href="@{/activity?status=created}">
+                                        		<div data-v-0a48d845="" role="tab" tabindex="0" th:classappend="${status == 'created'} ? active" class="tab my-quizzes fade-enter-active fade-enter"
+                                                aria-selected="true"><span data-v-0a48d845="" class="tab-name">Created</span><span data-v-0a48d845="" class="tab-icon"><i data-v-0a48d845="" class="fas fa-file-alt" style="font-weight: 400;"></i></span></div>
+                                        	</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-v-0a48d845="" class="all-games">
+                                    <div data-v-3f400e64="" data-v-0a48d845="" class="activity-sub-route-container">
+                                        <!---->
+                                        <div data-v-3f400e64="" class="my-quizzes-wrapper">
+                                            <div data-v-6482f4a3="" data-v-3f400e64="" class="solo-quiz-container text-unselectable">
+                                               <div data-v-6482f4a3="" class="solo-quizzes">
+                                                <th:block th:each="quiz, quizItem : ${lstQuiz}">
+	                                                <button data-v-6482f4a3="" th:value="${quiz.getId}"  aria-label="Quiz Information Card" class="solo-quiz max-in-row-2 max-in-row-3 max-in-row-4 max-in-row-5">
+	                                                <div data-v-76782db8="" data-v-6482f4a3="" class="curved-edge-container media-dimensions media-wrapper">
+	                                                	<div data-v-76782db8="" class="curve" style="width: 400%; padding-top: 400%; transform: translateX(-37.5%) translateY(-100%); top: 100%;">
+	                                                		<div data-v-76782db8="" class="content-container" style="width: calc(25.02%); left: calc(37.49%);">
+	                                                			<img th:src="@{${quiz.getImage()}}" data-v-6482f4a3="" data-v-76782db8="" class="media-dimensions flex-view all-center">
+												                    
+									                    		</img>
+									                    	</div>
+									                    </div>
+									                 </div>
+									                 <div data-v-6482f4a3="" class="quiz-info">
+									                 	<span data-v-6482f4a3="" th:text="${quiz.getSize()}" class="questions-length"></span>
+									                 	<span data-v-6482f4a3="" class="times-played">DRAFT</span>
+									                 </div>
+									                 <p data-v-6482f4a3="" class="quiz-name" th:text="${quiz.getName()}" style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2;"></p>
+									                </button>
+								                </th:block>
+        </div>
+    </div>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    </div>
+    <!---->
+    <!---->
+    </div>
+    </div>
+    <div class="krafty-container">
+        <div class="kr-modal editor-info-modal" tabindex="0" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="kr-modal-container" style=" opacity: 1;">
+                <form class="kr-modal-body" id="formSetNameQuiz" th:action="@{/activity/addNewQuiz}" method="post">
+                    <div class="banner">
+                        <div class="image-wrapper"><img src="https://cf.quizizz.com/img/editor/createaquiz.png"></div>
+                        <div class="title">Create a quiz</div>
+                    </div>
+                    <div class="form" >
+                        <div class="quiz-name-wrapper">
+                            <div class="quiz-name-input kr2-textfield ">
+                            	<label>1. Name this quiz</label>
+                                <input type="text" id="nameinput" name="nameinput" placeholder="Quiz name" maxlength="30">
+                                <div class="quiz-name-error"><span class="hidden">Please enter a quiz name</span></div>
+                            </div>
+                        </div>
+                        <div class="quiz-description-wrapper">
+                            <div class="quiz-description-input kr2-textfield ">
+                            	<label>2. Decription this quiz</label>
+                                <textarea rows="4" type="text" id="descriptionInput" name="descriptionInput" placeholder="Quiz description" maxlength="100"></textarea>
+                                <div class="quiz-description-error"><span class="hidden">Please enter a quiz description</span></div>
+                            </div>
+                        </div>
+                        <div class="quiz-subjects-wrapper">
+                            <div class="label">3. Choose relevant subjects
+                                <div class="max-subjects-msg hidden">(maximum 1 subjects)</div>
+                            </div>
+                            <div class="subjects" >
+                            		<input id="idCategory" name="idCategory" type="hidden" value="">
+                         			<th:block th:each="category, cateItem : ${lstCategory}">
+                         				<button class="subject  " name="categoryID"  th:value="${category.getId()}" type="button" th:text="${category.getName()}" ></button>
+                         			</th:block>
+                                    <button class="more-btn " type="button" >More...</button></div>
+                            <div class="error-subjects hidden">Please select one or more subjects</div>
+                        </div>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="action-btns-wrapper">
+                        <button type="button" class="cancel-btn" data-qtest="cancel-create-quiz-btn">Cancel</button>
+                        <button type="submit" class="save-btn" data-qtest="create-quiz-btn"><i class="fas fa-spinner kr-anim-spin hidden"></i><span class="">Next</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+		/*<![CDATA[*/
+		var quizList = /*[[${lstQuiz}]]*/"Quiz None";
+		var resultList = /*[[${incompleteQuizList}]]*/"Result None";
+		/*]]>*/
+	</script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/activity.js"></script>
+</body>
+</html>

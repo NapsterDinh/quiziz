@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html style="height: 100%; position: relative; overflow: hidden;" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description"
+        content="Join an activity with your class and find or create your own quizzes and flashcards." />
+    <meta name="apple-itunes-app" content="app-id=1160249042" />
+    <!-- fix -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/game.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="" class="using-mouse"
+    style="height: 100%; overflow: hidden; position: relative;">
+    <div class="root-bootstrapper-container">
+        <div class="route-loader-wrapper"></div>
+        <div class="root-component">
+            <!---->
+            <div class="error-boundary-container">
+                <div data-v-56a5acac="" data-v-1d9490ae="" class="theme theme-classic" media="[object Object]">
+                    <div data-v-1ca67761="" data-v-16a07c45="" data-v-56a5acac=""
+                        class="themed-background classic in-game-wrapper-container is-page-quiz"
+                        style="min-height: 284px;">
+                        <div data-v-16a07c45="" data-v-1ca67761="" class="dummy-animator-container"
+                            style="display: none;">
+                            <div data-v-16a07c45="" data-v-1ca67761="" class="the-animating-object animating-as-fade">
+                                <div data-v-1ca67761="" data-v-16a07c45=""
+                                    class="dummy-animator-bg themed-background classic"></div>
+                            </div>
+                        </div>
+                        <div data-v-0475adf1="" data-v-56a5acac="" class="header-container" data-v-1ca67761="">
+                            <!---->
+                            <div data-v-0475adf1="" id="pause-game-effect" class="powerup-effects-wrapper">
+                                <div data-v-4bd1dac5="" data-v-0475adf1="" class="powerup-effects-center-container">
+                                    <p data-v-4bd1dac5="" class="effects-container"></p>
+                                    <p data-v-4bd1dac5="" class="applied-effects-container"></p>
+                                </div>
+                            </div>
+                            <!---->
+                            <div data-v-0475adf1="" class="actions-wrapper in-quiz">
+                                <div data-v-0475adf1="" class="actions-container">
+                                    <button data-v-0475adf1="" class="pause-icon-container">
+                                        <div data-v-0475adf1="" id="pause-game-button" aria-label="Pause"
+                                            class="pause-icon"><i data-v-0475adf1="" id="pause-game-icon"
+                                                class="icon-fas-pause"></i></div>
+                                    </button>
+                                    <!---->
+                                    <!---->
+                                    <div data-v-0475adf1="" class="question-number-wrapper">
+                                        <div data-v-0475adf1=""
+                                            class="question-number-container text-unselectable animated fadeIn anim-300-duration when-question-number rounded-edges">
+                                            <span data-v-0475adf1="" class="current-question">1</span><span
+                                                data-v-0475adf1="" class="total-questions">/17</span>
+                                        </div>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <div data-v-0475adf1="" class="rank-and-score-wrapper">
+                                    <!---->
+                                    <div data-v-0475adf1="" class="score-container info">
+                                        <div data-v-0475adf1="" aria-label="Score" class="score-icon-container">
+                                            <span data-v-0475adf1="" class="score-icon-blur"></span><span
+                                                data-v-0475adf1="" class="score-icon icon-fad-coins"><span
+                                                    data-v-0475adf1="" class="path1"></span><span data-v-0475adf1=""
+                                                    class="path2"></span></span></div>
+                                        <div data-v-0475adf1="" class="score-title">
+                                            960
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-v-0475adf1="" class="fullscreen-btn-container">
+                                    <button data-v-0475adf1="" title="Fullscreen" class="fullscreen-btn"
+                                        id="fullscreen-btn">
+                                        <div data-v-0475adf1="" class="fullscreen-btn-icon"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                            <!---->
+                        </div>
+                        <div data-v-3cf8ff92="" data-v-1d9490ae=""
+                            class="page-container page-container in-quiz presentation-mode with-control-center"
+                            data-v-1ca67761="">
+                            <!---->
+                            <div data-v-3cf8ff92="" class="screen screen-game" data-screen="game">
+                                <div class="transitioner transitioner-component">
+                                    <div data-v-05b5e2fc="" data-v-1f1faf06=""
+                                        class="card-container text-unselectable card-view-controller">
+                                        <!---->
+                                        <!---->
+                                        <div data-v-0e082f83="" data-v-1f1faf06="" class="event-container"
+                                            data-v-05b5e2fc="">
+                                            <!---->
+                                            <div data-v-1f1faf06="" class="transitioner transitioner"
+                                                data-v-0e082f83="">
+                                                <div data-v-1ca67761="" data-v-19927ae6="" data-v-1f1faf06=""
+                                                    class="quiz-container no-theme-background question-theme when-no-theme"
+                                                    currentplayerid="me" currentpage="inGame|quiz"
+                                                    activatedpowerupeffects="">
+                                                    <div data-v-c22e5278="" data-v-19927ae6=""
+                                                        class="timer-bar-container" data-v-1ca67761="">
+                                                        <div data-v-c22e5278="" class="timer-bar">
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-19927ae6="" data-v-1ca67761="" class="quiz-container-inner">                                                    
+                                                        <!-- question answer -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+
+                                <!---->
+                                <!---->
+                            </div>
+                            <div data-v-05b5e2fc="" data-v-3cf8ff92="" class="">
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                        <div data-v-1d9490ae="" class="control-center" data-v-1ca67761="">
+                            <div data-v-4c5533fe="" data-v-1d9490ae="" class="control-center-container">
+                                <!---->
+                                <!---->
+                                <div data-v-4c5533fe="" class="dummy-awarded-powerup" style="left: 16px; top: 16px;">
+                                    <img data-v-4c5533fe="" alt="powerup icon" src=""
+                                        class="dummy-awarded-powerup-img" />
+                                </div>
+                                <!---->
+                                <div data-v-4c5533fe="" class="tool-bar">
+                                    <!---->
+                                    <div data-v-0bdd05df="" data-v-4c5533fe="" tabindex="-1" class="show-tooltip error"
+                                        style="position: absolute; bottom: calc(100% - 15px); z-index: 101; transition: left 0.1s ease-in 0s;">
+                                        <div data-v-0bdd05df="" class="content top error">Powerup is disabled</div>
+                                    </div>
+                                    <div data-v-4c5533fe="" class="music-mute-btn-container" id="music-button">
+                                        <button data-v-4c5533fe="" aria-label="Mute"
+                                            class="music-mute-btn control-center-btn">
+                                            <i data-v-4c5533fe="" class="icon-fas-music"></i>
+                                        </button>
+                                        <span data-v-4c5533fe="" class="btn-title">Music on </span>
+
+                                        <div id="music-player">
+                                            <audio controls autoplay loop style="display: none;">
+                                                <source src="/assets/music/Khalid - New Normal (Official Video).mp3"
+                                                    type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                    <div data-v-4c5533fe="" class="powerup-wrapper"></div>
+                                </div>
+                                <!---->
+                                <!---->
+                                <!---->
+                                <div data-v-4c5533fe="" class="navigators">
+                                    <div data-v-4c5533fe="" class="left-navigator-wrapper">
+                                        <button data-v-4c5533fe="" aria-label="Left Navigator"
+                                            class="left-navigator strip-default-btn-style"><i data-v-4c5533fe=""
+                                                class="icon-fas-play left"></i></button>
+                                        <div data-v-4c5533fe="" class="left-nav-title nav-title">Back</div>
+                                    </div>
+                                    <!---->
+                                    <div data-v-4c5533fe="" class="right-navigator-wrapper">
+                                        <div data-v-0bdd05df="" data-v-4c5533fe="" tabindex="-1"
+                                            class="show-tooltip error">
+                                            <button data-v-4c5533fe="" data-v-0bdd05df="" aria-label="Right Navigator"
+                                                class="right-navigator strip-default-btn-style disable no-click">
+                                                <i data-v-4c5533fe="" data-v-0bdd05df="" class="icon-fas-play"></i>
+                                            </button>
+                                            <div data-v-0bdd05df="" class="content top-left error"></div>
+                                        </div>
+                                        <div data-v-4c5533fe="" class="left-nav-title nav-title">Next</div>
+                                    </div>
+                                </div>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+            </div>
+            <!---->
+            <!---->
+        </div>
+    </div>
+    <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+
+    <!-- fix -->
+
+    <script th:inline="javascript">
+       	 	/*<![CDATA[*/
+        	var resultGolbal = /*[[${resultGolbal}]]*/ "Question None";
+    		/*]]>*/
+    </script>
+    <script src="/assets/js/game.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>QUIZ-after</title>
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+<link th:href="@{/assets/css/setting.css}" rel="stylesheet">
+
+<style>
+</style>
+</head>
+
+<body>
+	<div class="featured-wrapper">
+		<div class="featured-container">
+
+
+			<!-- header -->
+			<div data-v-2d3aa134="" class="header-wrapper">
+							<div th:replace = "header :: menu"></div>	
+						</div>	
+						</div>
+						</div>
+
+			<!-- body -->
+			<div class="settings-page">
+				<div class="settings-page-content">
+					<div class="settings-page-topbar">
+						<h1 class="settings-page-heading">Settings</h1>
+					</div>
+					<div class="settings-group-container">
+						<div class="settings-group-topbar">
+							<i class="icon-fas-user-edit settings-group-profile-icon"></i>
+							<h2 class="settings-group-heading">Profile</h2>
+						</div>
+						<button id="btnAvata"
+							class="strip-default-btn-style settings-input-container has-chevron">
+							<p class="settings-input-title">Avatar</p>
+							<p class="settings-input-content">Click here to set Avatar</p>
+						</button>
+						<button id="btnUsername" aria-open="false"
+							class="strip-default-btn-style settings-input-container has-chevron">
+							<p class="settings-input-title">Name</p>
+							<p class="settings-input-content" th:text="*{user.getName()}"
+								style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 1;">
+							</p>
+						</button>
+						<button id="btnBirthday"
+							class="strip-default-btn-style settings-input-container has-chevron">
+							<p class="settings-input-title">Birthday</p>
+							<p class="settings-input-content"
+								th:text="*{user.getDateOfBirth}"
+								style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 1;"></p>
+						</button>
+
+						<!---->
+					</div>
+					<div class="settings-group-container">
+						<div class="settings-group-topbar">
+							<i class="icon-fas-cogs settings-group-game-icon"></i>
+							<h2 class="settings-group-heading">Game settings</h2>
+						</div>
+						<div class="settings-input-container">
+							<p class="settings-input-title">Background music</p>
+							<button class="toggle-btn"
+								onclick="this.classList.toggle('active')">
+								<div class="inner-circle"></div>
+							</button>
+						</div>
+						<div class="settings-input-container">
+							<p class="settings-input-title">Sound effects</p>
+							<button class="toggle-btn"
+								onclick="this.classList.toggle('active')">
+								<div class="inner-circle"></div>
+							</button>
+						</div>
+						<div class="settings-input-container">
+							<p class="settings-input-title">Show memes</p>
+							<button class="toggle-btn"
+								onclick="this.classList.toggle('active')">
+								<div class="inner-circle"></div>
+							</button>
+						</div>
+						<div class="settings-input-container">
+							<p class="settings-input-title read-aloud-settings-title">
+								Read Aloud</p>
+							<button class="toggle-btn"
+								onclick="this.classList.toggle('active')">
+								<div class="inner-circle"></div>
+							</button>
+						</div>
+						<div class="settings-input-container themes">
+							<p class="settings-input-title">Game Themes</p>
+							<div role="radiogroup" class="settings-themes-container">
+								<!---->
+								<button
+									class="strip-default-btn-style settings-theme-btn selected">
+									<div
+										class="theme-icon-container flex-view all-center settings-theme-image classic">
+										<div class="theme-icon-wrapper flex-view all-center"
+											style="width: 34px; height: 34px;">
+											<div class="theme-icon"></div>
+										</div>
+									</div>
+									<div class="settings-theme-title">Classic</div>
+								</button>
+								<button class="strip-default-btn-style settings-theme-btn ">
+									<div
+										class="theme-icon-container flex-view all-center settings-theme-image synthwave">
+										<div class="theme-icon-wrapper flex-view all-center"
+											style="width: 34px; height: 34px;">
+											<div class="theme-icon" style="transform: scale(1);"></div>
+										</div>
+									</div>
+									<div class="settings-theme-title">Synthwave</div>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="settings-group-container">
+						<div class="settings-group-topbar">
+							<i class="icon-fas-user-circle settings-group-account-icon"></i>
+							<h2 class="settings-group-heading">Account settings</h2>
+						</div>
+						<form action="/update_password" method="post">
+						<button id="btnUpPass"
+							class="strip-default-btn-style settings-input-container has-chevron update-password-button">
+							<p class="settings-input-title">Update password</p>
+						</button>
+						</form>
+						<form action="/perform_logout" method="post">
+						<button
+							class="strip-default-btn-style settings-input-container log-out-button" >
+							<span class="settings-input-title">Log out</span>
+						</button>
+						</form>
+					</div>
+					<!---->
+					<div class="settings-footer">
+						<a href="https://quizizz.zendesk.com/hc" target="_blank"
+							class="settings-footer-link">Contact Us</a><a href="/tos"
+							target="_blank" class="settings-footer-link">Terms of Service</a><a
+							href="/privacy" target="_blank" class="settings-footer-link">Privacy
+							Policy</a>
+					</div>
+				</div>
+				<!---->
+			</div>
+
+			<!--modal-->
+			<div id="modal-avatar" data-v-52d0425c="" class="modal-container">
+				<div data-v-52d0425c="" class="modal-mask">
+					<div data-v-52d0425c="" tabindex="0" class="modal-body">
+
+						<div data-v-0aaf16eb="" data-v-2d3aa134="" role="dialog"
+							aria-modal="true" class="avatar-picker-wrapper">
+							<div data-v-0aaf16eb="" class="mobile-heading hidden">
+								<span data-v-0aaf16eb=""><i data-v-0aaf16eb=""
+									class="icon-fas-chevron-down"></i></span><span data-v-0aaf16eb=""
+									class="mobile-heading-title">Select avatar</span>
+							</div>
+							<div data-v-0aaf16eb="" class="avatar-picker-container">
+								<form data-v-0aaf16eb="" class="avatar-preview-wrapper"
+								th:action="@{/setting/updateImage}"  method="post" enctype="multipart/form-data">
+									<button data-v-b11ef74e="" id="button_close_login"
+										class="kr-modal-close-btn">
+										<i data-v-b11ef74e="" aria-label="Close log in dialog"
+											class="icon-fas-times"></i>
+									</button>
+										<p data-v-0aaf16eb="" class="heading">Select your avatar</p>
+
+										<div data-v-0aaf16eb="" class="avatar-actionable">
+											<img th:src="*{user.getImage}" id="preview_image_avatar"
+												onclick="ImageFileURL()"> 
+											<input hidden tabindex="-1" aria-hidden="true" name="button_upload_image_real" type="file" id="button_upload_image_real" accept="image/gif, image/jpeg, image/jpg, image/svg+xml, image/svg, image/png, image/x-png, image/pjpeg">
+											<div class="hover_image" onclick="ImageFileURL()">
+												<h2>UPLOAD</h2>
+											</div>
+										</div>
+										<div data-v-0aaf16eb="" class="avatar-show-container">
+										<input id="avatar_user" name="image" value="tuan" style="display:none;visibility: hidden;">
+											<button data-v-e67050a8="" type="submit"
+												data-v-0aaf16eb="" aria-label="Pick this avatar"
+												class="pick-avatar-button btn text-unselectable primary medium primary-floating">
+												<span data-v-0aaf16eb="" data-v-e67050a8=""> Save </span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="modalusername" class="modal-container">
+				<div class="modal-mask">
+					<div tabindex="0" class="modal-body">
+
+						<div class="update-settings-modal">
+						<button  id="btn-cancel-user" class="cancel-close-btn">
+                                <i  aria-label="Close log in dialog" class="icon-fas-times"></i>
+                            </button>
+							<form th:action="@{/setting/updateUsername}" method="post">
+								<label for="update-settings-username"
+									class="update-settings-instructions">Pick a Name
+									that's fun and unique!</label> <input id="username" type="text"
+									name="username" aria-required="true"
+									th:value="*{user.getName}" class="update-settings-input">
+								<span class="error" th:if="${errorusername !=null}">[[${errorusername}]]
+								</span>
+								<!---->
+								<div class="update-settings-buttons-container">
+									<!---->
+
+									<button id="btn-edit-user"
+										class="primary strip-default-btn-style">
+										Save
+										<!---->
+									</button>
+								</div>
+							</form>
+							
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div id="modalbirthday" class="modal-container">
+				<div class="modal-mask">
+					<div tabindex="0" class="modal-body">
+						<div class="update-settings-modal">
+						<button  id="btn-cancel-birthday" class="cancel-close-btn">
+                                <i  aria-label="Close log in dialog" class="icon-fas-times"></i>
+                            </button>
+							<form th:action="@{/setting/updateBirthday}" method="Post">
+								<label for="update-settings-username"
+									class="update-settings-instructions">Your Birthday</label> 
+									<th:block th:if="*{user.getDateOfBirth} == '9999-12-31'">
+										<input th:value="*2000-12-31" id="update-settings-first-name" autocomplete="off" 
+											name="birthday" type="date" aria-required="true" class="update-settings-input"> 
+									</th:block>
+									<th:block th:unless="*{user.getDateOfBirth} == '9999-12-31'">
+										<input th:value="*{user.getDateOfBirth}" id="update-settings-first-name" autocomplete="off" 
+											name="birthday" type="date" aria-required="true" class="update-settings-input"> 
+									</th:block>
+									
+									<span
+									class="error" th:if="${errorbirthday !=null}">[[${errorbirthday}]]
+								</span>
+								<div class="update-settings-buttons-container">
+									<!---->
+									<button class="primary strip-default-btn-style">
+										Save
+										<!---->
+									</button>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!---->
+
+			<div id="modalupPass" class="modal-container">
+				<div class="modal-mask">
+					<div tabindex="0" class="modal-body">
+						<div class="update-settings-modal">
+						<button  id="btn-cancel-UpPass" class="cancel-close-btn">
+                                <i  aria-label="Close log in dialog" class="icon-fas-times"></i>
+                            </button>
+							<form th:action="@{/setting/updatePassword}" method="Post">
+								<div class="update-settings-instructions">Update password</div>
+								<!---->
+								<label for="update-settings-new-pass-1"
+									class="update-settings-password-title">Enter new
+									password</label> 
+									<input id="update-settings-new-pass-1"
+									autocomplete="off" name="password" type="password"
+									aria-required="true" class="update-settings-input">
+									<label
+									for="update-settings-new-pass-2"
+									class="update-settings-password-title">Re-enter new
+									password</label> 
+									<input id="update-settings-new-pass-2"
+									autocomplete="off" name="confirmPssword"  type="password"
+									aria-required="true" class="update-settings-input"> <span
+									class="error" th:if="${errorpassword !=null}">[[${errorpassword}]]
+								</span>
+								<div class="update-settings-buttons-container">
+									<!---->
+
+									<button class="primary strip-default-btn-style">
+										Save
+										<!---->
+									</button>
+								</div>
+							
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!---->
+			
+			<!---->
+			<div th:if="${message !=null}">
+			<div data-v-2b138a44="" data-test="snackbar-container" id="snackbar"
+				role="alert" class="snackbar-container active" >
+				<div data-v-2b138a44="" data-test="content" class="content">
+					<p data-v-2b138a44="" name="message" class="message">[[${message}]]</p>
+				</div>
+				<div data-v-2b138a44="" class="action"></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<script>
+			function BackWelcomeGGFB() {
+				location
+						.replace("/oath2success");
+			}
+			function BackWelcomeNor() {
+				location
+						.replace("/welcome");
+			}
+			function Logout() {
+				location
+						.replace("/perform_logout");
+			}
+	</script>
+	
+	<script th:inline="javascript">
+
+var errorusername = /*[[${errorusername}]]*/ 'default';
+var errorbirthday = /*[[${errorbirthday}]]*/ 'default';
+var errorpassword = /*[[${errorpassword}]]*/ 'default'; 
+
+
+if( errorusername != null )
+{
+	modalusername.classList.add("active");
+}
+if( errorbirthday != null )
+{
+	modalbirthday.classList.add("active");
+}
+if( errorpassword != null )
+{
+	modalupPass.classList.add("active");
+}
+
+</script>
+	<script th:inline="javascript">
+	function checkPasswordMatch(fieldConfirmPassword) {
+		if (fieldConfirmPassword.value != $("#password").val()) {
+			fieldConfirmPassword.setCustomValidity("Passwords do not match!");
+		} else {
+			fieldConfirmPassword.setCustomValidity("");
+		}
+	}
+</script>
+
+	<script type="text/javascript" th:src="@{/assets/js/modal-after.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/assets/js/setting-header.js}"></script>
+	<script type="text/javascript" th:src="@{/assets/js/radio-themes.js}"></script>
+</body>
+
+</html>

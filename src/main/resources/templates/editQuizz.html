@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/395f3c7beb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/activity.css">
+    <link rel="stylesheet" href="../assets/css/editQuizz.css">
+    
+</head>
+<body>
+    <div class="app-container">
+        <div class="header-container editor">
+            <div class="editor-header-container ">
+                <div class="quiz-editor-header">
+                    <button class="exit-btn" aria-label="Exit Quiz Editor">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="status-title">Quiz Editor</div>
+                    <div class="change-status" unselectable="on"><i class="fas fa-check green"></i>
+                        <div class="text">All changes saved</div>
+                    </div>
+                    <div class="btn-tray"><button class="collaborate-btn header-tray-btn hidden">
+                        <i class="fas fa-user-plus"></i>Collaborate
+                    </button>
+                    <button class="publish-btn header-tray-btn ">Publish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container editor">
+            <div class="editor-body">
+                <div class="questions-header-backdrop   ">
+                    <div class="questions-header-backdrop-events"></div>
+                    <div class="questions-header  ">
+                        <div class="teleport-search-bar  ">
+                            <div class="teleport-search-label-container">
+                                <h3 class="teleport-label header-label">Teleport questions</h3><i class="fas fa-info-circle teleport-tooltip-icon"></i></div>
+                            <div class="teleport-search-input-container " tabindex="0" aria-label="Select and Search from millions of questions">
+                            	<i class="fas fa-search"></i><input tabindex="-1" type="text" class="teleport-search-input" placeholder="Search from millions of questions">
+                            		<button tabindex="-1" class="search-teleport-btn">Search</button>
+                            		<input type="hidden" id="typeVisible" th:value="${session.tempQuiz.questions.size()}">
+                            </div>
+                        </div>
+                        <div class="new-question-container ">
+                            <div class="header-label question-label">Create a question</div><button class="new-question  ">New question<i class="fas fa-plus-circle"></i></button>
+                            <div class="question-type-panel "><button class="question-type mcq" data-type="MCQ"><div class="icon"><i class="qicon-multiple_choice"></i></div><div class="name">Multiple Choice</div></button><button class="question-type msq" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div><div class="name">Checkbox</div></button>
+                                <button
+                                    class="question-type blank" data-type="BLANK">
+                                    <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                    <div class="name">Fill-in-the-Blank</div>
+                                    </button><button class="question-type poll" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div><div class="name">Poll</div></button><button class="question-type open" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div><div class="name">Open-Ended</div></button>
+                                    <button
+                                        class="question-type slide" data-type="SLIDE">
+                                        <div class="icon"><i class="fas fa-presentation"></i></div>
+                                        <div class="name">Slide<span class="new-label">new</span></div>
+                                        </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions-body    ">
+                    <div class="reorder-bar hidden">
+                        <div class="text">Drag questions to reorder.</div>
+                        <div class="btns"><button class="revert-reorder">REVERT</button><button class="done-reorder">DONE</button></div>
+                    </div>
+                    <div class="no-questions-placeholder ">
+                        <h3 class="new-questions-label">or, <span class="header-label">Create a new question</span></h3>
+                        <div class="question-type-panel ">
+                        	<button class="question-type mcq" data-type="MCQ"><div class="icon"><i class="far fa-question-circle"></i></div><div class="name">Multiple Choice</div></button>
+                        	<button class="question-type msq hidden" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div><div class="name">Checkbox</div></button>
+                            <button class="question-type blank hidden" data-type="BLANK">
+                                <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                <div class="name">Fill-in-the-Blank</div>
+                            </button>
+                            <button class="question-type poll hidden" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div><div class="name">Poll</div></button>
+                            <button class="question-type open hidden" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div><div class="name">Open-Ended</div></button>
+                            <button class="question-type slide hidden" data-type="SLIDE">
+                                    <div class="icon"><i class="fas fa-presentation"></i></div>
+                                    <div class="name">Slide<span class="new-label">new</span></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="questions" style="" >
+                    		<th:block th:each="row, stat : ${session.tempQuiz.questions}">
+							<div class="question   " data-idx="0" data-id="613b17afd87c7a001d8eadd9">
+								    <div class="header">
+								        <div class="icon reorder-questions "><i class="fa fa-bars"></i></div>
+								        <div th:text="*{session.tempQuiz.questions[__${stat.index}__].name}" class="title">
+								        	<span class="survey-label hidden"> SURVEY </span>
+								        </div>
+								        <div class="btn-bar" style="display: flex;">
+								        <button aria-label="Edit question" class="edit-btn" data-idx="0" th:value="${session.tempQuiz.questions[__${stat.index}__].id}">
+								        	<i class="fas fa-pencil-alt"></i> Edit </button>
+								        	<form method="post" action="/quizEditor/delelte">
+								        		<input th:value="${session.tempQuiz.questions[__${stat.index}__].id}" type="hidden" name="idquestionDelete">
+								        		<button type="submit" aria-label="Delete question" class="delete-btn" data-idx="0" data-id="613b17afd87c7a001d8eadd9"><i class="fas fa-trash-alt"></i></button>
+								        	</form>
+								            
+								        </div>
+								    </div>
+								    <div class="body">
+								        <div class="question-view full ">
+								            <div class="query">
+								                <div class="query-text full" kr-html-filter="true" kr-html="&amp;lt;p&amp;gt;ad&amp;lt;/p&amp;gt;">
+								                    <p th:text="*{session.tempQuiz.questions[__${stat.index}__].description}"></p>
+								                </div>
+								            </div>
+								            
+								            <div style="display: flex; justify-content: center; margin: 15px 0px 15px 0px;" class="image-question-container" th:if="*{session.tempQuiz.questions[__${stat.index}__].image} != ''" >
+								            	<img style="width: 200px; height: 200px; object-fit: contain;" class="questionImageItem" th:src="*{session.tempQuiz.questions[__${stat.index}__].image}">
+		                                   </div>
+		                                   <div style="display: flex; justify-content: center; margin: 15px 0px 15px 0px;" class="image-question-container hidden" th:unless="*{session.tempQuiz.questions[__${stat.index}__].image} != ''" >
+								            	<img class="questionImageItem">
+		                                   </div>
+								           
+								            <div class="question-divider ">
+								                <div class="divider-text "> answer choices </div>
+								            </div>
+								            <div class="question-options " >
+								            	<th:block th:each="row1, stat1 : ${session.tempQuiz.questions[__${stat.index}__].answers}">
+								                <div class="text-only-option">
+								                	<!-- if answer is true -->
+													<th:block th:if="${session.tempQuiz.questions[__${stat.index}__].answers[__${stat1.index}__].isTrue}">
+													   <div class="option-marker true"></div>
+													</th:block>
+													<!-- ELSE -->
+													<th:block th:unless="${session.tempQuiz.questions[__${stat.index}__].answers[__${stat1.index}__].isTrue}">
+													   <div class="option-marker false"></div>
+													</th:block>
+								                    <div class="option-text" kr-html-filter="true" kr-html="&amp;lt;p&amp;gt;ad&amp;lt;/p&amp;gt;">
+								                        <p th:text="*{session.tempQuiz.questions[__${stat.index}__].answers[__${stat1.index}__].description}"></p>
+								                    </div>
+								                </div>
+								                </th:block>
+								            </div>
+								            <div class="question-options for-blank hidden">
+								                <div class="options">
+								                    <div class="option"><i class="far fa-chevron-right"></i>
+								                        <div class="text"> &lt;p&gt;ad&lt;/p&gt; </div>
+								                    </div>
+								                    <div class="alternatives-label "> alternatives </div>
+								                    <div class="option"><i class="far fa-chevron-right"></i> &lt;p&gt;ad&lt;/p&gt; </div>
+								                    <div class="option"><i class="far fa-chevron-right"></i> &lt;p&gt;ad&lt;/p&gt; </div>
+								                    <div class="option"><i class="far fa-chevron-right"></i> &lt;p&gt;ad&lt;/p&gt; </div>
+								                </div>
+								            </div>
+								            <div class="question-divider hidden">
+								                <div class="divider-text"> answer explanation </div>
+								            </div>
+								        </div>
+								    </div>
+								    <div class="footer">
+								        <div class="footer-container">
+								            <div class="time-container">
+								                <div tabindex="0" role="list" class="selectbox closed " data-idx="0"><i class="far fa-clock"></i>
+								                    <div class="selectbox-label"> 30 Seconds </div>
+								                    <i class="fas fa-caret-down caret hidden"></i>
+								                    <input type="hidden" class="duration" th:value="${session.tempQuiz.questions[__${stat.index}__].duration}">
+								                </div>
+								                <div tabindex="0" role="list" class="selectbox closed " style="width: 115px;" data-idx="0"><i class="far fa-clock"></i>
+								                    
+								                    <th:block th:if="${session.tempQuiz.questions[__${stat.index}__].level} == 'Easy'">
+								                    	<div class="selectbox-label"> Easy </div>
+								                    	<i class="fas fa-caret-down caret hidden"></i>
+								                    	<input type="hidden" class="level" value="0">
+								                    </th:block>
+								                    <th:block th:if="${session.tempQuiz.questions[__${stat.index}__].level} == 'Medium'">
+								                    	<div class="selectbox-label"> Medium </div>
+								                    	<i class="fas fa-caret-down caret hidden"></i>
+								                    	<input type="hidden" class="level" value="1">
+								                    </th:block>
+								                    <th:block th:if="${session.tempQuiz.questions[__${stat.index}__].level} == 'Advanced'">
+								                    	<div class="selectbox-label"> Advanced </div>
+								                    	<i class="fas fa-caret-down caret hidden"></i>
+								                    	<input type="hidden" class="level" value="2">
+								                    </th:block>
+								                    
+								                </div>
+								            </div>
+								        </div>
+								    </div>
+								</div>
+								</th:block>
+                    </div>
+                    <div class="new-question-btn-bar  hidden" style="display: none;">
+                        <div class="question-type-panel "><button class="question-type mcq" aria-label="MCQ type" data-type="MCQ"><div class="icon"><i class="qicon-multiple_choice"></i></div></button><button class="question-type msq" aria-label="MSQ type" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div></button>
+                            <button
+                                class="question-type blank" aria-label="Fill in the blank type" data-type="BLANK">
+                                <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                </button><button class="question-type poll" aria-label="Poll type" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div></button><button class="question-type open" aria-label="Open ended type" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div></button>
+                                <button
+                                    class="question-type slide" aria-label="Slide type" data-type="SLIDE">
+                                    <div class="icon"><i class="fas fa-presentation"></i></div>
+                                    </button>
+                        </div>
+                    </div>
+                    <div class="kr-modal" style="background-color: rgba(0, 0, 0, 0.8);">
+                        <div class="question-editor kr-modal-container" style="top: 50px; opacity: 1;">
+                            <form class="kr-modal-body add" action="#" th:action="@{/quizEditor/addQuestion}" th:object="${newQuestion}" method="post" enctype="multipart/form-data">
+                                <div class="header">
+                                 	<input id="idQuestion" name="idQuestion" type="hidden" value="-1">
+                                    <div class="question-type-select ">
+                                        <div class="question-type-select-inner "><button style="width: 32px;" class="question-type-selected-option MCQ " aria-haspopup="listbox" aria-label="Select question type"><i class="select-icon qicon-multiple_choice"></i><i class="arrow fas fa-caret-down hidden"></i></button>
+                                            <ul class="question-type-select-list "
+                                                role="listbox" tabindex="0" aria-expanded="false" aria-activedescendant="option-MCQ">
+                                                <li id="option-MCQ" class="question-type-select-list-item MCQ selected" aria-selected="selected" data-type="MCQ" role="option" tabindex="-1"><i class="qicon-multiple_choice"></i>
+                                                    <div class="text">Multiple Choice</div>
+                                                </li>
+                                                <li id="option-MSQ" class="question-type-select-list-item MSQ " aria-selected="" data-type="MSQ" role="option" tabindex="-1"><i class="qicon-checkboxes"></i>
+                                                    <div class="text">Checkbox</div>
+                                                </li>
+                                                <li id="option-BLANK" class="question-type-select-list-item BLANK " aria-selected="" data-type="BLANK" role="option" tabindex="-1"><i class="qicon-fill_in_the_blank"></i>
+                                                    <div class="text">Fill-in-the-Blank</div>
+                                                </li>
+                                                <li id="option-OPEN" class="question-type-select-list-item OPEN " aria-selected="" data-type="OPEN" role="option" tabindex="-1"><i class="qicon-open_ended"></i>
+                                                    <div class="text">Open-Ended</div>
+                                                </li>
+                                                <li id="option-POLL" class="question-type-select-list-item POLL " aria-selected="" data-type="POLL" role="option" tabindex="-1"><i class="qicon-poll"></i>
+                                                    <div class="text">Poll</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="title">New Question</div>
+                                </div>
+                                <div class="body">
+                                    
+                                    <div class="question-text-editor edit-container">
+                                        <div class="editor-toolbar" data-src="create" data-id="questionText" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                            <ul class="toolbar">
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="italic"><i class="fas fa-italic"></i></li>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="underline"><i class="fas fa-underline"></i></li>
+                                                <li class="menu main" data-src="create" data-id="questionText" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="superscript"><i class="fas fa-superscript"></i></li>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="subscript"><i class="fas fa-subscript"></i></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                            </ul>
+                                            <ul class="color-menu">
+                                                <li class="menu-item tool black" data-src="create" data-id="questionText" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                <li class="menu-item tool red" data-src="create" data-id="questionText" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                <li class="menu-item tool green" data-src="create" data-id="questionText" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                <li class="menu-item tool blue" data-src="create" data-id="questionText" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                            </ul>
+                                            <div class="expand-btn"><i class="fas fa-ellipsis-h"></i><i class="fas fa-minus"></i></div>
+                                        </div>
+                                        
+                                        <div class="question-text ql-container">
+                                            <textarea id="question-text" th:field="*{description}" rows="3" class="ql-editor" placeholder=" "></textarea>
+                                            <label for="ql-editor" class="label editor-label question-text-editor-label focused">Write your question here</label>
+                                            <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                        </div>
+                                        <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                            <button type="button" tabindex="-1" data-src="question" class="math-init-btn ">
+                                                <i class="fas fa-square-root-alt"></i><span class="text">Math</span></button>
+                                            <button type="button"  tabindex="-1" data-src="question" class="media-image-btn question-image">
+                                                <i class="fas fa-image"></i><span class="text">Image</span></button>
+                                            <button type="button"  tabindex="-1" data-src="question" class="media-audio-btn  ">
+                                                <i class="fas fa-microphone-alt"></i><span class="text">Audio</span></button>
+                                            <button type="button"  tabindex="-1" data-src="question" class="media-video-btn  ">
+                                                <i class="fas fa-video"></i><span class="text">Video</span></button>
+                                        </div>
+                                    </div>
+                                   
+                                   <div class="image-question-container-modal">
+                                   		<input hidden tabindex="-1" aria-hidden="true" name="button_upload_image_question" type="file" id="button_upload_image_question" 
+                                        	accept="image/gif, image/jpeg, image/jpg, image/svg+xml, image/svg, image/png, image/x-png, image/pjpeg">
+                                        <div class="image-question" >
+                                        	
+                                        	<button type="button" class="remove_image_question">
+                                        		<img class="questionImage">
+                                        		<i class="fas fa-times-circle" ></i>
+                                        	</button>
+                                        	<input type="hidden" value="0" id="isRemoveImage" name="isRemoveImage">
+                                        	
+                                        </div>
+                                   </div>
+                                    <div class="poll-q-type hidden"><i class="checkbox fas fa-square"></i>
+                                        <div class="text">Allow multiple selection</div>
+                                    </div>
+                                    
+                                    <div class="blank-label hidden"><span class="label">Add the answer and any accepted alternatives</span></div>
+                                    <div class="blank-msg hidden">Mark an answer as correct, if it</div>
+                                    <div class="options ">
+                                    
+			                            <input value="0" id="numeric-input" class="numeric-input-textbox" type="hidden" name="numeric-input">
+                                        <div>
+                                            <div class="or hidden">OR</div>
+                                        <div class="option option-1-container edit-container">
+                                         
+                                            <div class="editor-toolbar option-toolbar " data-src="create" data-id="option1" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                                <ul class="toolbar">
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="italic"><i class="fas fa-italic"></i></li>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="underline"><i class="fas fa-underline"></i></li>
+                                                    <li class="menu main" data-src="create" data-id="option1" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="superscript"><i class="fas fa-superscript"></i></li>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="subscript"><i class="fas fa-subscript"></i></li><span class="seperator"></span>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                                </ul>
+                                                <ul class="color-menu">
+                                                    <li class="menu-item tool black" data-src="create" data-id="option1" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                    <li class="menu-item tool red" data-src="create" data-id="option1" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                    <li class="menu-item tool green" data-src="create" data-id="option1" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                    <li class="menu-item tool blue" data-src="create" data-id="option1" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                                </ul>
+                                                <div class="expand-btn"><i class="fas fa-ellipsis-h"></i><i class="fas fa-minus"></i></div>
+                                            </div>
+                                            <div class="fib-matcher-dropdown hidden">
+                                                <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                                <div class="fib-matcher-dropdown-list ">
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="exact" id="0" role="option">is exactly</div>
+                                                    <div class="divider"></div>
+                                                    <div class="super-list">
+                                                        <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="contains" id="0" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                        <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="exact_num" id="0" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" aria-label="Mark option 1 as correct" class="option-state classic option-1-state" data-idx="0" value="0">
+                                            	<i class="fas fa-check "></i>
+                                            </button>
+                                            <div class="option-inner">
+                                                <div class="option-editor-container  ">
+                                                    <div class="option-1 ql-container" >
+                                                        <input id="option-1" th:field="*{answers[0].description}" type="text" class="ql-editor" placeholder="Answer option 1"></input>
+                                                        <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="option-math-editor  hidden" id="option-1">
+                                                    <div class="math-input-container">
+                                                        <div class="krafty-container-fc70b962-9f3a-4ae7-9c4b-e242bff3191d">
+                                                            <div class="kr-math-input">
+                                                                <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                                <div class="placeholder">Answer option 1</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="image-option hidden" id="option-1">
+                                                    <div class="upload" data-id="option-1"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                                </div>
+                                        </div>
+                                        <button kr-inert="true" tabindex="-1" class="math-btn  hidden" data-id="optionTextMath1" data-src="create" kr-inerted="true" aria-hidden="true">
+                                        	<i class="fas fa-square-root-alt"></i></button>
+                                        <button kr-inert="true" tabindex="-1" class="option-image-btn  option-image-btn-0 "data-qtest="option-image-upload-btn" data-id="option-1" kr-inerted="true" aria-hidden="true">
+                                        	<img src="https://cf.quizizz.com/img/editor/image_icon_v2.png">
+                                        </button>
+                                        </div>
+                                        </div>
+                                        <div>
+                                            <div class="or hidden">OR</div>
+                                    	<div class="option option-2-container edit-container">
+                                        <div class="editor-toolbar option-toolbar " data-src="create" data-id="option2" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                            <ul class="toolbar">
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="italic"><i class="fas fa-italic"></i></li>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="underline"><i class="fas fa-underline"></i></li>
+                                                <li class="menu main" data-src="create" data-id="option2" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="superscript"><i class="fas fa-superscript"></i></li>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="subscript"><i class="fas fa-subscript"></i></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                            </ul>
+                                            <ul class="color-menu">
+                                                <li class="menu-item tool black" data-src="create" data-id="option2" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                <li class="menu-item tool red" data-src="create" data-id="option2" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                <li class="menu-item tool green" data-src="create" data-id="option2" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                <li class="menu-item tool blue" data-src="create" data-id="option2" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                            </ul>
+                                            <div class="expand-btn"><i class="fas fa-ellipsis-h"></i><i class="fas fa-minus"></i></div>
+                                        </div>
+                                        <div class="fib-matcher-dropdown hidden">
+                                            <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                            <div class="fib-matcher-dropdown-list ">
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="exact" id="1" role="option">is exactly</div>
+                                                <div class="divider"></div>
+                                                <div class="super-list">
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="contains" id="1" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="exact_num" id="1" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" aria-label="Mark option 2 as correct" class="option-state   classic option-2-state  " value="1" data-idx="1"><i class="fas fa-check "></i></button>
+                                        <div
+                                            class="option-inner  ">
+                                            <div class="option-editor-container  ">
+                                                <div class="option-image-btn-2 ql-container" >
+                                                    <input id="option-2" th:field="*{answers[1].description}"  type="text" class="ql-editor" placeholder="Answer option 2"></input>
+                                                    <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                                </div>
+                                            </div>
+                                            <div class="option-math-editor  hidden" id="option-2">
+                                                <div class="math-input-container">
+                                                    <div class="krafty-container-bed93e2e-1d88-449d-8661-fe98f75f88d2">
+                                                        <div class="kr-math-input">
+                                                            <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                            <div class="placeholder">Answer option 2</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="image-option hidden" id="option-2">
+                                                <div class="upload" data-id="option-2"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                            </div>
+                                    </div><button kr-inert="true" tabindex="-1" class="math-btn  hidden" data-id="optionTextMath2" data-src="create" kr-inerted="true" aria-hidden="true"><i class="fas fa-square-root-alt"></i></button>
+                                    <button kr-inert="true" tabindex="-1" class="option-image-btn option-image-btn-1 "
+    										data-qtest="option-image-upload-btn" data-id="option-2" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button>
+                                    </div>
+                                        </div>
+                                        <div>
+                                            <div class="or hidden">OR</div>
+                                        <div class="option option-3-container edit-container">
+                                    <div class="editor-toolbar option-toolbar " data-src="create" data-id="option3" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                        <ul class="toolbar">
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="italic"><i class="fas fa-italic"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="underline"><i class="fas fa-underline"></i></li>
+                                            <li class="menu main" data-src="create" data-id="option3" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="superscript"><i class="fas fa-superscript"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="subscript"><i class="fas fa-subscript"></i></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                        </ul>
+                                        <ul class="color-menu">
+                                            <li class="menu-item tool black" data-src="create" data-id="option3" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                            <li class="menu-item tool red" data-src="create" data-id="option3" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                            <li class="menu-item tool green" data-src="create" data-id="option3" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                            <li class="menu-item tool blue" data-src="create" data-id="option3" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                        </ul>
+                                        <div class="expand-btn"><i class="fas fa-ellipsis-h"></i><i class="fas fa-minus"></i></div>
+                                    </div>
+                                    <div class="fib-matcher-dropdown hidden">
+                                        <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                        <div class="fib-matcher-dropdown-list ">
+                                            <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact" id="2" role="option">is exactly</div>
+                                            <div class="divider"></div>
+                                            <div class="super-list">
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="contains" id="2" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact_num" id="2" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" aria-label="Mark option 3 as correct" class="option-state   classic option-3-state  " value="2" data-idx="2"><i class="fas fa-check "></i></button>
+                                    <div
+                                        class="option-inner  ">
+                                        <div class="option-editor-container  ">
+                                            <div class="option-3 ql-container" >
+                                                <input  id="option-3" th:field="*{answers[2].description}" type="text" class="ql-editor" placeholder="Answer option 3"></input>
+                                                <button type="button" tabindex="-1" aria-label="Delete option 3" class="delete-option-btn hidden" value="2">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                                <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="option-math-editor  hidden" id="option-3">
+                                            <div class="math-input-container">
+                                                <div class="krafty-container-2c2c42d1-b1a4-489e-8e7c-dd8b00f2558c">
+                                                    <div class="kr-math-input">
+                                                        <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                        <div class="placeholder">Answer option 3</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="image-option hidden" id="option-3">
+                                            <div class="upload" data-id="option-3"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <button kr-inert="true" tabindex="-1" class="math-btn  hidden"
+                                    data-id="optionTextMath3" data-src="create" kr-inerted="true" aria-hidden="true"><i class="fas fa-square-root-alt"></i></button>
+                                    <button kr-inert="true" tabindex="-1" class="option-image-btn  option-image-btn-2 " data-qtest="option-image-upload-btn"
+                                    data-id="option-3" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button></div>
+                                        </div>
+                                        <div>
+                                            <div class="or hidden">OR</div>
+	                                        <div class="option option-4-container edit-container">
+			                                    <div class="editor-toolbar option-toolbar " data-src="create" data-id="option4" kr-inert="true" kr-inerted="true" aria-hidden="true">
+			                                        <ul class="toolbar">
+			                                            <li class="tool main" data-src="create" data-id="option4" data-key="italic"><i class="fas fa-italic"></i></li>
+			                                            <li class="tool main" data-src="create" data-id="option4" data-key="underline"><i class="fas fa-underline"></i></li>
+			                                            <li class="menu main" data-src="create" data-id="option4" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+			                                            <li class="tool main" data-src="create" data-id="option4" data-key="superscript"><i class="fas fa-superscript"></i></li>
+			                                            <li class="tool main" data-src="create" data-id="option4" data-key="subscript"><i class="fas fa-subscript"></i></li><span class="seperator"></span>
+			                                            <li class="tool main" data-src="create" data-id="option4" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+			                                        </ul>
+			                                        <ul class="color-menu">
+			                                            <li class="menu-item tool black" data-src="create" data-id="option4" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+			                                            <li class="menu-item tool red" data-src="create" data-id="option4" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+			                                            <li class="menu-item tool green" data-src="create" data-id="option4" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+			                                            <li class="menu-item tool blue" data-src="create" data-id="option4" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+			                                        </ul>
+			                                        <div class="expand-btn"><i class="fas fa-ellipsis-h"></i><i class="fas fa-minus"></i></div>
+			                                    </div>
+			                                    <div class="fib-matcher-dropdown hidden">
+			                                        <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+			                                        <div class="fib-matcher-dropdown-list ">
+			                                            <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact" id="2" role="option">is exactly</div>
+			                                            <div class="divider"></div>
+			                                            <div class="super-list">
+			                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="contains" id="2" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+			                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact_num" id="2" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+			                                            </div>
+			                                        </div>
+			                                    </div>
+			                                    <button type="button" aria-label="Mark option 4 as correct" class="option-state   classic option-4-state  " value="3" data-idx="2"><i class="fas fa-check "></i></button>
+			                                    <div
+			                                        class="option-inner  ">
+			                                        <div class="option-editor-container  ">
+			                                            <div class="option-3 ql-container" >
+			                                                <input  id="option-4"  th:field="*{answers[3].description}" type="text" class="ql-editor" placeholder="Answer option 4"></input>
+			                                                <button type="button" tabindex="-1" aria-label="Delete option 4" class="delete-option-btn hidden" value="3">
+			                                                    <i class="fas fa-trash-alt"></i>
+			                                                </button>
+			                                                <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+			                                            </div>
+			                                        </div>
+			                                        <div class="option-math-editor  hidden" id="option-3">
+			                                            <div class="math-input-container">
+			                                                <div class="krafty-container-2c2c42d1-b1a4-489e-8e7c-dd8b00f2558c">
+			                                                    <div class="kr-math-input">
+			                                                        <div class="input" contenteditable="true" data-gramm="false"></div>
+			                                                        <div class="placeholder">Answer option 4</div>
+			                                                    </div>
+			                                                </div>
+			                                            </div>
+			                                        </div>
+			                                        <div class="image-option hidden" id="option-4">
+			                                            <div class="upload" data-id="option-4"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+			                                        </div>
+			                                        
+			                                    </div>
+			                                    <button kr-inert="true" tabindex="-1" class="math-btn  hidden"
+			                                    data-id="optionTextMath4" data-src="create" kr-inerted="true" aria-hidden="true"><i class="fas fa-square-root-alt"></i></button>
+			                                    <button kr-inert="true" tabindex="-1" class="option-image-btn  option-image-btn-4 " data-qtest="option-image-upload-btn"
+			                                    data-id="option-4" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button>
+	                                    </div>
+                                </div>
+                                      
+                    
+                                <button style="display: none;" id="addAnswer" type="button" class="add-answer-btn  " data-src="create">Add answer option</button></div>
+                    <div class="blank-label ans-exp-title-container hidden"><span class="label">Answer Explanation (optional)</span></div>
+                    <div class="answer-explanation-disabled-text-container hidden">
+                        <div class="input-container" tabindex="0">
+                            <div class="placeholder">Add a fun fact or explanation for the correct answer.</div><span class="super-icon"><i class="fas fa-bolt"></i></span></div><button tabindex="-1" class="disabled-math-btn"><i class="fas fa-square-root-alt"></i><span class="text">Math</span></button>
+                        <button
+                            class="disabled-image-btn"><img class="media-icon" src="https://cf.quizizz.com/img/editor/audio_icon_v2.png"><span class="text">Media</span></button>
+                    </div>
+                    <div class="answer-explanation-text-editor hidden">
+                        <div class="math-editor">
+                            <div class="krafty-container-fe8fcbd6-a20f-415b-8be1-e60903f2a888">
+                                <div class="kr-math-input">
+                                    <div class="input" contenteditable="true" data-gramm="false"></div>
+                                    <div class="placeholder">Add a fun fact or explanation for the correct answer.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                            <button tabindex="-1" class="math-btn" data-id="answerExplanationTextMath" data-src="create">
+                                <i class="fas fa-square-root-alt"></i><span class="text">Math</span>
+                            </button>
+                            <button tabindex="-1" data-src="explanation" class="media-image-btn  ">
+                                <i class="fas fa-image"></i><span class="text">Image</span>
+                            </button>
+                            <button tabindex="-1" data-src="explanation" class="media-audio-btn  ">
+                                <i class="fas fa-microphone-alt"></i><span class="text">Audio</span>
+                            </button>
+                            <button tabindex="-1" data-src="explanation" class="media-video-btn  ">
+                                <i class="fas fa-video"></i><span class="text">Video</span>
+                            </button>
+                        </div>
+                    </div>
+                                </div>
+                                <div class="footer">
+                    <div class="question-topics-container  " style="display: none;">
+                        <button type="button" class="topics-container-inner" aria-label="Tag topics">
+                        <div class="tag-topics-button "><i class="fas fa-tags"></i>Tag topics</div><div class="tags-icon-wrapper">
+                            <i class="fas fa-tags tags-icon hidden"></i>
+                        </div>
+                        <div class="tagged-topics">
+                                <div class="edit-topics-btn hidden "><i class="fas fa-pencil-alt"></i>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="super-feature-icon " tabindex="0"><i class="fas fa-bolt"></i></div>
+                </div>
+                <div class="footer-inner">
+                    <div class="select time-select-tooltip">
+                        <div class="krafty-container-2e78ce0e-cf84-4f69-832a-591c39fd2d50">
+                            <div class="kr-selectbox no-select">
+                            <input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+                                <div class="kr-selectbox-selected-option  selectbox addEdit closed "><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span><input class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden" placeholder="-- Question Duration --" value="30 Seconds"><span class="kr-selectbox-selected-option-text "
+                                        role="listbox" aria-expanded="false" aria-activedescendant="option3" tabindex="0"><i class="pre-icon fas fa-clock"></i>30 Seconds</span><i class="fas fa-caret-down "></i></div>
+                                <div class="kr-selectbox-list-container   closed desktop">
+                                	<input value="30000" id="duration" class="numeric-input-textbox duration-modal" type="hidden" name="duration">
+                                    <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option3">
+                                        <li value="5000" data-idx="0" data-val="5000" class="duration-item" id="option1" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">5 Seconds</div>
+                                        </li>
+                                        <li value="10000" data-idx="1" data-val="10000" class="duration-item" id="option2" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">10 Seconds</div>
+                                        </li>
+                                        <li value="20000" data-idx="2" data-val="20000" class="duration-item" id="option3" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">20 Seconds</div>
+                                        </li>
+                                        <li value="30000" data-idx="3" data-val="30000" class="duration-item" id="option4" aria-selected="true" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">30 Seconds</div>
+                                        </li>
+                                        <li value="455000" data-idx="4" data-val="45000" class="duration-item" id="option5" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">45 Seconds</div>
+                                        </li>
+                                        <li value="60000" data-idx="5" data-val="60000" class="duration-item" id="option6" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">60 Seconds</div>
+                                        </li>
+                                        <li value="120000" data-idx="6" data-val="120000" class="duration-item" id="option7" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">2 Minutes</div>
+                                        </li>
+                                        <li value="180000" data-idx="7" data-val="180000" class="duration-item" id="option8" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">3 Minutes</div>
+                                        </li>
+                                        <li value="300000" data-idx="8" data-val="300000" class="duration-item" id="option9" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">5 Minutes</div>
+                                        </li>
+                                        <li value="600000" data-idx="9" data-val="600000" class="duration-item" id="option10" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">10 Minutes</div>
+                                        </li>
+                                        <li value="900000" data-idx="10" data-val="900000" class="duration-item" id="option11" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                            <div class="kr-selectbox-list-item-text">15 Minutes</div>
+                                        </li>
+                                    </ul>
+                                    <div class="kr-selectbox-btn hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select time-select-tooltip" style="width: 115px; margin-left: 10px;">
+                        <div class="krafty-container-2e78ce0e-cf84-4f69-832a-591c39fd2d50">
+                            <div class="kr-selectbox no-select">
+                            <input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+                                <div class="kr-selectbox-selected-option  selectbox addEdit closed ">
+                                	<span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                		<input class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden" placeholder="-- Question Duration --" value="30 Seconds">
+                                		<span class="kr-selectbox-selected-option-text "
+                                        role="listbox" aria-expanded="false" aria-activedescendant="option3" tabindex="0">
+                                        	<i class="pre-icon fas fa-clock hidden"></i>Easy</span><i class="fas fa-caret-down "></i></div>
+                                <div class="kr-selectbox-list-container   closed desktop">
+                                	<input value="0" id="level" class="numeric-input-textbox duration-modal" type="hidden" name="level">
+                                    <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option3">
+                                        <li value="0" data-idx="0" class="level-item" id="option1" aria-selected="false" role="option" tabindex="-1">
+                                            <div class="kr-selectbox-list-item-text">Easy</div>
+                                        </li>
+                                        <li value="1" data-idx="1" class="level-item" id="option2" aria-selected="false" role="option" tabindex="-1">
+                                            <div class="kr-selectbox-list-item-text">Medium</div>
+                                        </li>
+                                        <li value="2" data-idx="2" class="level-item" id="option3" aria-selected="false" role="option" tabindex="-1">
+                                            <div class="kr-selectbox-list-item-text">Advanced</div>
+                                        </li>
+                                    </ul>
+                                    <div class="kr-selectbox-btn hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-extra-container">
+                        <div class="bulk-time-btn">Change for all questions</div>
+                        <div class="bulk-time-loading">Saving ...<i class="fas fa-sync kr-anim-spin"></i></div>
+                        <div class="bulk-time-done">Done!</div>
+                    </div><span class="duration-info hidden"><i class="fas fa-info-circle"></i></span>
+                    <div class="advanced-options hidden" unselectable="on">Advanced options</div>
+                    <button type="submit" class="save-btn" aria-label="Save"><i class="fas fa-save" aria-hidden="true"></i>SAVE</button>
+                    <button type="button" class="cancel-btn" aria-label="Cancel">CANCEL</button></div>
+                                </div>
+                            </form>
+                            
+                        </div>
+            </div>
+            </div>
+            <div class="quiz-info ">
+                <div class="quiz-info-wrapper">
+                    <div class="quiz-image ">
+                    <button class="placeholder " aria-label="Add quiz image">
+                    	<div class="icon">
+                    		<img th:src="${session.tempQuiz.image}">
+                    	</div>
+                    	<i class="fas fa-plus"></i> Add quiz image
+                    </button>
+                    <img src="" class="hidden">
+                        <div class="quiz-image-overlay hidden"><span>edit image</span></div>
+                    </div>
+                    <div th:text="${session.tempQuiz.name}" class="quiz-name">
+                        <div class="placeholder hidden">add quiz name</div>
+                        <button aria-label="Edit profile" class="edit-icon">
+                        	<i aria-hidden="true" class="fas fa-pencil-alt"></i>
+                        </button>
+                    </div>
+                    <div class="quiz-data">
+                    	<button th:text="${session.tempQuiz.privacy}" class="tag privacy ">
+                    		<i class="fas fa-eye"></i>public  
+                    		<span class="hidden">, 0+ </span>
+                    	</button>
+                        <div class="tag tag-separator "></div><button th:text="${session.tempQuiz.level}" class="tag level "><i class="fas fa-language"></i></button>
+                        <div class="tag tag-separator "></div>
+                        <div class="tag pref-time">
+                        	<button th:text="${session.tempQuiz.createdDate}" class="pref-time-btn tag  tooltip" data-tooltip-text="Default time for all questions">
+                        		<i class="fas fa-clock"></i>
+                        </button>
+                        </div>
+                    </div>
+            </div>
+            
+            </div>
+            </div>
+        </div>
+    </div>
+	<div class="krafty-container-188c1213-6cf8-4fd6-8d64-0f33849f85f9" role="dialog" aria-modal="true" aria-label="Quiz details">
+		    <div class="kr-modal modal-quiz-detail editor-subjects-modal" tabindex="0" style="background-color: rgba(0, 0, 0, 0.8);">
+		        <div class="kr-modal-container" style="top: 0px; opacity: 1;">
+		            <form class="kr-modal-body" action="#" th:action="@{/quizEditor/setImageandPrivacy}" th:object="${tempQuiz}" method="post" enctype="multipart/form-data">
+		                <div class="editor-subjects-view">
+		                    <div class="title-wrapper">
+		                        <div class="title-image"><img src="https://cf.quizizz.com/img/editor/createaquiz.png"></div>
+		                        <div class="title">Quiz details</div>
+		                    </div>
+		                    <div class="hr"></div>
+		                    <div class="section section-image-upload">
+		                        <div class="label">1. Add a title image</div>
+		                        <div class="quiz-image-wrapper">
+		                            <div class="quiz-image-input">
+		                                <div tabindex="0" class="input-container ">
+		                                <input tabindex="-1" aria-hidden="true" name="quizImage" type="file" id="image-upload" accept="image/gif, image/jpeg, image/jpg, image/svg+xml, image/svg, image/png, image/x-png, image/pjpeg">
+		                                    <!-- if has no image -->
+													<th:block th:if="${session.tempQuiz.image == '../assets/image/quiz/2.jpg'}">
+													  	<div class="image-preview quiz-image">
+					                                        <div class="">
+					                                        	<img src="../assets/image/quiz/2.jpg">
+					                                            <div class="image-upload-msg">
+					                                            	<i class="far fa-plus"></i> Drag and drop or click here to upload
+					                                            </div>
+					                                        </div>
+					                                        <div class="image-uploading hidden">
+					                                        	<i class="fas fa-spinner kr-anim-spin"></i>
+					                                            <div class="image-upload-msg">Uploading...</div>
+					                                        </div>
+					                                    </div>
+													</th:block>
+													<!-- ELSE -->
+													<th:block th:unless="${session.tempQuiz.image == '../assets/image/quiz/2.jpg'}">
+														   <div class="image-preview quiz-image has-image">
+						                                        <div class="">
+						                                        	<img th:src="${session.tempQuiz.image}">
+						                                            <div class="image-upload-msg hidden">
+						                                            	<i class="far fa-plus"></i> Drag and drop or click here to upload
+						                                            </div>
+						                                        </div>
+						                                        <div class="image-uploading hidden">
+						                                        	<i class="fas fa-spinner kr-anim-spin"></i>
+						                                            <div class="image-upload-msg">Uploading...</div>
+						                                        </div>
+						                                    </div>
+													</th:block>
+		                                    
+		                                    	<button class="delete-btn hidden">
+		                                    	<i class="far fa-trash-alt"></i></button>
+		                                    	
+		                                    </div>
+		                            </div>
+		                            <div class="quiz-image-link-input " style="background-color: #d4d4d7;">
+		                                <div class="link-icon"><i class="fas fa-link"></i></div>
+		                                <input style="cursor: text; color: black;" disabled tabindex="0" type="text" id="image-link-upload" th:value="'http://localhost:8081/quiz/'+${session.tempQuiz.id}">
+		                                <div class="status-icons"><i class="fas fa-check hidden"></i><i class="fas fa-times hidden"></i></div>
+		                            </div>
+		                            <div class="image-error"><span class="hidden"></span></div>
+		                        </div>
+		                    </div>
+		                    <div class="section">
+		                        <div class="label">2. Select level</div>
+		                        <div class="lang-select-wrapper">
+		                            <div class="lang-dropdown kr2-selectbox ">
+		                            <th:block th:if="${session.tempQuiz.level == 'Easy'}">
+		                            	<input class="field" type="hidden" id="level" name="level" value="Easy">
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    <div class="kr2-selectbox-selected" data-val="0">Easy</div>
+		                             </th:block>
+		                             <th:block th:if="${session.tempQuiz.level == 'Medium'}">
+		                            	<input class="field" type="hidden" id="level" name="level" value="Medium">
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    <div class="kr2-selectbox-selected" data-val="0">Medium</div>
+		                             </th:block>
+		                             <th:block th:if="${session.tempQuiz.level == 'Advanced'}">
+		                            	<input class="field" type="hidden" id="level" name="level" value="Advanced">
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    <div class="kr2-selectbox-selected" data-val="0">Advanced</div>
+		                             </th:block>
+		                                    <div class="kr2-selectbox-icon"><i class="fas fa-caret-down"></i></div>
+		                                    <div class="kr2-selectbox-dropdown" id="level_dropdown">
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Easy" data-val="0">Easy</div>
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Medium"  data-val="1">Medium</div>
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Advanced" data-val="2">Advanced</div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="section section-grades ">      
+		                        <div class="grade-select-wrapper">
+		                            <div class="grade-lower-dropdown kr2-selectbox none-event ">
+		                            	<div class="label">3. Code:</div>
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    <div class="kr2-selectbox-selected" data-val="0" th:text="${session.tempQuiz.getCode()}"></div>
+		                                </div>
+		                            </div>
+		                            <div class="grade-upper-dropdown kr2-selectbox none-event ">
+		                            	<div class="label">4. Date Created:</div>
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    <div class="kr2-selectbox-selected" data-val="1" th:text="${session.tempQuiz.createdDate}"></div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="section ">
+		                        <div class="label">5. Who can see this quiz?</div>
+		                        <div class="visibility-select-wrapper  ">
+		                            <div class="visibility-dropdown kr2-selectbox ">
+		                                <div tabindex="0" role="list" class="kr2-selectbox-control">
+		                                    	<th:block th:if="${session.tempQuiz.getPrivacy() == 'Private'}">
+		                                    		<div class="kr2-selectbox-selected">
+		                                    			<i class="far fa-eye-slash visibility-icon "></i>Private, visible to you
+		                                    		</div>
+		                                    		<input class="field" type="hidden" id="privacy" name="privacy" value="Private">
+		                                    	</th:block>
+		                                    	<th:block th:unless="${session.tempQuiz.getPrivacy() == 'Private'}">
+		                                    		<div class="kr2-selectbox-selected">
+		                                    			<i class="far fa-eye-slash visibility-icon "></i>Public, visible to everyone
+		                                    		</div>
+		                                    		<input class="field" th:field="*{privacy}" type="hidden" id="privacy" name="privacy" value="Public">
+		                                    	</th:block>
+		                                    
+		                                    <div class="kr2-selectbox-icon"><i class="fas fa-caret-down"></i></div>
+		                                    <div class="kr2-selectbox-dropdown">
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Public">
+		                                        	<i class="far fa-eye visibility-icon"></i>Public, visible to everyone</div>
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Private">
+		                                        	<i class="far fa-eye-slash visibility-icon"></i>Private, visible to you</div>
+		                                        <div role="listitem" tabindex="-1" class="kr2-selectbox-option" id="Custom" data-val="advanced">Advanced options</div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="quiz-shared-with-users-wrapper hidden">
+		                            <div class="quiz-shared-with-users"><i class="far fa-globe globe-icon"></i>
+		                                <div class="shared-with-user"></div>
+		                                <div class="shared-others-count hidden">+-1 others</div><button class="change-shared-users-btn">Change</button></div>
+		                        </div>
+		                    </div>
+		                    <div class="footer">
+		                    	<button type="button" class="cancel">Cancel</button>
+		                    	<button type="submit" class="save-details">
+		                    		<span class="">Save</span>
+		                    		<i class="kr-anim-spin fas fa-spinner hidden"></i>
+		                    	</button>
+		                    </div>
+		                </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+		<div class="krafty-container">
+        <div class="kr-modal editor-info-modal" tabindex="0" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="kr-modal-container" style=" opacity: 1;">
+                <form class="kr-modal-body" id="formSetNameQuiz" action="/activity/updateNameDescription" method="post">
+                    <div class="banner">
+                        <div class="image-wrapper"><img src="https://cf.quizizz.com/img/editor/createaquiz.png"></div>
+                        <div class="title">Create a quiz</div>
+                    </div>
+                   
+                    <div class="form">
+                        <div class="quiz-name-wrapper">
+                            <div class="quiz-name-input kr2-textfield ">
+                            	<label>1. Name this quiz</label>
+                                <input th:value="${session.tempQuiz.name}" type="text" id="nameinput" name="nameinput" placeholder="Quiz name" maxlength="30">
+                                <div class="quiz-name-error"><span class="hidden">Please enter a quiz name</span></div>
+                            </div>
+                        </div>
+                        <div class="quiz-description-wrapper">
+                            <div class="quiz-description-input kr2-textfield ">
+                            	<label>2. Decription this quiz</label>
+                            	<input type="hidden" th:value="${session.tempQuiz.description}" id="descriptionInputHolder">
+                                <textarea rows="4" type="text" id="descriptionInput" name="descriptionInput" placeholder="Quiz description" maxlength="100"></textarea>
+                                <div class="quiz-description-error"><span class="hidden">Please enter a quiz description</span></div>
+                            </div>
+                        </div>
+                        <div class="quiz-subjects-wrapper">
+                            <div class="label">3. Choose relevant subjects
+                                <div class="max-subjects-msg hidden">(maximum 1 subjects)</div>
+                            </div>
+                            <div class="subjects">
+                            		<input id="idCategory" name="idCategory" type="hidden" value="">
+                         			
+                         			<th:block th:each="category, cateItem : ${session.lstCategory}">
+                         				<button class="subject  " name="categoryID" th:class="${session.tempQuiz.category.id} == ${category.getId()} ? 'subject  choose' : 'subject  '" 
+                         				th:value="${category.getId()}" type="button" th:text="${category.getName()}" ></button>
+                         			</th:block>
+                         			
+                                    <button class="more-btn " type="button" style="display: inline-block;">More...</button></div>
+                            <div class="error-subjects hidden">Please select one or more subjects</div>
+                        </div>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="action-btns-wrapper">
+                        <button type="button" class="cancel-btn" data-qtest="cancel-create-quiz-btn">Cancel</button>
+                        <button type="submit" class="save-btn" data-qtest="create-quiz-btn"><i class="fas fa-spinner kr-anim-spin hidden" aria-hidden="true"></i><span class="">Save</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/editQuizz.js"></script>
+</body>
+</html>

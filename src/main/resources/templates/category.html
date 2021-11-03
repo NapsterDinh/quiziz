@@ -1,0 +1,124 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<meta name="description"
+	content="Join an activity with your class and find or create your own quizzes and flashcards." />
+<meta name="apple-itunes-app" content="app-id=1160249042" />
+<!-- Setting the address bar color (in mobile browsers)-->
+<meta name="theme-color" content="#260828" />
+<link rel="shortcut icon"
+	href="https://cf.quizizz.com/img/favicon/favicon.ico" />
+<link rel="canonical" href="https://quizizz.com/join" />
+<link rel="apple-touch-icon" sizes="180x180"
+	href="https://cf.quizizz.com/img/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32"
+	href="https://cf.quizizz.com/img/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16"
+	href="https://cf.quizizz.com/img/favicon/favicon-16x16.png" />
+<link rel="manifest"
+	href="https://cf.quizizz.com/img/favicon/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#603cba" />
+<meta name="theme-color" content="#ffffff" />
+<!-- Social Media tags-->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@quizizz" />
+<meta name="twitter:title" content="Quizizz: Practice link" />
+<meta name="twitter:description" content="Click the link to join now." />
+<meta name="twitter:image"
+	content="https://cf.quizizz.com/game/img/share/quizizz_share1.png" />
+<meta property="og:image"
+	content="https://cf.quizizz.com/game/img/share/quizizz_share1.png" />
+<meta property="og:app_id" content="1589541687945427" />
+<meta property="og:url" content="https://quizizz.com/join" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Quizizz: Practice link" />
+<meta property="og:description" content="Click the link to join now." />
+<title>For Students - Quizizz</title>
+
+<link rel="stylesheet" href="/assets/css/joinmore.css">
+</head>
+<body class="using-mouse">
+	<div class="root-bootstrapper-container">
+		<div class="route-loader-wrapper"></div>
+		<div class="root-component">
+			<div class="error-boundary-container">
+				<div data-v-2d3aa134="" class="featured-wrapper">
+					<div data-v-2d3aa134="" class="featured-container">
+						<!---->
+						<!---->
+						<!-- header -->
+						<div data-v-2d3aa134="" class="header-wrapper">
+										<div th:replace = "header :: menu"></div>	
+									</div>	
+									</div>
+									</div>
+						<div data-v-377ae896="" data-v-2d3aa134=""
+							class="recommendations-page" media="[object Object]"
+							user="[object Object]">
+							<!---->
+							<div data-v-377ae896="" class="page-header">
+								<div data-v-377ae896="" class="page-header-text">
+									Popular quizzes for <span data-v-377ae896="" class="topic-name" th:utext=${nameCategory}></span>
+								</div>
+							</div>
+							<div data-v-377ae896="" class="recommended-quizzes-list">
+								<div data-v-6482f4a3="" data-v-377ae896=""
+									class="solo-quiz-container text-unselectable">
+									<div data-v-6482f4a3="" class="solo-quizzes">
+										<th:block th:each="quiz,iter : ${quizlist}">
+											<button data-v-6482f4a3="" aria-label="Quiz Information Card"
+												class="solo-quiz max-in-row-2 max-in-row-3 max-in-row-4 max-in-row-5"
+												th:value="${quiz.id}" >
+												<div data-v-76782db8="" data-v-6482f4a3=""
+													class="curved-edge-container media-dimensions media-wrapper">
+													<div data-v-76782db8="" class="curve"
+														style="width: 400%; padding-top: 400%; transform: translateX(-37.5%) translateY(-100%); top: 100%;">
+														<div data-v-76782db8="" class="content-container"
+															style="width: calc(25.02%); left: calc(37.49%);">
+															<div data-v-6482f4a3="" fdata-v-76782db8="" role="img"
+																aria-label="Quiz thumbnail"
+																class="media-dimensions media"
+																th:style="'background-image:url(' + @{${quiz.image}} + ');'"></div>
+														</div>
+													</div>
+												</div>
+												<div data-v-6482f4a3="" class="quiz-info">
+													<span data-v-6482f4a3="" class="questions-length">
+														[(${quiz.quantityOfQuestion})] Qs</span>
+												</div>
+												<p data-v-6482f4a3="" class="quiz-name"
+													style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2;"
+													th:utext=${quiz.name}></p>
+											</button>
+										</th:block>
+									</div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<!---->
+					</div>
+				</div>
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+			</div>
+			<!---->
+			<!---->
+		</div>
+	</div>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		var quizList = /*[[${quizlist}]]*/"Quiz None";
+		/*]]>*/
+	</script>
+	<script src="/assets/js/joinmore_vi.js"></script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+@charset "UTF-8";
+
+@-webkit-keyframes move {
+    0% {
+        left: 0;
+        opacity: 0
+    }
+
+    5% {
+        opacity: 0
+    }
+
+    48% {
+        opacity: .2
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    to {
+        left: 82%
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+        opacity: 0
+    }
+
+    5% {
+        opacity: 0
+    }
+
+    48% {
+        opacity: .2
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    to {
+        left: 82%
+    }
+}
+
+@font-face {
+    font-family: Quizizz-Iconset;
+    src: url(https://cf.quizizz.com/game/fonts/icons/v30/Quizizz-Iconset.woff) format("woff"), url(https://cf.quizizz.com/game/fonts/icons/v30/Quizizz-Iconset.ttf) format("truetype"), url(https://cf.quizizz.com/game/fonts/icons/v30/Quizizz-Iconset.svg) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+[class*=" icon-"],
+[class^=icon-] {
+    font-family: Quizizz-Iconset !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-far-search-plus:before {
+    content: "\E93B"
+}
+
+.icon-far-angle-up:before {
+    content: "\E955"
+}
+
+.icon-far-angle-down:before {
+    content: "\E956"
+}
+
+.icon-fas-youtube-brand:before {
+    content: "\E954"
+}
+
+.icon-fas-user-friends:before {
+    content: "\E94F"
+}
+
+.icon-fas-users:before {
+    content: "\E950"
+}
+
+.icon-fas-fire:before {
+    content: "\E93A"
+}
+
+.icon-fas-bullseye:before {
+    content: "\E94D"
+}
+
+.icon-fas-coins:before {
+    content: "\E94E"
+}
+
+.icon-fad-coins .path1:before {
+    content: "\E937";
+    color: #000;
+    opacity: .4
+}
+
+.icon-fad-coins .path2:before {
+    content: "\E938";
+    margin-left: -1em;
+    color: #000
+}
+
+.icon-fas-medal:before {
+    content: "\E939"
+}
+
+.icon-fas-plus-circle:before {
+    content: "\E936"
+}
+
+.icon-far-user-plus:before {
+    content: "\E935"
+}
+
+.icon-far-bars:before {
+    content: "\E934"
+}
+
+.icon-far-plus-circle:before {
+    content: "\E909"
+}
+
+.icon-far-file-alt:before {
+    content: "\E90C"
+}
+
+.icon-far-hourglass-end:before {
+    content: "\E90D"
+}
+
+.icon-far-hourglass-half:before {
+    content: "\E90E"
+}
+
+.icon-fas-question-circle:before {
+    content: "\E906"
+}
+
+.icon-far-calendar-star:before {
+    content: "\E907"
+}
+
+.icon-far-moon-stars:before {
+    content: "\E908"
+}
+
+.icon-far-lock-alt:before {
+    content: "\E903"
+}
+
+.icon-far-lock-open-alt:before {
+    content: "\E905"
+}
+
+.icon-far-fire:before {
+    content: "\E901"
+}
+
+.icon-far-stopwatch:before {
+    content: "\E902"
+}
+
+.icon-far-alarm-clock:before {
+    content: "\F34E"
+}
+
+.icon-far-check-circle:before {
+    content: "\F058"
+}
+
+.icon-far-check-square:before {
+    content: "\F14A"
+}
+
+.icon-far-clock:before {
+    content: "\F017"
+}
+
+.icon-far-cog:before {
+    content: "\F014"
+}
+
+.icon-far-exclamation-circle:before {
+    content: "\F06A"
+}
+
+.icon-far-exclamation-triangle:before {
+    content: "\F071"
+}
+
+.icon-far-history:before {
+    content: "\F1DA"
+}
+
+.icon-far-sign-out-alt:before {
+    content: "\F2F5"
+}
+
+.icon-far-sign-out:before {
+    content: "\F08B"
+}
+
+.icon-far-user:before {
+    content: "\F008"
+}
+
+.icon-fas-alarm-clock:before {
+    content: "\F34F"
+}
+
+.icon-fas-check-circle:before {
+    content: "\F059"
+}
+
+.icon-fas-check-square:before {
+    content: "\F14B"
+}
+
+.icon-fas-clock:before {
+    content: "\F018"
+}
+
+.icon-fas-cogs:before {
+    content: "\F085"
+}
+
+.icon-fas-exclamation-circle:before {
+    content: "\F06B"
+}
+
+.icon-fas-exclamation-triangle:before {
+    content: "\F072"
+}
+
+.icon-fas-history:before {
+    content: "\F1DB"
+}
+
+.icon-fas-info-circle:before {
+    content: "\F05A"
+}
+
+.icon-fas-sign-out-alt:before {
+    content: "\F2F6"
+}
+
+.icon-fas-sign-out:before {
+    content: "\F08C"
+}
+
+.icon-fas-user-circle:before {
+    content: "\F2BD"
+}
+
+.icon-fas-user-edit:before {
+    content: "\F4FF"
+}
+
+.icon-fas-user:before {
+    content: "\F007"
+}
+
+.icon-far-envelope:before {
+    content: "\F0E0"
+}
+
+.icon-far-search:before {
+    content: "\E900"
+}
+
+.icon-fas-search:before {
+    content: "\F002"
+}
+
+.icon-fas-filter:before {
+    content: "\F0B0"
+}
+
+.icon-fas-chalkboard-teacher:before {
+    content: "\F51C"
+}
+
+.icon-far-home:before {
+    content: "\F015"
+}
+
+.icon-fas-home:before {
+    content: "\E904"
+}
+
+.icon-fas-pen:before {
+    content: "\F304"
+}
+
+.icon-fas-bell:before {
+    content: "\F0F3"
+}
+
+.icon-fas-caret-down:before {
+    content: "\F0D7"
+}
+
+.icon-fas-caret-up:before {
+    content: "\F0D8"
+}
+
+.icon-fas-caret-right:before {
+    content: "\F0D8";
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block
+}
+
+.icon-fas-check:before {
+    content: "\F00C"
+}
+
+.icon-far-check:before {
+    content: "\E90A"
+}
+
+.icon-fal-check:before {
+    content: "\E90B"
+}
+
+.icon-fas-sync-alt:before {
+    content: "\F2F1"
+}
+
+.icon-fas-chevron-down:before {
+    content: "\F078"
+}
+
+.icon-fas-chevron-left:before {
+    content: "\F053"
+}
+
+.icon-fas-chevron-right:before {
+    content: "\F054"
+}
+
+.icon-fas-chevron-up:before {
+    content: "\F077"
+}
+
+.icon-far-chevron-down:before {
+    content: "\E911"
+}
+
+.icon-far-chevron-left:before {
+    content: "\E912"
+}
+
+.icon-far-chevron-right:before {
+    content: "\E913"
+}
+
+.icon-far-chevron-up:before {
+    content: "\E914"
+}
+
+.icon-fas-arrow-left:before {
+    content: "\F060"
+}
+
+.icon-fas-arrow-right:before {
+    content: "\F061"
+}
+
+.icon-fas-long-arrow-left:before {
+    content: "\F177"
+}
+
+.icon-fas-long-arrow-right:before {
+    content: "\F178"
+}
+
+.icon-fas-play:before {
+    content: "\F04B"
+}
+
+.icon-fas-ellipsis-v:before {
+    content: "\F142"
+}
+
+.icon-fas-search-minus:before {
+    content: "\F010"
+}
+
+.icon-fas-search-plus:before {
+    content: "\F00E"
+}
+
+.icon-fas-cog:before {
+    content: "\F013"
+}
+
+.icon-fas-share-alt:before {
+    content: "\F1E0"
+}
+
+.icon-fas-times:before {
+    content: "\F00D"
+}
+
+.icon-far-times:before {
+    content: "\E920"
+}
+
+.icon-fab-facebook-f:before {
+    content: "\F39E"
+}
+
+.icon-fab-twitter:before {
+    content: "\F099"
+}
+
+.icon-far-pen:before {
+    content: "\E90F"
+}
+
+.icon-fas-pause:before {
+    content: "\E924"
+}
+
+.icon-fas-bat:before {
+    content: "\E925"
+}
+
+.icon-fas-campfire:before {
+    content: "\E926"
+}
+
+.icon-fas-comment-dots:before {
+    content: "\E927"
+}
+
+.icon-fas-flag-checkered:before {
+    content: "\E928"
+}
+
+.icon-fas-grin-tears:before {
+    content: "\E929"
+}
+
+.icon-fas-hiking:before {
+    content: "\E92A"
+}
+
+.icon-fas-igloo:before {
+    content: "\E92B"
+}
+
+.icon-fas-jack-o-lantern:before {
+    content: "\E92C"
+}
+
+.icon-fas-music:before {
+    content: "\E92D"
+}
+
+.icon-fas-running:before {
+    content: "\E92E"
+}
+
+.icon-fas-skiing:before {
+    content: "\E92F"
+}
+
+.icon-fas-stars:before {
+    content: "\E930"
+}
+
+.icon-fas-user-astronaut:before {
+    content: "\E931"
+}
+
+.icon-fas-volume:before {
+    content: "\E932"
+}
+
+.icon-fas-camera:before {
+    content: "\E93D"
+}
+
+.icon-fas-redo:before {
+    content: "\E93C"
+}
+
+.icon-fas-lock-alt:before {
+    content: "\E93E"
+}
+
+.icon-fas-flask:before {
+    content: "\E93F"
+}
+
+.icon-apple-solid-unlock:before {
+    content: "\E940"
+}
+
+.icon-far-users:before {
+    content: "\E941"
+}
+
+.icon-apple-solid-lock:before {
+    content: "\E942"
+}
+
+.icon-fas-music-slash:before {
+    content: "\E943"
+}
+
+.icon-fas-boombox:before {
+    content: "\E944"
+}
+
+.icon-fas-football-ball:before {
+    content: "\E945"
+}
+
+.icon-fas-hood-cloak:before {
+    content: "\E946"
+}
+
+.icon-far-computer-classic:before {
+    content: "\E947"
+}
+
+.icon-far-paw-alt:before {
+    content: "\E948"
+}
+
+.icon-far-sun-haze:before {
+    content: "\E949"
+}
+
+.icon-fas-external-link-alt:before {
+    content: "\E94A"
+}
+
+.icon-fas-eye-slash:before {
+    content: "\E94B"
+}
+
+.icon-fas-flame-solid:before {
+    content: "\E94C"
+}
+
+.icon-fas-times-circle:before {
+    content: "\E951"
+}
+
+.icon-fas-stopwatch:before {
+    content: "\E952"
+}
+
+.icon-fas-edit:before {
+    content: "\E953"
+}
+
+.icon-fas-copy-solid:before {
+    content: "\E957"
+}
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2016 Daniel Eden
+ */
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+
+.animated.bounceIn,
+.animated.bounceOut,
+.animated.flipOutX,
+.animated.flipOutY {
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    20%,
+    53%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    40%,
+    43% {
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0)
+    }
+
+    40%,
+    43%,
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    }
+
+    70% {
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    53%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    40%,
+    43% {
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0)
+    }
+
+    40%,
+    43%,
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    }
+
+    70% {
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom
+}
+
+@-webkit-keyframes flash {
+
+    0%,
+    50%,
+    to {
+        opacity: 1
+    }
+
+    25%,
+    75% {
+        opacity: 0
+    }
+}
+
+@keyframes flash {
+
+    0%,
+    50%,
+    to {
+        opacity: 1
+    }
+
+    25%,
+    75% {
+        opacity: 0
+    }
+}
+
+.flash {
+    -webkit-animation-name: flash;
+    animation-name: flash
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse
+}
+
+@-webkit-keyframes rubberBand {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, .75, 1);
+        transform: scale3d(1.25, .75, 1)
+    }
+
+    40% {
+        -webkit-transform: scale3d(.75, 1.25, 1);
+        transform: scale3d(.75, 1.25, 1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, .85, 1);
+        transform: scale3d(1.15, .85, 1)
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1)
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1)
+    }
+
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, .75, 1);
+        transform: scale3d(1.25, .75, 1)
+    }
+
+    40% {
+        -webkit-transform: scale3d(.75, 1.25, 1);
+        transform: scale3d(.75, 1.25, 1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, .85, 1);
+        transform: scale3d(1.15, .85, 1)
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1)
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95…

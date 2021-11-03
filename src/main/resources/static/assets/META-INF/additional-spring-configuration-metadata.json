@@ -1,0 +1,112 @@
+{"properties": [
+  {
+    "name": "security.oauth2.resource.scope",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.resource.scope'"
+  },
+  {
+    "name": "security.oauth2.resource.uource",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.resource.uource'"
+  },
+  {
+    "name": "security.oauth2.client.registration.facebook",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.facebook'"
+  },
+  {
+    "name": "security.oauth2.client.registration.clientId",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.clientId'"
+  },
+  {
+    "name": "security.oauth2.client.registration.clientSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.clientSecret'"
+  },
+  {
+    "name": "security.oauth2.client.registration.accessTokenUri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.accessTokenUri'"
+  },
+  {
+    "name": "security.oauth2.client.registration.userAuthorizationUri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.userAuthorizationUri'"
+  },
+  {
+    "name": "security.oauth2.client.registration.tokenName",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.tokenName'"
+  },
+  {
+    "name": "security.oauth2.client.registration.authenticationScheme",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.authenticationScheme'"
+  },
+  {
+    "name": "security.oauth2.client.registration.clientAuthenticationScheme",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.clientAuthenticationScheme'"
+  },
+  {
+    "name": "security.oauth2.client.registration.scope",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.registration.scope'"
+  },
+  {
+    "name": "security.oauth2.client.resource.user-info-uri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.resource.user-info-uri'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.client-id",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.client-id'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.clientSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.clientSecret'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.scope",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.scope'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.accessTokenUri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.accessTokenUri'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.userAuthorizationUri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.userAuthorizationUri'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.tokenName",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.tokenName'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.authenticationScheme",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.authenticationScheme'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.facebook.clientAuthenticationScheme",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.facebook.clientAuthenticationScheme'"
+  },
+  {
+    "name": "security.security.oauth2.client.registration.resource",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.client.registration.resource'"
+  },
+  {
+    "name": "security.security.oauth2.userInfoUri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.security.oauth2.userInfoUri'"
+  }
+]}

@@ -1,0 +1,35 @@
+.toggle-btn {
+    position: absolute;
+    right: 0;
+}
+.toggle-btn  {
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 30px;
+    border: 1px solid #d5d5d5;
+    background-color: #d5d5d5;
+    cursor: pointer;
+    -webkit-transition: all .21s ease;
+    transition: all .21s ease;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+}
+.toggle-btn > .inner-circle{
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+}
+.toggle-btn.active{
+    background: violet;
+}
+.toggle-btn.active > .inner-circle{
+    margin-left: 18px;
+}

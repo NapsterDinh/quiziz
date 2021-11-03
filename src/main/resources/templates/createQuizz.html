@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/createQuizz.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="nav-container">
+            <div class="krafty-container-397b720e-113c-4e25-9821-f86730cc175b">
+                <header id="main-header" class="main-header desktop up awaited-up" style="">
+                    <div class="top-header">
+                        <div class="nav-size-container"><button class="bars hidden no-select" aria-label="Expand navigation menu"><span class="burger-icon stripe"><span class="top-stripe stripe"></span><span class="mid-stripe stripe"></span><span class="bottom-stripe stripe"></span></span></button>
+                            <div
+                                class="main-logo" style="margin-left: 20px"><button class="skip-to-main-content">Skip to main content</button><a href="/admin"><img class="" src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" alt="Quizizz"></a></div>
+                    </div>
+                    <div class="main-search-master-wrapper ">
+                        <div class="main-search-wrapper">
+                            <div class="main-search">
+                                <div class="main-search-container "><i class="fas fa-search"></i>
+                                    <div class="main-search-input">
+                                        <div class="krafty-container-9113d0b4-219c-4a6e-9752-51f217353942">
+                                            <div class="kr-selectbox no-select"><input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+                                                <div class="kr-selectbox-selected-option allow-search placeholder closed "><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span><input class="kr-selectbox-selected-open-text kr-selectbox-search-input " placeholder="Search" value=""><span class="kr-selectbox-selected-option-text hidden"
+                                                        role="listbox" aria-expanded="false" aria-activedescendant="option-1" tabindex="0">Search</span><i class="fas fa-caret-down hidden"></i></div>
+                                                <div class="kr-selectbox-list-container  allow-search closed desktop">
+                                                    <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option-1"></ul>
+                                                    <div class="kr-selectbox-btn hidden"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><span class="divider"></span>
+                                    <div class="search-context">
+                                        <div class="krafty-container-3c115004-d24a-4f7c-a001-959cc9c656c4">
+                                            <div class="kr-selectbox no-select"><input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+                                                <div class="kr-selectbox-selected-option   closed "><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span><input class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden" placeholder="--" value="Quizizz library">
+                                                    <span
+                                                        class="kr-selectbox-selected-option-text " role="listbox" aria-expanded="false" aria-activedescendant="option0" tabindex="0">Quizizz library</span><i class="fas fa-caret-down "></i></div>
+                                                <div class="kr-selectbox-list-container   closed desktop">
+                                                    <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option0">
+                                                        <li data-idx="0" data-val="all_quizzes" class="" id="option1" aria-selected="true" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                            <div class="kr-selectbox-list-item-text">Quizizz library</div>
+                                                        </li>
+                                                        <li data-idx="1" data-val="my_quizzes" class="" id="option2" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                            <div class="kr-selectbox-list-item-text">My library</div>
+                                                        </li>
+                                                        <li data-idx="2" data-val="reports" class="" id="option3" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                            <div class="kr-selectbox-list-item-text">Reports</div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="kr-selectbox-btn hidden"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tray no-select "><button class="search-icon hidden"><i class="far fa-search"></i></button><a class="join-game-btn hidden" href="/join" target="_blank">Enter Code</a><button class="sign-in-btn login-action hidden desktop">Log in</button><button class="sign-in-btn signup-action hidden">Sign up</button>
+                        <button
+                            class="notification-bell desktop   " aria-label="Notifications"><i class="fal fa-bell"></i><i class="fas fa-gift"></i><span class="notification-count hidden">0</span></button>
+                    </div>
+            </div>
+            <div class="bottom-header-wrapper" style="">
+                <div class="bottom-header-container">
+                    <div class="bottom-header  hidden"></div>
+                </div>
+            </div>
+            </header>
+        </div>
+        <div class="krafty-container-84732724-7c38-4291-9001-dac5043294d6">
+            <nav id="main-navigation" class="main-navigation no-select desktop closed awaited-close">
+                <div class="main-navigation-inner" data-qtest="navigation-sidebar">
+                    <div class="header   ">
+                        <div class="signed-in">
+                            <div class="user-details"><span role="link" tabindex="0" class="name"> Tu Dinh </span>
+                                <div class="user-type teacher_basic  "> Basic account </div>
+                                <div class="account-type hidden"> Schools &amp; Districts account </div>
+                            </div>
+                        </div><button class="upgrade-super-nav-btn " type="button"><i class="fas fa-bolt"></i><span>Upgrade to Super</span></button><button class="manage-org-members-btn hidden "><i class="fas fa-user-cog"></i>Manage members</button></div>
+                    <div
+                        class="create-menu-wrapper">
+                        <div class="create-fullscreen-overlay hidden"></div><button class="create-btn" id="create"><i class="far fa-plus-circle"></i><span class="create-btn-label">Create</span><i class="fas fa-caret-down"></i></button>
+                        <div class="create-menu hidden"><button class="menu-option menu-option-quiz"><div class="menu-option-img"><video autoplay="true" loop="true" src="https://cf.quizizz.com/img/illustrations/Bars_H_hover.mp4"></video></div><div class="menu-option-content"><div class="menu-title ">Quiz</div><div class="menu-desc">Engage live or asynchronously with quiz and poll questions that participants complete at their own pace.</div></div></button>
+                            <button
+                                class="menu-option menu-option-presentation">
+                                <div class="menu-option-img"><video autoplay="true" loop="true" src="https://cf.quizizz.com/img/illustrations/Card_V_hover.mp4"></video></div>
+                                <div class="menu-option-content">
+                                    <div class="menu-title ">Lesson<span class="new-label">NEW</span></div>
+                                    <div class="menu-desc">Create an instructor-led experience where slides and multimedia are combined with quiz and poll questions.</div>
+                                </div>
+                                </button>
+                        </div>
+                </div>
+                <div class="main-navigation-list-wrapper" style="height: 0px;">
+                    <ul class="main-navigation-list" style="">
+                        <li id="explore" class=" "><i aria-hidden="true" class="fal fa-map-marked-alt"></i><span id="explore-link" role="link" tabindex="0">Explore</span></li>
+                        <li id="my-quizzes" class=""><i aria-hidden="true" class="fal fa-folder-open"></i><span id="my-quizzes-link" role="link" tabindex="0">My library</span></li>
+                        <li id="my-organization" class=" hidden"><i aria-hidden="true" class="fal fa-landmark"></i><span id="my-organization-link" role="link" tabindex="0">My organization <div class="new-tag  "> NEW </div></span></li>
+                        <li id="reports" class=""><i aria-hidden="true" class="fal fa-analytics"></i><span id="reports-link" role="link" tabindex="0">Reports</span></li>
+                        <li id="classes" class=" hidden "><i aria-hidden="true" class="fal fa-users-class"></i><span id="classes-link" role="link" tabindex="0">Classes</span></li>
+                        <li id="settings" class=" "><i aria-hidden="true" class="fal fa-cog"></i><span id="settings-link" role="link" tabindex="0">Settings</span></li>
+                        <li class="divider collapsed"></li>
+                        <li id="memes" class=" collapsed"><i aria-hidden="true" class="fal fa-images"></i><span id="memes-link" role="link" tabindex="-1" aria-hidden="true">Memes</span></li>
+                        <li id="collections" class=" collapsed"><i aria-hidden="true" class="fal fa-folder"></i><span id="collections-link" role="link" tabindex="-1" aria-hidden="true">Collections</span></li>
+                        <li id="profile" class=" collapsed "><i aria-hidden="true" class="fal fa-user"></i><span id="profile-link" role="link" tabindex="-1" aria-hidden="true">Profile</span></li>
+                        <li id="signout" class="collapsed " data-qtest="signout-btn"><i aria-hidden="true" class="fal fa-sign-out"></i><span id="signout-link" role="link" tabindex="-1" aria-hidden="true">Log out</span></li>
+                        <li id="nav-more" class="nav-collapsed"><i aria-hidden="true" class="fas fa-chevron-down "></i><span id="nav-more-link" role="link" tabindex="0" aria-hidden="false" class="nav-label-collapsed">More</span><span id="nav-more-link" role="link" tabindex="-1" aria-hidden="true"
+                                class="nav-label-open">Less</span></li>
+                        <li class="spacer no-hover hidden"></li>
+                    </ul>
+                </div>
+        </div>
+        </nav>
+        <nav class="main-navigation-drawer-container desktop closed awaited-close">
+            <div class="main-navigation-drawer ">
+                <div class="header   ">
+                    <div class="signed-in">
+                        <div class="user-details"><span role="link" tabindex="0" class="name"> Tu Dinh </span>
+                            <div class="user-type teacher_basic  "> Basic account </div>
+                        </div>
+                    </div><button class="upgrade-super-nav-btn " type="button"><i class="fas fa-bolt"></i><span>Upgrade to Super</span></button><button class="manage-org-members-btn hidden  "><i class="fas fa-user-cog"></i>Manage members</button></div>
+                <div
+                    class="create-menu-wrapper"><button class="create-btn" id="create-drawer"><i class="far fa-plus-circle"></i><span class="create-btn-label">Create</span><i class="fas fa-caret-down "></i></button></div>
+            <div class="main-navigation-inner">
+                <ul class="main-navigation-list" style="">
+                    <li class=" "><i aria-hidden="true" class="fal fa-map-marked-alt"></i><span id="explore" role="link" tabindex="0">Explore</span></li>
+                    <li class=""><i aria-hidden="true" class="fal fa-folder-open"></i><span id="my-quizzes" role="link" tabindex="0">My library</span></li>
+                    <li class=""><i aria-hidden="true" class="fal fa-analytics"></i><span id="reports" role="link" tabindex="0">Reports</span></li>
+                    <li class=" hidden "><i aria-hidden="true" class="fal fa-users-class"></i><span id="classes" role="link" tabindex="0">Classes</span></li>
+                    <li class=" "><i aria-hidden="true" class="fal fa-cog"></i><span id="settings" role="link" tabindex="0">Settings</span></li>
+                    <li class="divider collapsed"></li>
+                    <li class=" collapsed"><i aria-hidden="true" class="fal fa-images"></i><span id="memes" role="link" tabindex="0">Memes</span></li>
+                    <li class=" collapsed"><i aria-hidden="true" class="fal fa-folder"></i><span id="collections" role="link" tabindex="0">Collections</span></li>
+                    <li class=" collapsed "><i aria-hidden="true" class="fal fa-user"></i><span id="profile" role="link" tabindex="0">Profile</span></li>
+                    <li class="collapsed " data-qtest="signout-btn"><i aria-hidden="true" class="fal fa-sign-out"></i><span id="signout" role="link" tabindex="0">Log out</span></li>
+                    <li id="nav-more" class="nav-collapsed" aria-hidden="true"><i class="fas fa-chevron-down"></i><span class="nav-label-collapsed">More</span><span class="nav-label-open">Less</span></li>
+                    <li class="spacer no-hover hidden"></li>
+                </ul>
+            </div>
+    </div>
+    </nav>
+    </div>
+    </div>
+    <main id="page-container" tabindex="0" class="page-container desktop" style="padding-top: 0px; margin-left: 0px; width: 100%;">
+        <div class="page-inner"></div>
+        <div class="app-spinner-container" style="display: none;">
+            <div class="spinner kr-anim-spin"><img src="data:image/png;base64,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"
+                    alt=""></div>
+        </div>
+        <div class="krafty-container-2def047e-4668-4658-b334-3a64b0402dd6">
+            <div class=" hidden">
+                <div class="krafty-container-bf2ea3d4-a8d9-4ea8-ae84-40746f9731d8">
+                    <div class="content-limit-upsell-wrapper">
+                        <div class="img-text-wrapper-left">
+                            <div class="upsell-img-wrapper"><img src="https://storage.googleapis.com/quizizz-static-content/game/img/misc/content_limit_upselll_img.png"></div>
+                            <div class="upsell-text-wrapper">
+                                <h1 class="title-upsell">Your library is getting pretty full.</h1>
+                                <h2 class="subtitle-upsell">Upgrade from a basic plan to create unlimited quizzes and lessons and use anything in the library.</h2>
+                            </div>
+                        </div>
+                        <div class="btn-cross-wrapper-right"><button class="upsell-btn">UPGRADE</button>
+                            <div class="cross-wrapper"><i class="fal fa-times cross-icon"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="editor hidden">
+                <div class="editor-header-container ">
+                    <div class="quiz-editor-header"><button class="exit-btn" aria-label="Exit Quiz Editor"><i class="far fa-chevron-left"></i></button>
+                        <div class="status-title">Quiz Editor</div>
+                        <div class="change-status" unselectable="on"><i class="fas fa-check green"></i>
+                            <div class="text">All changes saved</div>
+                        </div>
+                        <div class="btn-tray"><button class="collaborate-btn header-tray-btn hidden"><i class="far fa-user-plus"></i>Collaborate</button><button class="publish-btn header-tray-btn ">Publish</button></div>
+                    </div>
+                </div>
+                <div class="editor-body ">
+                    <div class="questions-header-backdrop    no-questions">
+                        <div class="questions-header-backdrop-events"></div>
+                        <div class="questions-header   no-questions">
+                            <div class="teleport-search-bar  no-questions">
+                                <div class="teleport-search-label-container">
+                                    <h3 class="teleport-label header-label">Teleport questions</h3><i class="far fa-info-circle teleport-tooltip-icon"></i></div>
+                                <div class="teleport-search-input-container no-questions" tabindex="0" aria-label="Select and Search from millions of questions"><i class="fal fa-search"></i><input tabindex="-1" type="text" class="teleport-search-input" placeholder="Search from millions of questions"><button tabindex="-1" class="search-teleport-btn">Search</button></div>
+                            </div>
+                            <div class="new-question-container no-questions">
+                                <div class="header-label question-label">Create a question</div><button class="new-question  no-questions">New question<i class="far fa-plus-circle"></i></button>
+                                <div class="question-type-panel "><button class="question-type mcq" data-type="MCQ"><div class="icon"><i class="qicon-multiple_choice"></i></div><div class="name">Multiple Choice</div></button><button class="question-type msq" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div><div class="name">Checkbox</div></button>
+                                    <button
+                                        class="question-type blank" data-type="BLANK">
+                                        <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                        <div class="name">Fill-in-the-Blank</div>
+                                        </button><button class="question-type poll" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div><div class="name">Poll</div></button><button class="question-type open" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div><div class="name">Open-Ended</div></button>
+                                        <button
+                                            class="question-type slide" data-type="SLIDE">
+                                            <div class="icon"><i class="far fa-presentation"></i></div>
+                                            <div class="name">Slide<span class="new-label">new</span></div>
+                                            <div class="subtext">create a lesson</div>
+                                            </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questions-body    no-questions">
+                        <div class="reorder-bar hidden">
+                            <div class="text">Drag questions to reorder.</div>
+                            <div class="btns"><button class="revert-reorder">REVERT</button><button class="done-reorder">DONE</button></div>
+                        </div>
+                        <div class="no-questions-placeholder ">
+                            <h3 class="new-questions-label">or, <span class="header-label">Create a new question</span></h3>
+                            <div class="question-type-panel "><button class="question-type mcq" data-type="MCQ"><div class="icon"><i class="qicon-multiple_choice"></i></div><div class="name">Multiple Choice</div></button><button class="question-type msq" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div><div class="name">Checkbox</div></button>
+                                <button
+                                    class="question-type blank" data-type="BLANK">
+                                    <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                    <div class="name">Fill-in-the-Blank</div>
+                                    </button><button class="question-type poll" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div><div class="name">Poll</div></button><button class="question-type open" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div><div class="name">Open-Ended</div></button>
+                                    <button
+                                        class="question-type slide" data-type="SLIDE">
+                                        <div class="icon"><i class="far fa-presentation"></i></div>
+                                        <div class="name">Slide<span class="new-label">new</span></div>
+                                        <div class="subtext">create a lesson</div>
+                                        </button>
+                            </div>
+                        </div>
+                        <div class="questions" style=""></div>
+                        <div class="new-question-btn-bar  hidden">
+                            <div class="question-type-panel "><button class="question-type mcq" aria-label="MCQ type" data-type="MCQ"><div class="icon"><i class="qicon-multiple_choice"></i></div></button><button class="question-type msq" aria-label="MSQ type" data-type="MSQ"><div class="icon"><i class="qicon-checkboxes"></i></div></button>
+                                <button
+                                    class="question-type blank" aria-label="Fill in the blank type" data-type="BLANK">
+                                    <div class="icon"><i class="qicon-fill_in_the_blank"></i></div>
+                                    </button><button class="question-type poll" aria-label="Poll type" data-type="POLL"><div class="icon"><i class="qicon-poll"></i></div></button><button class="question-type open" aria-label="Open ended type" data-type="OPEN"><div class="icon"><i class="qicon-open_ended"></i></div></button>
+                                    <button
+                                        class="question-type slide" aria-label="Slide type" data-type="SLIDE">
+                                        <div class="icon"><i class="far fa-presentation"></i></div>
+                                        </button>
+                            </div>
+                        </div>
+                        <div class="krafty-container-a064c410-d6a8-4592-9508-b0e6672a4b04">
+                            <div class="question-editor hidden ">
+                                <div class="header">
+                                    <div class="question-type-select ">
+                                        <div class="question-type-select-inner "><button class="question-type-selected-option MCQ " aria-haspopup="listbox" aria-label="Select question type"><i class="select-icon qicon-multiple_choice"></i><i class="arrow fas fa-caret-down"></i></button>
+                                            <ul class="question-type-select-list "
+                                                role="listbox" tabindex="0" aria-expanded="false" aria-activedescendant="option-MCQ">
+                                                <li id="option-MCQ" class="question-type-select-list-item MCQ selected" aria-selected="selected" data-type="MCQ" role="option" tabindex="-1"><i class="qicon-multiple_choice"></i>
+                                                    <div class="text">Multiple Choice</div>
+                                                </li>
+                                                <li id="option-MSQ" class="question-type-select-list-item MSQ " aria-selected="" data-type="MSQ" role="option" tabindex="-1"><i class="qicon-checkboxes"></i>
+                                                    <div class="text">Checkbox</div>
+                                                </li>
+                                                <li id="option-BLANK" class="question-type-select-list-item BLANK " aria-selected="" data-type="BLANK" role="option" tabindex="-1"><i class="qicon-fill_in_the_blank"></i>
+                                                    <div class="text">Fill-in-the-Blank</div>
+                                                </li>
+                                                <li id="option-OPEN" class="question-type-select-list-item OPEN " aria-selected="" data-type="OPEN" role="option" tabindex="-1"><i class="qicon-open_ended"></i>
+                                                    <div class="text">Open-Ended</div>
+                                                </li>
+                                                <li id="option-POLL" class="question-type-select-list-item POLL " aria-selected="" data-type="POLL" role="option" tabindex="-1"><i class="qicon-poll"></i>
+                                                    <div class="text">Poll</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="title">Question 1</div>
+                                </div>
+                                <div class="body">
+                                    <div class="label editor-label question-text-editor-label" unselectable="on">Write your question here</div>
+                                    <div class="question-text-editor edit-container">
+                                        <div class="editor-toolbar" data-src="create" data-id="questionText" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                            <ul class="toolbar">
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="italic"><i class="far fa-italic"></i></li>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="underline"><i class="far fa-underline"></i></li>
+                                                <li class="menu main" data-src="create" data-id="questionText" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="questionText" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                            </ul>
+                                            <ul class="color-menu">
+                                                <li class="menu-item tool black" data-src="create" data-id="questionText" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                <li class="menu-item tool red" data-src="create" data-id="questionText" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                <li class="menu-item tool green" data-src="create" data-id="questionText" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                <li class="menu-item tool blue" data-src="create" data-id="questionText" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                            </ul>
+                                            <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                                        </div>
+                                        <div class="question-text ql-container" id="question-text">
+                                            <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                                <p><br></p>
+                                            </div>
+                                            <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                        </div>
+                                        <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true"><button tabindex="-1" data-src="question" class="math-init-btn"><i class="far fa-function"></i><span class="text">Math</span></button><button tabindex="-1" data-src="question" class="media-image-btn  "><div class="far fa-image"></div><span class="text">Image</span></button>
+                                            <button
+                                                tabindex="-1" data-src="question" class="media-audio-btn  "><span class="far fa-microphone-alt"></span><span class="text">Audio</span></button><button tabindex="-1" data-src="question" class="media-video-btn  "><span class="far fa-video"></span><span class="text">Video</span></button></div>
+                                    </div>
+                                    <div class="question-text-editor hidden">
+                                        <div class="math-editor">
+                                            <div class="krafty-container-f24b6c51-7b3d-4dc4-b8e7-d4004943798d">
+                                                <div class="kr-math-input">
+                                                    <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                    <div class="placeholder">Write your question here</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true"><button tabindex="-1" class="math-btn" data-id="questionTextMath" data-src="create"><i class="far fa-function"></i><span class="text">Math</span></button><button tabindex="-1" data-src="question" class="media-image-btn  "><div class="far fa-image"></div><span class="text">Image</span></button>
+                                            <button
+                                                tabindex="-1" data-src="question" class="media-audio-btn  "><span class="far fa-microphone-alt"></span><span class="text">Audio</span></button><button tabindex="-1" data-src="question" class="media-video-btn  "><span class="far fa-video"></span><span class="text">Video</span></button></div>
+                                    </div>
+                                    <div class="poll-q-type hidden"><i class="checkbox far fa-square"></i>
+                                        <div class="text">Allow multiple selection</div>
+                                    </div>
+                                    <div class="open-ended-info hidden">
+                                        <div class="msg-body"><i class="far fa-info"></i>
+                                            <div class="open-msg">Open-Ended questions are ungraded. They are marked as Correct in your reports.</div>
+                                        </div>
+                                        <div class="btn-footer">
+                                            <div class="got-it-btn" data-key="open">GOT IT</div>
+                                        </div>
+                                    </div>
+                                    <div class="poll-info hidden">
+                                        <div class="msg-body"><i class="far fa-info"></i>
+                                            <div class="open-msg">Polls are ungraded. They are marked as Correct in the your reports.</div>
+                                        </div>
+                                        <div class="btn-footer">
+                                            <div class="got-it-btn" data-key="poll">GOT IT</div>
+                                        </div>
+                                    </div>
+                                    <div class="blank-label hidden"><span class="label">Add the answer and any accepted alternatives</span></div>
+                                    <div class="blank-msg hidden">Mark an answer as correct, if it</div>
+                                    <div class="options ">
+                                        <div class="or hidden">OR</div>
+                                        <div class="option option-1-container edit-container">
+                                            <div class="label editor-label option-1-editor-label" unselectable="on">Answer option 1</div>
+                                            <div class="editor-toolbar option-toolbar " data-src="create" data-id="option1" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                                <ul class="toolbar">
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="italic"><i class="far fa-italic"></i></li>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="underline"><i class="far fa-underline"></i></li>
+                                                    <li class="menu main" data-src="create" data-id="option1" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                                    <li class="tool main" data-src="create" data-id="option1" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                                </ul>
+                                                <ul class="color-menu">
+                                                    <li class="menu-item tool black" data-src="create" data-id="option1" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                    <li class="menu-item tool red" data-src="create" data-id="option1" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                    <li class="menu-item tool green" data-src="create" data-id="option1" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                    <li class="menu-item tool blue" data-src="create" data-id="option1" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                                </ul>
+                                                <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                                            </div>
+                                            <div class="fib-matcher-dropdown hidden">
+                                                <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                                <div class="fib-matcher-dropdown-list ">
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="exact" id="0" role="option">is exactly</div>
+                                                    <div class="divider"></div>
+                                                    <div class="super-list">
+                                                        <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="contains" id="0" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                        <div class="fib-matcher-dropdown-list-item" data-idx="0" data-val="exact_num" id="0" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="numeric-input hidden"><input id="numeric-input" class="numeric-input-textbox" type="number" lang="en-US" placeholder="Answer*" data-idx="0"></div><button aria-label="Mark option 1 as correct" class="option-state   classic option-1-state  "
+                                                data-idx="0"><i class="fas fa-check "></i></button>
+                                            <div class="option-inner  ">
+                                                <div class="option-editor-container  ">
+                                                    <div class="option-1 ql-container" id="option-1" data-gramm="false">
+                                                        <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                                            <p><br></p>
+                                                        </div>
+                                                        <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="option-math-editor  hidden" id="option-1">
+                                                    <div class="math-input-container">
+                                                        <div class="krafty-container-05733e1f-2887-41e0-b836-b09da7ce9145">
+                                                            <div class="kr-math-input">
+                                                                <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                                <div class="placeholder">Answer option 1</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="image-option hidden" id="option-1">
+                                                    <div class="upload" data-id="option-1"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                                </div>
+                                            </div><button kr-inert="true" tabindex="-1" class="math-btn  " data-id="optionTextMath1" data-src="create" kr-inerted="true" aria-hidden="true"><i class="far fa-function"></i></button><button kr-inert="true" tabindex="-1"
+                                                class="option-image-btn   option-image-btn-0 " data-qtest="option-image-upload-btn" data-id="option-1" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button></div>
+                                        <div
+                                            class="or hidden">OR</div>
+                                    <div class="option option-2-container edit-container">
+                                        <div class="label editor-label option-2-editor-label" unselectable="on">Answer option 2</div>
+                                        <div class="editor-toolbar option-toolbar " data-src="create" data-id="option2" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                            <ul class="toolbar">
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="italic"><i class="far fa-italic"></i></li>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="underline"><i class="far fa-underline"></i></li>
+                                                <li class="menu main" data-src="create" data-id="option2" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                                <li class="tool main" data-src="create" data-id="option2" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                            </ul>
+                                            <ul class="color-menu">
+                                                <li class="menu-item tool black" data-src="create" data-id="option2" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                                <li class="menu-item tool red" data-src="create" data-id="option2" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                                <li class="menu-item tool green" data-src="create" data-id="option2" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                                <li class="menu-item tool blue" data-src="create" data-id="option2" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                            </ul>
+                                            <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                                        </div>
+                                        <div class="fib-matcher-dropdown hidden">
+                                            <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                            <div class="fib-matcher-dropdown-list ">
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="exact" id="1" role="option">is exactly</div>
+                                                <div class="divider"></div>
+                                                <div class="super-list">
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="contains" id="1" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                    <div class="fib-matcher-dropdown-list-item" data-idx="1" data-val="exact_num" id="1" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="numeric-input hidden"><input id="numeric-input" class="numeric-input-textbox" type="number" lang="en-US" placeholder="Alternative" data-idx="1"></div><button aria-label="Mark option 2 as correct" class="option-state   classic option-2-state  "
+                                            data-idx="1"><i class="fas fa-check "></i></button>
+                                        <div class="option-inner  ">
+                                            <div class="option-editor-container  ">
+                                                <div class="option-2 ql-container" id="option-2" data-gramm="false">
+                                                    <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                                        <p><br></p>
+                                                    </div>
+                                                    <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                                </div>
+                                            </div>
+                                            <div class="option-math-editor  hidden" id="option-2">
+                                                <div class="math-input-container">
+                                                    <div class="krafty-container-e8e088f3-039f-4246-8be9-0b8a25edf4d1">
+                                                        <div class="kr-math-input">
+                                                            <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                            <div class="placeholder">Answer option 2</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="image-option hidden" id="option-2">
+                                                <div class="upload" data-id="option-2"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                            </div>
+                                        </div><button kr-inert="true" tabindex="-1" class="math-btn  " data-id="optionTextMath2" data-src="create" kr-inerted="true" aria-hidden="true"><i class="far fa-function"></i></button><button kr-inert="true" tabindex="-1"
+                                            class="option-image-btn   option-image-btn-1 " data-qtest="option-image-upload-btn" data-id="option-2" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button></div>
+                                    <div
+                                        class="or hidden">OR</div>
+                                <div class="option option-3-container edit-container">
+                                    <div class="label editor-label option-3-editor-label" unselectable="on">Answer option 3</div>
+                                    <div class="editor-toolbar option-toolbar " data-src="create" data-id="option3" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                        <ul class="toolbar">
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="italic"><i class="far fa-italic"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="underline"><i class="far fa-underline"></i></li>
+                                            <li class="menu main" data-src="create" data-id="option3" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option3" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                        </ul>
+                                        <ul class="color-menu">
+                                            <li class="menu-item tool black" data-src="create" data-id="option3" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                            <li class="menu-item tool red" data-src="create" data-id="option3" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                            <li class="menu-item tool green" data-src="create" data-id="option3" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                            <li class="menu-item tool blue" data-src="create" data-id="option3" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                        </ul>
+                                        <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                                    </div>
+                                    <div class="fib-matcher-dropdown hidden">
+                                        <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                        <div class="fib-matcher-dropdown-list ">
+                                            <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact" id="2" role="option">is exactly</div>
+                                            <div class="divider"></div>
+                                            <div class="super-list">
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="contains" id="2" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="2" data-val="exact_num" id="2" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="numeric-input hidden"><input id="numeric-input" class="numeric-input-textbox" type="number" lang="en-US" placeholder="Alternative" data-idx="2"></div><button aria-label="Mark option 3 as correct" class="option-state   classic option-3-state  "
+                                        data-idx="2"><i class="fas fa-check "></i></button>
+                                    <div class="option-inner  ">
+                                        <div class="option-editor-container  ">
+                                            <div class="option-3 ql-container" id="option-3" data-gramm="false">
+                                                <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                                    <p><br></p>
+                                                </div>
+                                                <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="option-math-editor  hidden" id="option-3">
+                                            <div class="math-input-container">
+                                                <div class="krafty-container-7a56a715-a2aa-4181-8a25-6cb684cb0556">
+                                                    <div class="kr-math-input">
+                                                        <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                        <div class="placeholder">Answer option 3</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="image-option hidden" id="option-3">
+                                            <div class="upload" data-id="option-3"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                        </div><button tabindex="-1" aria-label="Delete option 3" class="delete-option-btn " data-qtest="delete-option-btn" data-id="2" data-src="create"><i class="far fa-trash-alt"></i></button></div><button kr-inert="true" tabindex="-1"
+                                        class="math-btn  " data-id="optionTextMath3" data-src="create" kr-inerted="true" aria-hidden="true"><i class="far fa-function"></i></button><button kr-inert="true" tabindex="-1" class="option-image-btn   option-image-btn-2 "
+                                        data-qtest="option-image-upload-btn" data-id="option-3" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button></div>
+                                <div class="or hidden">OR</div>
+                                <div class="option option-4-container edit-container">
+                                    <div class="label editor-label option-4-editor-label" unselectable="on">Answer option 4</div>
+                                    <div class="editor-toolbar option-toolbar " data-src="create" data-id="option4" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                        <ul class="toolbar">
+                                            <li class="tool main" data-src="create" data-id="option4" data-key="italic"><i class="far fa-italic"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option4" data-key="underline"><i class="far fa-underline"></i></li>
+                                            <li class="menu main" data-src="create" data-id="option4" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option4" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                            <li class="tool main" data-src="create" data-id="option4" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                            <li class="tool main" data-src="create" data-id="option4" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                        </ul>
+                                        <ul class="color-menu">
+                                            <li class="menu-item tool black" data-src="create" data-id="option4" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                            <li class="menu-item tool red" data-src="create" data-id="option4" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                            <li class="menu-item tool green" data-src="create" data-id="option4" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                            <li class="menu-item tool blue" data-src="create" data-id="option4" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                        </ul>
+                                        <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                                    </div>
+                                    <div class="fib-matcher-dropdown hidden">
+                                        <div class="fib-matcher-value" tabindex="0" role="listbox">is exactly<i class="fa fa-caret-down"></i></div>
+                                        <div class="fib-matcher-dropdown-list ">
+                                            <div class="fib-matcher-dropdown-list-item" data-idx="3" data-val="exact" id="3" role="option">is exactly</div>
+                                            <div class="divider"></div>
+                                            <div class="super-list">
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="3" data-val="contains" id="3" role="option">contains<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                                <div class="fib-matcher-dropdown-list-item" data-idx="3" data-val="exact_num" id="3" role="option">equals (number)<span class="fib-super-icon "><i class="fas fa-bolt"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="numeric-input hidden"><input id="numeric-input" class="numeric-input-textbox" type="number" lang="en-US" placeholder="Alternative" data-idx="3"></div><button aria-label="Mark option 4 as correct" class="option-state   classic option-4-state  "
+                                        data-idx="3"><i class="fas fa-check "></i></button>
+                                    <div class="option-inner  ">
+                                        <div class="option-editor-container  ">
+                                            <div class="option-4 ql-container" id="option-4" data-gramm="false">
+                                                <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                                    <p><br></p>
+                                                </div>
+                                                <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="option-math-editor  hidden" id="option-4">
+                                            <div class="math-input-container">
+                                                <div class="krafty-container-4f84816d-f640-425c-ad90-016e89b2433d">
+                                                    <div class="kr-math-input">
+                                                        <div class="input" contenteditable="true" data-gramm="false"></div>
+                                                        <div class="placeholder">Answer option 4</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="image-option hidden" id="option-4">
+                                            <div class="upload" data-id="option-4"><img src="https://cf.quizizz.com/img/editor/image-icon.png"><span class="text ">Upload Image</span></div>
+                                        </div><button tabindex="-1" aria-label="Delete option 4" class="delete-option-btn " data-qtest="delete-option-btn" data-id="3" data-src="create"><i class="far fa-trash-alt"></i></button></div><button kr-inert="true" tabindex="-1"
+                                        class="math-btn  " data-id="optionTextMath4" data-src="create" kr-inerted="true" aria-hidden="true"><i class="far fa-function"></i></button><button kr-inert="true" tabindex="-1" class="option-image-btn   option-image-btn-3 "
+                                        data-qtest="option-image-upload-btn" data-id="option-4" kr-inerted="true" aria-hidden="true"><img src="https://cf.quizizz.com/img/editor/image_icon_v2.png"></button></div><button class="add-answer-btn  " data-src="create">Add answer option</button></div>
+                            <div
+                                class="blank-label ans-exp-title-container "><span class="label">Answer Explanation (optional)</span></div>
+                        <div class="label editor-label answer-explanation-text-editor-label hidden" unselectable="on">Add a fun fact or explanation for the correct answer.</div>
+                        <div class="answer-explanation-text-editor edit-container  hidden">
+                            <div class="editor-toolbar" data-src="create" data-id="answerExplanationText" kr-inert="true" kr-inerted="true" aria-hidden="true">
+                                <ul class="toolbar">
+                                    <li class="tool main" data-src="create" data-id="answerExplanationText" data-key="italic"><i class="far fa-italic"></i></li>
+                                    <li class="tool main" data-src="create" data-id="answerExplanationText" data-key="underline"><i class="far fa-underline"></i></li>
+                                    <li class="menu main" data-src="create" data-id="answerExplanationText" data-key="color"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li><span class="seperator"></span>
+                                    <li class="tool main" data-src="create" data-id="answerExplanationText" data-key="superscript"><i class="far fa-superscript"></i></li>
+                                    <li class="tool main" data-src="create" data-id="answerExplanationText" data-key="subscript"><i class="far fa-subscript"></i></li><span class="seperator"></span>
+                                    <li class="tool main" data-src="create" data-id="answerExplanationText" data-key="symbol"><img src="https://cf.quizizz.com/img/editor/symbol-icon.png" class="icon"></li>
+                                </ul>
+                                <ul class="color-menu">
+                                    <li class="menu-item tool black" data-src="create" data-id="answerExplanationText" data-key="color" data-val="#000000"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big.png" class="icon"></li>
+                                    <li class="menu-item tool red" data-src="create" data-id="answerExplanationText" data-key="color" data-val="#f14d76"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-red.png" class="icon"></li>
+                                    <li class="menu-item tool green" data-src="create" data-id="answerExplanationText" data-key="color" data-val="#5de2a5"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-green.png" class="icon"></li>
+                                    <li class="menu-item tool blue" data-src="create" data-id="answerExplanationText" data-key="color" data-val="#4990e2"><img src="https://cf.quizizz.com/img/editor/text-color-icon-big-blue.png" class="icon"></li>
+                                </ul>
+                                <div class="expand-btn"><i class="far fa-ellipsis-h"></i><i class="far fa-minus"></i></div>
+                            </div>
+                            <div class="answer-explanation-text ql-container" id="answer-explanation-text">
+                                <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
+                                    <p><br></p>
+                                </div>
+                                <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
+                            </div>
+                            <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true"><button tabindex="-1" data-src="explanation" class="math-init-btn"><i class="far fa-function"></i><span class="text">Math</span></button><button tabindex="-1" data-src="explanation" class="media-image-btn  "><div class="far fa-image"></div><span class="text">Image</span></button>
+                                <button
+                                    tabindex="-1" data-src="explanation" class="media-audio-btn  "><span class="far fa-microphone-alt"></span><span class="text">Audio</span></button><button tabindex="-1" data-src="explanation" class="media-video-btn  "><span class="far fa-video"></span><span class="text">Video</span></button></div>
+                        </div>
+                        <div class="answer-explanation-disabled-text-container ">
+                            <div class="input-container" tabindex="0">
+                                <div class="placeholder">Add a fun fact or explanation for the correct answer.</div><span class="super-icon"><i class="fas fa-bolt"></i></span></div><button tabindex="-1" class="disabled-math-btn"><i class="far fa-function"></i><span class="text">Math</span></button>
+                            <button
+                                class="disabled-image-btn"><img class="media-icon" src="https://cf.quizizz.com/img/editor/audio_icon_v2.png"><span class="text">Media</span></button>
+                        </div>
+                        <div class="answer-explanation-text-editor hidden">
+                            <div class="math-editor">
+                                <div class="krafty-container-b4374324-3f31-4017-8a04-31cb162c430b">
+                                    <div class="kr-math-input">
+                                        <div class="input" contenteditable="true" data-gramm="false"></div>
+                                        <div class="placeholder">Add a fun fact or explanation for the correct answer.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons-container" kr-inert="true" kr-inerted="true" aria-hidden="true"><button tabindex="-1" class="math-btn" data-id="answerExplanationTextMath" data-src="create"><i class="far fa-function"></i><span class="text">Math</span></button><button tabindex="-1" data-src="explanation" class="media-image-btn  "><div class="far fa-image"></div><span class="text">Image</span></button>
+                                <button
+                                    tabindex="-1" data-src="explanation" class="media-audio-btn  "><span class="far fa-microphone-alt"></span><span class="text">Audio</span></button><button tabindex="-1" data-src="explanation" class="media-video-btn  "><span class="far fa-video"></span><span class="text">Video</span></button></div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="question-topics-container  "><button class="topics-container-inner" aria-label="Tag topics"><div class="tag-topics-button "><i class="far fa-tags"></i>Tag topics</div><div class="tags-icon-wrapper"><i class="fas fa-tags tags-icon hidden"></i></div><div class="tagged-topics"><div class="edit-topics-btn hidden "><i class="far fa-pencil"></i></div></div></button>
+                            <div
+                                class="super-feature-icon " tabindex="0"><i class="fas fa-bolt"></i></div>
+                    </div>
+                    <div class="footer-inner">
+                        <div class="select time-select-tooltip">
+                            <div class="krafty-container-a0e36837-0574-4eb0-acaf-dc95daab0b8e">
+                                <div class="kr-selectbox no-select"><input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+                                    <div class="kr-selectbox-selected-option   closed "><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span><input class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden" placeholder="-- Question Duration --" value="30 Seconds">
+                                        <span
+                                            class="kr-selectbox-selected-option-text " role="listbox" aria-expanded="false" aria-activedescendant="option3" tabindex="0"><i class="pre-icon far fa-clock"></i>30 Seconds</span><i class="fas fa-caret-down "></i></div>
+                                    <div class="kr-selectbox-list-container   closed desktop">
+                                        <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option3">
+                                            <li data-idx="0" data-val="5000" class="" id="option1" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">5 Seconds</div>
+                                            </li>
+                                            <li data-idx="1" data-val="10000" class="" id="option2" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">10 Seconds</div>
+                                            </li>
+                                            <li data-idx="2" data-val="20000" class="" id="option3" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">20 Seconds</div>
+                                            </li>
+                                            <li data-idx="3" data-val="30000" class="" id="option4" aria-selected="true" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">30 Seconds</div>
+                                            </li>
+                                            <li data-idx="4" data-val="45000" class="" id="option5" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">45 Seconds</div>
+                                            </li>
+                                            <li data-idx="5" data-val="60000" class="" id="option6" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">60 Seconds</div>
+                                            </li>
+                                            <li data-idx="6" data-val="120000" class="" id="option7" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">2 Minutes</div>
+                                            </li>
+                                            <li data-idx="7" data-val="180000" class="" id="option8" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">3 Minutes</div>
+                                            </li>
+                                            <li data-idx="8" data-val="300000" class="" id="option9" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">5 Minutes</div>
+                                            </li>
+                                            <li data-idx="9" data-val="600000" class="" id="option10" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">10 Minutes</div>
+                                            </li>
+                                            <li data-idx="10" data-val="900000" class="" id="option11" aria-selected="false" role="option" tabindex="-1"><span class="kr-selectbox-list-item-img hidden" style="background-image: url()"></span>
+                                                <div class="kr-selectbox-list-item-text">15 Minutes</div>
+                                            </li>
+                                        </ul>
+                                        <div class="kr-selectbox-btn hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-extra-container">
+                            <div class="bulk-time-btn">Change for all questions</div>
+                            <div class="bulk-time-loading">Saving ...<i class="far fa-sync kr-anim-spin"></i></div>
+                            <div class="bulk-time-done">Done!</div>
+                        </div><span class="duration-info hidden"><i class="fas fa-info-circle"></i></span>
+                        <div class="advanced-options hidden" unselectable="on">Advanced options</div><button class="save-btn" aria-label="Save"><i class="fas fa-save" aria-hidden="true"></i>SAVE</button><button class="cancel-btn" aria-label="Cancel">CANCEL</button></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="quiz-info ">
+            <div class="quiz-info-wrapper">
+                <div class="quiz-image "><button class="placeholder " aria-label="Add quiz image"><div class="icon"><img src="https://cf.quizizz.com/img/editor/picture_frame.png"></div><i class="far fa-plus"></i> Add quiz image</button><img src="" class="hidden">
+                    <div class="quiz-image-overlay hidden"><span>edit image</span></div>
+                </div>
+                <div class="quiz-name">
+                    <div class="placeholder ">add quiz name</div><button aria-label="Edit profile" class="edit-icon"><i aria-hidden="true" class="fas fa-pencil"></i></button></div>
+                <div class="quiz-data"><button class="tag privacy "><i class="far fa-eye"></i>private <span class="hidden">, 0+ </span></button>
+                    <div class="tag tag-separator "></div><button class="tag lang "><i class="fas fa-language"></i>Set Language</button>
+                    <div class="tag tag-separator "></div>
+                    <div class="tag pref-time"><button class="pref-time-btn tag  tooltip" data-tooltip-text="Default time for all questions"><i class="fas fa-clock"></i>30 secs</button>
+                        <div class="saving hidden"><i class="fal fa-sync kr-anim-spin"></i>saving..</div>
+                        <ul class="dropdown time-dropdown" role="listbox" aria-expanded="false">
+                            <li id="0" role="option" tabindex="-1" aria-hidden="true" data-val="5000">5 Seconds</li>
+                            <li id="1" role="option" tabindex="-1" aria-hidden="true" data-val="10000">10 Seconds</li>
+                            <li id="2" role="option" tabindex="-1" aria-hidden="true" data-val="20000">20 Seconds</li>
+                            <li id="3" role="option" tabindex="-1" aria-hidden="true" data-val="30000">30 Seconds</li>
+                            <li id="4" role="option" tabindex="-1" aria-hidden="true" data-val="45000">45 Seconds</li>
+                            <li id="5" role="option" tabindex="-1" aria-hidden="true" data-val="60000">60 Seconds</li>
+                            <li id="6" role="option" tabindex="-1" aria-hidden="true" data-val="120000">2 Minutes</li>
+                            <li id="7" role="option" tabindex="-1" aria-hidden="true" data-val="180000">3 Minutes</li>
+                            <li id="8" role="option" tabindex="-1" aria-hidden="true" data-val="300000">5 Minutes</li>
+                            <li id="9" role="option" tabindex="-1" aria-hidden="true" data-val="600000">10 Minutes</li>
+                            <li id="10" role="option" tabindex="-1" aria-hidden="true" data-val="900000">15 Minutes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider "></div><button class="quiz-grades "><i class="far fa-graduation-cap" aria-hidden="true"></i><div class="value hidden" title=""></div><div class="placeholder ">Add grades</div></button><button class="quiz-subjects "><i class="far fa-book" aria-hidden="true"></i><div class="value hidden" title=""></div><div class="placeholder ">Add subjects and topics</div></button>
+                <div
+                    class="upload-container"><button class="upload-excel"><i class="far fa-upload" aria-hidden="true"></i><div class="value">Import from spreadsheet</div></button></div>
+        </div>
+        <div class="question-bank-info">
+            <div class="new-label"></div>
+            <div class="icon">
+                <div class="fas fa-analytics"></div>
+            </div>
+            <div class="text">You can now use quizzes for Adaptive Learning. <span role="button" tabindex="0" class="link">Learn more</span></div>
+        </div>
+        <div class="quiz-score-wrapper ">
+            <div class="quiz-score-title">Quiz quality score</div>
+            <div class="quiz-score-value"><span class="quiz-score-numerator">0</span><span class="quiz-score-denominator">/10</span></div>
+            <div class="quiz-score-progress">
+                <div class="quiz-score-progress-fill progress-fill-danger" style="width: 0%"></div>
+            </div>
+            <div class="quiz-score-checklist">
+                <div class="checklist-item ">
+                    <div class="checkbox"></div>
+                    <div class="label">Pick a relevant quiz name</div>
+                </div>
+                <div class="checklist-item ">
+                    <div class="checkbox"></div>
+                    <div class="label">Add a quiz image</div>
+                </div>
+                <div class="checklist-item ">
+                    <div class="checkbox"></div>
+                    <div class="label">Add grades</div>
+                </div>
+                <div class="checklist-item ">
+                    <div class="checkbox"></div>
+                    <div class="label">Add at least 4 questions</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="preview out ">
+            <div class="tablet-preview ">
+                <div class="title hidden">PREVIEW</div>
+                <div class="tablet-inner">
+                    <div class="preview-container ">
+                        <div class="content">
+                            <div class="question  " style="height: 45%;">
+                                <div class="question-text-container" style="height: calc(0% - 6px); width: 0%;">
+                                    <div class="text" kr-html-filter="true" kr-html="" style="font-size: 12px; height: 24px; position: absolute;"></div>
+                                </div><button class="zoom"><i class="fas fa-search-plus"></i></button></div>
+                            <div class="options" style="height: 55%;">
+                                <div class="option-1 option " style="background-color: rgb(47, 109, 174); height: calc(25% - 4px); width: calc(100% - 4px); margin-left: 0px;"><img src="" class="hidden">
+                                    <div class="text  " kr-html-filter="true" kr-html=" " style="font-size: 12px; height: 8px;"> </div><span class="option-select hidden"><i class="fas fa-check"></i></span></div>
+                                <div class="option-2 option " style="background-color: rgb(44, 156, 166); height: calc(25% - 4px); width: calc(100% - 4px); margin-left: 0px;"><img src="" class="hidden">
+                                    <div class="text  " kr-html-filter="true" kr-html=" " style="font-size: 12px; height: 8px;"> </div><span class="option-select hidden"><i class="fas fa-check"></i></span></div>
+                                <div class="option-3 option " style="background-color: rgb(236, 168, 44); height: calc(25% - 4px); width: calc(100% - 4px); margin-left: 0px;"><img src="" class="hidden">
+                                    <div class="text  " kr-html-filter="true" kr-html=" " style="font-size: 12px; height: 8px;"> </div><span class="option-select hidden"><i class="fas fa-check"></i></span></div>
+                                <div class="option-4 option " style="background-color: rgb(212, 84, 106); height: calc(25% - 4px); width: calc(100% - 4px); margin-left: 0px;"><img src="" class="hidden">
+                                    <div class="text  " kr-html-filter="true" kr-html=" " style="font-size: 12px; height: 8px;"> </div><span class="option-select hidden"><i class="fas fa-check"></i></span></div>
+                            </div>
+                            <div class="open-ended-section hidden">
+                                <div class="textbox">Type your answer...</div>
+                            </div>
+                            <div class="submit-btn hidden">SUBMIT</div>
+                        </div>
+                        <div class="answer-explanation-container">
+                            <div class="ans-exp-title">Answer Explanation</div>
+                            <div class="explanation" style="overflow-y: hidden;">
+                                <div class="explanation-text-container hidden" style="height: 100%;">
+                                    <div class="text" kr-html-filter="true" kr-html=" "> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-tabs-container">
+                    <div class="question active tab">Question</div>
+                    <div class="answer-explanation  tab">Explanation</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="tablet-portrait-overlay hidden"><img src="https://quizizz.com/_media/questions/ab733438-90a4-4a9e-838b-bc35fe4c3b6e">
+            <div class="msg">
+                <div class="main">Please rotate your device.</div>
+                <div class="sub">The Quizizz Editor does not support portrait mode. Please rotate your device to landscape mode.</div>
+            </div>
+        </div>
+        <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+        </div>
+        </div>
+    </main>
+    <div class="krafty-container-971879bd-2167-4dee-9b1a-ff5f208b860c">
+        <div class="main-overlay-container hide-overlay"></div>
+    </div>
+    </div>
+    <div id="browser-checker"></div>
+    <div class="krafty-container-b79de116-1f95-4fbe-aba6-5fb019e0400f" role="dialog" aria-modal="true" aria-label="Create a quiz">
+        <div class="kr-modal editor-info-modal" tabindex="0" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="kr-modal-container" style="top: 0px; opacity: 1;">
+                <div class="kr-modal-body">
+                    <div class="banner">
+                        <div class="image-wrapper"><img src="https://cf.quizizz.com/img/editor/createaquiz.png"></div>
+                        <div class="title">Create a quiz</div>
+                    </div>
+                    <div class="form">
+                        <div class="quiz-name-wrapper">
+                            <div class="quiz-name-input kr2-textfield "><label>1. Name this quiz</label><input type="text" id="name-input" placeholder="Quiz name" data-qtest="quiz-name-input-field" maxlength="60">
+                                <div class="quiz-name-error"><span class="hidden">Please enter a quiz name</span></div>
+                            </div>
+                        </div>
+                        <div class="quiz-subjects-wrapper">
+                            <div class="label">2. Choose relevant subjects
+                                <div class="max-subjects-msg hidden">(maximum 3 subjects)</div>
+                            </div>
+                            <div class="subjects"><button class="subject  " data-subject="Mathematics" role="checkbox" aria-checked="false" unselectable="on">Mathematics</button><button class="subject  " data-subject="English" role="checkbox" aria-checked="false" unselectable="on">English</button>
+                                <button
+                                    class="subject  " data-subject="Physics" role="checkbox" aria-checked="false" unselectable="on">Physics</button><button class="subject  " data-subject="Chemistry" role="checkbox" aria-checked="false" unselectable="on">Chemistry</button><button class="subject  " data-subject="Biology" role="checkbox" aria-checked="false"
+                                        unselectable="on">Biology</button><button class="subject  " data-subject="Science" role="checkbox" aria-checked="false" unselectable="on">Science</button><button class="subject  " data-subject="Computers" role="checkbox"
+                                        aria-checked="false" unselectable="on">Computers</button><button class="subject  " data-subject="Geography" role="checkbox" aria-checked="false" unselectable="on">Geography</button><button class="subject  " data-subject="World Languages"
+                                        role="checkbox" aria-checked="false" unselectable="on">World Languages</button><button class="subject  " data-subject="History" role="checkbox" aria-checked="false" unselectable="on">History</button><button class="subject  "
+                                        data-subject="Social Studies" role="checkbox" aria-checked="false" unselectable="on">Social Studies</button><button class="subject  " data-subject="Physical Ed" role="checkbox" aria-checked="false" unselectable="on">Physical Ed</button>
+                                    <button
+                                        class="subject  " data-subject="Arts" role="checkbox" aria-checked="false" unselectable="on">Arts</button><button class="subject  " data-subject="Fun" role="checkbox" aria-checked="false" unselectable="on">Fun</button><button class="subject  " data-subject="Professional Development" role="checkbox" aria-checked="false"
+                                            unselectable="on">Professional Development</button><button class="subject hidden " data-subject="Architecture" role="checkbox" aria-checked="false" unselectable="on">Architecture</button><button class="subject hidden "
+                                            data-subject="Business" role="checkbox" aria-checked="false" unselectable="on">Business</button><button class="subject hidden " data-subject="Design" role="checkbox" aria-checked="false" unselectable="on">Design</button>
+                                        <button
+                                            class="subject hidden " data-subject="Education" role="checkbox" aria-checked="false" unselectable="on">Education</button><button class="subject hidden " data-subject="Instructional Technology" role="checkbox" aria-checked="false" unselectable="on">Instructional Technology</button><button class="subject hidden " data-subject="Journalism"
+                                                role="checkbox" aria-checked="false" unselectable="on">Journalism</button><button class="subject hidden " data-subject="Life Skills" role="checkbox" aria-checked="false" unselectable="on">Life Skills</button>
+                                            <button
+                                                class="subject hidden " data-subject="Moral Science" role="checkbox" aria-checked="false" unselectable="on">Moral Science</button><button class="subject hidden " data-subject="Performing Arts" role="checkbox" aria-checked="false" unselectable="on">Performing Arts</button><button class="subject hidden " data-subject="Philosophy"
+                                                    role="checkbox" aria-checked="false" unselectable="on">Philosophy</button><button class="subject hidden " data-subject="Religious Studies" role="checkbox" aria-checked="false" unselectable="on">Religious Studies</button>
+                                                <button
+                                                    class="subject hidden " data-subject="Special Education" role="checkbox" aria-checked="false" unselectable="on">Special Education</button><button class="subject hidden " data-subject="Specialty" role="checkbox" aria-checked="false" unselectable="on">Specialty</button><button class="subject hidden " data-subject="Other"
+                                                        role="checkbox" aria-checked="false" unselectable="on">Other</button><button class="more-btn " unselectable="on">More...</button></div>
+                            <div class="error-subjects hidden">Please select one or more subjects</div>
+                        </div>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="action-btns-wrapper"><button class="cancel-btn" data-qtest="cancel-create-quiz-btn">Cancel</button><button class="save-btn" data-qtest="create-quiz-btn"><i class="fas fa-spinner kr-anim-spin hidden"></i><span class="">Next</span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/createQuizz.js"></script>
+</body>
+</html>

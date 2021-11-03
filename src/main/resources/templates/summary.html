@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html style="height: 100%;position: relative;" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/assets/css/summary.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+</head>
+<body style="height: 100%;" class="using-mouse">
+    <div class="root-bootstrapper-container">
+        <div class="route-loader-wrapper"></div>
+        <div class="root-component">
+            <!---->
+            <div class="error-boundary-container">
+                <div data-v-56a5acac="" data-v-1d9490ae="" class="theme theme-anime" media="[object Object]">
+                    <div
+                        data-v-1ca67761=""
+                        data-v-16a07c45=""
+                        data-v-56a5acac=""
+                        class="themed-background anime in-game-wrapper-container"
+                        style="background-image: url('https://cf.quizizz.com/themes/v2/anime/bg_image_1080p.jpg'); min-height: 754px;"
+                    >
+                        <div data-v-16a07c45="" data-v-1ca67761="" class="dummy-animator-container" style="display: none;">
+                            <div data-v-16a07c45="" data-v-1ca67761="" class="the-animating-object animating-as-fade">
+                                <div data-v-1ca67761="" data-v-16a07c45="" class="dummy-animator-bg themed-background anime" style="background-image: url('https://cf.quizizz.com/themes/v2/anime/bg_image_1080p.jpg');"></div>
+                            </div>
+                        </div>
+                        <div data-v-0475adf1="" data-v-56a5acac="" class="header-container" data-v-1ca67761="">
+                            <!----><!----><!---->
+                            <div data-v-0475adf1="" class="actions-wrapper">
+                                <div data-v-0475adf1="" class="actions-container">
+                                    <button data-v-0475adf1="" class="pause-icon-container">
+                                        <div data-v-0475adf1="" aria-label="Exit" class="exit-icon"><i data-v-0475adf1="" class="icon-far-times"></i></div>
+                                    </button>
+                                    <!---->
+                                    <div data-v-0bdd05df="" data-v-0475adf1="" tabindex="-1" class="show-tooltip hover default">
+                                        <button data-v-0475adf1="" data-v-0bdd05df="" class="mute-btn strip-default-btn-style"><i data-v-0475adf1="" data-v-0bdd05df="" class="mute-icon icon-fas-music"></i></button>
+                                        <div data-v-0bdd05df="" class="content bottom-right default">Click to turn off the music</div>
+                                    </div>
+                                    <!----><!----><!---->
+                                </div>
+                                <!----><!---->
+                            </div>
+                            <!----><!----><!---->
+                        </div>
+                        <div data-v-3cf8ff92="" data-v-1d9490ae="" class="page-container page-container" data-v-1ca67761="">
+                            <!---->
+                            <div data-v-3cf8ff92="" class="screen screen-summary" data-screen="summary">
+                                <!---->
+                                <div data-v-093f3eb4="" class="screen-container themed black">
+                                    <!----><!---->
+                                    <div data-v-093f3eb4="" class="main-section-title"><p data-v-093f3eb4="">Summary</p></div>
+                                    <div data-v-093f3eb4="" class="main-section">
+                                        <div data-v-093f3eb4="" class="top-section-wrapper">
+                                            <div data-v-0fb28cf0="" class="top-section-container" data-v-093f3eb4="">
+                                                <div data-v-0fb28cf0="" class="top-section user-data-container flex-view">
+                                                    <div data-v-0fb28cf0="" class="animated zoomIn anim-300-duration avatar-container">
+                                                        <img data-v-0fb28cf0="" alt="avatar" th:src="${resultGolbal.user.image}" class="avatar" />
+                                                    </div>
+                                                    <div data-v-0fb28cf0="" class="animated fadeIn anim-300-duration player-stats flex-view flex-column">
+                                                        <div data-v-0fb28cf0="" class="player-name"><span data-v-0fb28cf0="">[(${resultGolbal.user.username})]</span></div>
+                                                        <div data-v-0fb28cf0="" class="game-type-title-wrapper flex-view">
+                                                            <i data-v-0fb28cf0="" class="icon-fas-user game-type-icon-user"></i>
+                                                            <div data-v-0fb28cf0="" class="game-type-title">Solo review</div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-0fb28cf0="" class="share-floating-btn-wrapper">
+                                                        <button data-v-0fb28cf0="" aria-label="Share" class="share-btn"><i data-v-0fb28cf0="" class="icon-fas-share-alt"></i><span data-v-0fb28cf0="" class="share-btn-text"></span></button>
+                                                    </div>
+                                                </div>
+                                                <span data-v-0fb28cf0="">
+                                                    <div data-v-0fb28cf0="" class="accuracy-info-section flex-view flex-column">
+                                                        <div data-v-0fb28cf0="" class="accuracy-bar-wrapper">
+                                                            <label data-v-0fb28cf0="" class="accuracy-label">Accuracy</label>
+                                                            <div data-v-0fb28cf0="" class="accuracy-bar">
+                                                                <div data-v-0fb28cf0="" class="accuracy-success-fill" th:style="'width: calc('+ (${countTrue}/${resultGolbal.quiz.quantityOfQuestion})*100 +'% - 2px);'"></div>
+                                                                <div data-v-0fb28cf0="" class="accuracy-danger-fill" th:style="'width: calc('+ (${countFalse}/${resultGolbal.quiz.quantityOfQuestion})*100 +'% - 2px);'"></div>
+                                                                <div data-v-0fb28cf0="" class="accuracy-label-tooltip is-visible animated fadeInUp anim-400-duration" th:style="'left: calc('+ (${countTrue}/${resultGolbal.quiz.quantityOfQuestion})*100 +'% - 29px);'">
+                                                                    <div data-v-0fb28cf0="" class="tooltip-text" >[((${countTrue} / ${resultGolbal.quiz.quantityOfQuestion}) * 100)]%</div>
+                                                                    <div data-v-0fb28cf0="" class="tooltip-arrow"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div data-v-0fb28cf0="" class="accuracy-info-second-row flex-view">
+                                               
+                                                            <div data-v-0fb28cf0="" class="top-section info-container flex-view">
+                                                                <div data-v-0fb28cf0="" class="value-and-title-container flex-view flex-column">
+                                                                    <span data-v-0fb28cf0="" class="info-title">Score</span><span data-v-0fb28cf0="" class="player-score">[(${resultGolbal.score})]</span>
+                                                                </div>
+                                                                <div data-v-0fb28cf0="" class="icon-wrapper score flex-view all-center"><i data-v-0fb28cf0="" class="icon-fas-coins"></i></div>
+                                                            </div>
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                </span>
+                                                <!---->
+                                                <div data-v-0fb28cf0="" class="actions-container">
+                                                    <button data-v-0fb28cf0="" class="primary-action-btn">
+                                                        Play again
+                                                    </button>
+                                                    <button data-v-0fb28cf0="" class="secondary-action-btn" onclick="window.location.href='/home'">
+                                                        Find a new quiz
+                                                    </button>
+                                                    <!----><!---->
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-093f3eb4="" class="animated fadeInUp anim-400-duration middle-section-wrapper">
+                                            <div data-v-afeb5f78="" class="middle-section" data-v-093f3eb4="">
+                                                <div data-v-afeb5f78="" class="title">Performance Stats</div>
+                                                <div data-v-afeb5f78="" class="stats-container">
+                                                    <div data-v-afeb5f78="" class="stat-box-big correct-container">
+                                                        <div data-v-afeb5f78="" class="bg-image" style="background-position: -65px -318px;"></div>
+                                                        <div data-v-afeb5f78="" class="value">[(${countTrue})]</div>
+                                                        <div data-v-afeb5f78="" class="label">Correct</div>
+                                                    </div>
+                                                    <div data-v-afeb5f78="" class="stat-box-big incorrect-container">
+                                                        <div data-v-afeb5f78="" class="bg-image" style="background-position: -135px -323px;"></div>
+                                                        <div data-v-afeb5f78="" class="value">[(${countFalse})]</div>
+                                                        <div data-v-afeb5f78="" class="label">Incorrect</div>
+                                                    </div>
+                                                    <div data-v-afeb5f78="" class="stat-box-big avg-time-container">
+                                                        <div data-v-afeb5f78="" class="bg-image" style="background-position: -240px -223px;"></div>
+                                                        <div data-v-afeb5f78="" class="value">[(${resultGolbal.totalTime}/(${resultGolbal.quiz.quantityOfQuestion}*1000))] s</div>
+                                                        <div data-v-afeb5f78="" class="label">Time/ques</div>
+                                                    </div>
+                                       
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!----><!---->
+                                    <div class="review-section-wrapper" data-v-093f3eb4="">
+                                        <div class="review-section">
+                                            <div class="header-container">
+                                                <div class="header-desc">
+                                                    <div class="title">Review Questions</div>
+                                                    <div class="sub-title text">Click on the questions to see answers</div>
+                                                </div>
+                  
+                                            </div>
+                                            <div class="question-review-list">
+                                                <div class="review-container flex-view flex-column">
+     												<th:block th:each="question : ${resultGolbal.quiz.questions}">
+                                                    <button class="question-container" th:value="${question.id}">
+                                                        <div class="question-info-container">
+                                                            <div
+                                                                class="question-image background-as-image"
+                                                                th:style="'background-image:url(' + @{${question.image}} + ');'"
+                                                            ></div>
+                                                            <div class="question-text-wrapper">
+                                                                <div class="question-text color-black">
+                                                                    <p>[(${question.description})]</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="options-container">
+                                                        	<th:block th:each="answer : ${question.answers}">
+                                                            <div class="option-container full-width">
+                                                                <!----><!---->
+                                                                <div class="bullet"></div>
+                                                                <span class="option-text color-black"><p>[(${answer.description})]</p></span>
+                                                            </div>
+                      										</th:block>
+                                                        </div>
+                                                    </button>
+                                                    </th:block>
+                                                </div>
+                                                <!---->
+                                                <div tabindex="0" role="dialog" aria-modal="true" aria-label="Review question" class="question-being-viewed" style="display: none;">
+                                                    <!---->
+                                                    <div class="controls-container">
+                                                        <div class="controls text-unselectable flex-view flex-row all-center">
+                                                            <div class="checkbox-list flex-view">
+                                                            </div>
+                                                            <div class="navigation-btns">
+                                                                <button class="items prev flex-view all-center" id="prebtn">
+                                                                    <div class="icon"></div>
+                                                                    <span aria-label="Previous" class="text">PREV</span>
+                                                                </button>
+                                                                <button class="items next flex-view all-center" id="nextbtn">
+                                                                    <div class="icon"></div>
+                                                                    <span class="text">NEXT</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!----><!----><!---->
+                            </div>
+                        </div>
+                        <!----><!----><!---->
+                    </div>
+                </div>
+                <!----><!----><!----><!----><!----><!----><!----><!---->
+            </div>
+            <!----><!---->
+        </div>
+    </div>
+    <script th:inline="javascript">
+       	 	/*<![CDATA[*/
+        	var resultGolbal = /*[[${resultGolbal}]]*/ "Question None";
+    		/*]]>*/
+    </script>
+    <script src="/assets/js/summary.js" async></script>
+    <input aria-hidden="true" tabindex="-1" id="__anchor-input__" style="position: fixed; bottom: -10vh; width: 10px; height: 20px; left: 50vw;" />
+    <img src="https://cf.quizizz.com/game/img/ui/disconnect.png" style="width: 0; height: 0; display: none;" />
+</body>
+
+
+
+</html>

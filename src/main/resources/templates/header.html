@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<base href="/" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<meta name="description"
+	content="Join an activity with your class and find or create your own quizzes and flashcards." />
+<title>For Students - Quizizz</title>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/join.css">
+</head>
+<body class="using-mouse">
+							<div data-v-35baa134="" data-v-2d3aa134="" class="header" th:fragment = "menu">
+								
+								<div data-v-35baa134="" class="navigation">
+									<div data-v-35baa134="" class="logo-img-container">
+									<a href="/welcome">
+										<img src="/assets/image/logo/mockprojectLogo02_600x200.png" style="object-fit: cover;width: 100px;height: 50px;    left: -10px;">	
+									</a>
+									</div>
+
+
+									<div data-v-35baa134="" class="search-input-container">
+										<input data-v-35baa134="" type="text"
+											placeholder="Find a quiz" class="search-input" /> <a
+											data-v-35baa134=""> <span data-v-35baa134=""
+											class="search-icon-container"><i data-v-35baa134=""
+												class="icon-fas-search search-icon"></i></span>
+										</a>
+										<!---->
+									</div>
+									<div data-v-35baa134="" role="tablist" class="navigation-items">
+										<a href="/home" data-v-35baa134="" role="tab" aria-selected="true"
+											tabindex="0" class="navigation-menu-item link-is-active">
+											<div data-v-35baa134="">
+												<span data-v-35baa134=""><i data-v-35baa134=""
+													class="icon-far-home inactive-icon"></i><i
+													data-v-35baa134="" class="icon-fas-home active-icon"></i></span> <span
+													data-v-35baa134="" class="nav-item-title">Home</span>
+											</div>
+											<div data-v-35baa134=""
+												class="link-underline link-home-underline"></div>
+										</a> 
+										<a href="/activity?status=0" data-v-35baa134="" role="tab" tabindex="0"
+											class="navigation-menu-item">
+											<div data-v-35baa134="">
+												<span data-v-35baa134=""><i data-v-35baa134=""
+													class="icon-far-history inactive-icon"></i><i
+													data-v-35baa134="" class="icon-fas-history active-icon"></i></span>
+												<span data-v-35baa134="" class="nav-item-title">Activity</span>
+											</div>
+											<div data-v-35baa134="" class="link-underline"></div>
+										</a>
+									</div>
+
+
+								</div>
+								
+								
+								<!--Login-Sign Up-->
+							<div data-v-35baa134="" class="flex-view all-center logged-out-menu" id="signup_login" >
+								<th:block sec:authorize="isAnonymous()">
+									<div id="button_login">
+											<button data-v-35baa134="" id="button_login_child"
+												aria-label="Log in" class="login-button">Log in</button>
+										</div>
+								<div id="button_signup">
+											<button data-v-35baa134="" id="button_signup_child"
+												aria-abel="Sign up" class="signup-button">Sign up</button>
+										</div>
+								</th:block>
+								<th:block sec:authorize="!isAnonymous()">
+									<div id="button_login" class="hidden">
+											<button data-v-35baa134="" id="button_login_child"
+												aria-label="Log in" class="login-button">Log in</button>
+										</div>
+								<div id="button_signup" class="hidden">
+											<button data-v-35baa134="" id="button_signup_child"
+												aria-abel="Sign up" class="signup-button">Sign up</button>
+										</div>
+								</th:block>
+								
+										
+										
+										
+										
+								<th:block sec:authorize="isAnonymous()">
+										<div data-v-35baa134="" class="user-info" id="create_quiz_btn">
+									</div>
+									</th:block>
+								<th:block sec:authorize="!isAnonymous()">
+										<div data-v-35baa134="" class="user-info" id="create_quiz_btn" style="position: relative;">
+										<button data-v-35baa134="" class="admin-external-link">
+										<span data-v-35baa134="" class="admin-external-link-icon"><i
+										data-v-35baa134="" class="icon-far-plus-circle"></i> </span> Create a quiz
+										</button>
+									</div>
+									</th:block>							
+								<th:block sec:authorize="isAnonymous()">
+										<div data-v-35baa134="" class="user-dropdown-container"
+										id="user_drop_con" style="display: none">
+									</th:block>
+								<th:block sec:authorize="!isAnonymous()">
+										<div data-v-35baa134="" class="user-dropdown-container"
+										id="user_drop_con" style="display: block">
+									</th:block>
+								<button data-v-35baa134 id="button_dropdown" role="button"
+											aria-label="Settings" class="user-dropdown-action">
+											<!---->
+											<i data-v-35baa134="" class="icon-far-bars"></i>
+										</button>
+								<div data-v-35baa134="" class="user-dropdown" id="dropdown">
+											<div data-v-35baa134="" class="user-details-container">
+												<ul data-v-35baa134="" class="flex-view flex-column">
+													<li data-v-35baa134="" id="email"
+														class="email light-text-color" th:text = ${userEmail}>
+															
+													</li>
+												</ul>
+											</div>
+											<ul data-v-35baa134=""
+												class="user-dropdown-items flex-view flex-column">
+												<a href="/setting" style="text-decoration: none;">
+													<li data-v-35baa134=""
+													class="user-dropdown-list-item strip-default-btn-style">
+													<button data-v-35baa134="" role="button"
+														aria-label="Settings"
+														class="user-dropdown-list-item-content user-dropdown-list-link">
+														<span data-v-35baa134=""
+															class="user-dropdown-icon-container"><i
+															data-v-35baa134="" class="icon-far-cog"></i></span><span
+															data-v-35baa134="">Settings</span>
+													</button>
+												</li>
+												</a>
+												
+												<form action="/perform_logout" method="post">
+													<li data-v-35baa134=""
+														class="user-dropdown-list-item strip-default-btn-style">
+															<button id="log_out" data-v-35baa134=""
+															class="user-dropdown-list-item strip-default-btn-style">
+															<span data-v-35baa134=""
+																class="user-dropdown-list-item-content"> <span
+																data-v-35baa134="" class="user-dropdown-icon-container"><i
+																	data-v-35baa134=""
+																	class="icon-far-sign-out-alt logout-icon"></i></span><span
+																data-v-35baa134="">Log out</span>
+															</span>
+														</button>
+														
+													</li>
+												</form>
+											</ul>
+										</div>
+	
+										<!---->
+										
+										
+										
+									</div>
+
+
+
+</body>
+</html>

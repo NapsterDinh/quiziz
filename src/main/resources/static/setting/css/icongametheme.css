@@ -1,0 +1,169 @@
+@-webkit-keyframes move-data-v-94fa1eba {
+    0% {
+        left: 0;
+        opacity: 0
+    }
+
+    5% {
+        opacity: 0
+    }
+
+    48% {
+        opacity: .2
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    to {
+        left: 82%
+    }
+}
+
+@keyframes move-data-v-94fa1eba {
+    0% {
+        left: 0;
+        opacity: 0
+    }
+
+    5% {
+        opacity: 0
+    }
+
+    48% {
+        opacity: .2
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    to {
+        left: 82%
+    }
+}
+
+.theme-icon-wrapper {
+    position: relative
+}
+
+.theme-icon {
+    background-image: url(https://cf.quizizz.com/game/img/ui/game_sprites22.png);
+    background-size: 267px auto;
+    width: 34px;
+    height: 34px;
+    position: absolute
+}
+
+.theme-icon-container.random .theme-icon {
+    background-position: -226px -379px
+}
+
+.theme-icon-container.classic .theme-icon {
+    background-image: url(https://storage.googleapis.com/quizizz-static-content/themes/classic/classic_icon.png);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-position: 0;
+    background-repeat: no-repeat
+}
+
+.theme-icon-container.classic .apply-theme-bg {
+    background-color: #461a42
+}
+
+.theme-icon-container.classic.apply-border {
+    border-style: solid;
+    border-color: #8845c0
+}
+
+.theme-icon-container.anime .theme-icon,
+.theme-icon-container.dogsville .theme-icon,
+.theme-icon-container.football .theme-icon,
+.theme-icon-container.nineties .theme-icon,
+.theme-icon-container.synthwave .theme-icon,
+.theme-icon-container.the8Bit .theme-icon {
+    background-image: url(https://cf.quizizz.com/themes/theme_icons_250.jpg);
+    background-size: 204px auto
+}
+
+.theme-icon-container.synthwave .theme-icon {
+    background-position: 0 0
+}
+
+.theme-icon-container.synthwave .apply-theme-bg {
+    background-color: #5c1730
+}
+
+.theme-icon-container.synthwave.apply-border {
+    border-style: solid;
+    border-color: #31a7c6
+}
+
+.theme-icon-container.dogsville .theme-icon {
+    background-position: -34px 0
+}
+
+.theme-icon-container.dogsville .apply-theme-bg {
+    background-color: #5a2f1a
+}
+
+.theme-icon-container.dogsville.apply-border {
+    border-style: solid;
+    border-color: #caaf98
+}
+
+.theme-icon-container.the8Bit .theme-icon {
+    background-position: -68px 0
+}
+
+.theme-icon-container.the8Bit .apply-theme-bg {
+    background-color: #14101a
+}
+
+.theme-icon-container.the8Bit.apply-border {
+    border-style: solid;
+    border-color: #fbd958
+}
+
+.theme-icon-container.anime .theme-icon {
+    background-position: -102px 0
+}
+
+.theme-icon-container.anime .apply-theme-bg {
+    background-color: #0c0203
+}
+
+.theme-icon-container.anime.apply-border {
+    border-style: solid;
+    border-color: #dd935c
+}
+
+.theme-icon-container.football .theme-icon {
+    background-position: -136px 0
+}
+
+.theme-icon-container.football .apply-theme-bg {
+    background-color: #af2519
+}
+
+.theme-icon-container.football.apply-border {
+    border-style: solid;
+    border-color: #fff
+}
+
+.theme-icon-container.nineties .theme-icon {
+    background-position: -170px 0
+}
+
+.theme-icon-container.nineties .apply-theme-bg {
+    background-color: #000
+}
+
+.theme-icon-container.nineties.apply-border {
+    border-style: solid;
+    border-color: #b72c56
+}
